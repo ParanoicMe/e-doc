@@ -1,0 +1,101 @@
+<BLRWBL version="0.1">
+    <MessageHeader>
+        <MessageID>1673011146725</MessageID>
+        <MsgDateTime>20230106161906</MsgDateTime>
+        <MessageType>BLRWBL</MessageType>
+        <MsgSenderID>4810391900003</MsgSenderID>
+        <MsgReceiverID>4819052230008</MsgReceiverID>
+    </MessageHeader>
+    <DeliveryNote>
+        <DeliveryNoteType>700</DeliveryNoteType>
+        <DocumentID>919ce51bba9c4106b08ac018cc4e02fd</DocumentID>
+        <CreationDateTime>20230106161837</CreationDateTime>
+        <FunctionCode>9</FunctionCode>
+        <DeliveryNoteID>002-4810391900003-0000018445</DeliveryNoteID>
+        <DeliveryNoteDate>20230109</DeliveryNoteDate>
+        <ContractName>Договор</ContractName>
+        <ContractID>2/53СБ</ContractID>
+        <ContractDate>20200505</ContractDate>
+        <WaybillID>146</WaybillID>
+        <Shipper>
+            <GLN>4810391900003</GLN>
+            <Name>Открытое акционерное общество "Лунинецкий молочный завод"</Name>
+            <Address>225643, Брестская обл., г.Лунинец, ул. Давыдова, дом № 2</Address>
+            <VATRegistrationNumber>200106617</VATRegistrationNumber>
+            <Contact>Экономист по сбыту Благодёров Александр Александрович</Contact>
+        </Shipper>
+        <Receiver>
+            <GLN>4819052230008</GLN>
+            <Name>ООО "ПОСТТОРГ 2"</Name>
+            <Address>220070, г. Минск, ул. Клумова, 3, пом. 46</Address>
+            <VATRegistrationNumber>193416315</VATRegistrationNumber>
+        </Receiver>
+        <FreightPayer>
+            <GLN>4810391900003</GLN>
+            <Name>Открытое акционерное общество "Лунинецкий молочный завод"</Name>
+            <Address>225643, Брестская обл., г.Лунинец, ул. Давыдова, дом № 2</Address>
+            <VATRegistrationNumber>200106617</VATRegistrationNumber>
+        </FreightPayer>
+        <ShipFrom>
+            <GLN>4810391900003</GLN>
+            <Address>225643, Брестская обл., г.Лунинец, ул. Давыдова, дом № 2</Address>
+            <Contact>Кладовщик Курилович Оксана Федоровна</Contact>
+        </ShipFrom>
+        <ShipTo>
+            <GLN>4819052230022</GLN>
+            <Address>магазин ТПС №3 ООО Постторг 2 ул. Берестянская 5 г.Минск</Address>
+        </ShipTo>
+        <Carrier>
+            <TransportContact>Бушило Иван Иванович</TransportContact>
+            <DeliveryContact>Бушило Иван Иванович</DeliveryContact>
+        </Carrier>
+        <QuantityTrip>1</QuantityTrip>
+        <TransportOwnerName>ОАО "Лунинецкий МЗ"</TransportOwnerName>
+        <TransportID>МАЗ 447143, АК 1850 - 1</TransportID>
+        <OrderID>000297608</OrderID>
+        <Currency>BYN</Currency>
+        <ExtraField>
+            <FieldName>Данные входящего документа</FieldName>
+            <FieldCode>INDATA</FieldCode>
+            <FieldValue>00000001184 от 20230109</FieldValue>
+        </ExtraField>
+        <DespatchAdviceLogisticUnitLineItem>
+            <LineItem>
+                <LineItemNumber>1</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810391002851</LineItemID>
+                <LineItemName>Масло сладкосливочное несоленое"Золото Полесья" "Лунинецкое" м.д. жира 84 % 180 г
+                </LineItemName>
+                <GrossWeightValue>0.00864</GrossWeightValue>
+                <QuantityDespatched>48.000</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <TaxRate>10</TaxRate>
+                <AdditionalInformation>Прейскурант №8 от 14.09.2022 г. (дата введения 01.10.2022 г.). Цена
+                    произв.=3,01BYN. Опт.надб.=0%
+                </AdditionalInformation>
+                <LineItemAmountWithoutCharges>144.48</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>14.45</LineItemAmountCharges>
+                <LineItemAmount>158.93</LineItemAmount>
+                <LineItemPrice>3.01</LineItemPrice>
+            </LineItem>
+        </DespatchAdviceLogisticUnitLineItem>
+        <Total>
+            <TotalAmountWithoutCharges>144.48</TotalAmountWithoutCharges>
+            <TotalAmountCharges>14.45</TotalAmountCharges>
+            <TotalAmount>158.93</TotalAmount>
+            <TotalLineItem>1</TotalLineItem>
+            <TotalLineItemQuantity>48.000</TotalLineItemQuantity>
+            <TotalGrossWeight>0.00864</TotalGrossWeight>
+            <TotalDespatchUnitQuantity>2</TotalDespatchUnitQuantity>
+        </Total>
+    </DeliveryNote>
+    <SpecialPart>
+        <Signature>
+            <SecurityID>1</SecurityID>
+            <SignatureValue>
+                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
+            </SignatureValue>
+        </Signature>
+    </SpecialPart>
+</BLRWBL>
