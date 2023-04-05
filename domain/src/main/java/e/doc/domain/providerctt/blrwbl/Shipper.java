@@ -13,7 +13,7 @@ public class Shipper {
     @JsonProperty("Address")
     protected String address;
     @JsonProperty("VATRegistrationNumber")
-    protected String vatRegistrationNumber;
+    protected String vatRegNumber;
     @JsonProperty("Contact")
     protected String contact;
 
@@ -113,28 +113,12 @@ public class Shipper {
         this.address = value;
     }
 
-    /**
-     * УНП номер 
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVATRegistrationNumber() {
-        return vatRegistrationNumber;
+    public String getVatRegNumber() {
+        return vatRegNumber;
     }
 
-    /**
-     * Sets the value of the vatRegistrationNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVATRegistrationNumber(String value) {
-        this.vatRegistrationNumber = value;
+    public void setVatRegNumber(String vatRegNumber) {
+        this.vatRegNumber = vatRegNumber;
     }
 
     /**

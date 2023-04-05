@@ -3,6 +3,8 @@ package e.doc.domain.sm.wi;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
+
 public class SMDocumentWI implements SupermagDomain {
     @JsonProperty("ID")
     String id;
@@ -39,11 +41,11 @@ public class SMDocumentWI implements SupermagDomain {
     @JsonProperty("PRICEROUNDMODE")
     String priceRoundMode;
     @JsonProperty("TOTALSUM")
-    Float totalSum;
+    BigDecimal totalSum;
     @JsonProperty("TOTALSUMCUR")
-    Float totalSumCur;
+    BigDecimal totalSumCur;
     @JsonProperty("USEROP")
-    Float userOp;
+    BigDecimal userOp;
     @JsonProperty("SUPPLIERGLN")
     String supplierGln;
     @JsonProperty("DESTINATIONGLN")
@@ -179,27 +181,27 @@ public class SMDocumentWI implements SupermagDomain {
         this.priceRoundMode = priceRoundMode;
     }
 
-    public Float getTotalSum() {
+    public BigDecimal getTotalSum() {
         return totalSum;
     }
 
-    public void setTotalSum(Float totalSum) {
+    public void setTotalSum(BigDecimal totalSum) {
         this.totalSum = totalSum;
     }
 
-    public Float getTotalSumCur() {
+    public BigDecimal getTotalSumCur() {
         return totalSumCur;
     }
 
-    public void setTotalSumCur(Float totalSumCur) {
+    public void setTotalSumCur(BigDecimal totalSumCur) {
         this.totalSumCur = totalSumCur;
     }
 
-    public Float getUserOp() {
+    public BigDecimal getUserOp() {
         return userOp;
     }
 
-    public void setUserOp(Float userOp) {
+    public void setUserOp(BigDecimal userOp) {
         this.userOp = userOp;
     }
 

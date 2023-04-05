@@ -1,24 +1,39 @@
 {
   "configuration": {
-    "status": "error",
-    "name": "JSONConfigDemo",
+    "name": "CfgLog4j",
     "packages": "e.docs.docApp",
-    "ThresholdFilter": {
-      "level": "debug"
-    },
     "appenders": {
       "Console": {
-        "name": "STDOUT",
+        "name": "Console-Appender",
+        "target": "SYSTEM_OUT",
         "PatternLayout": {
-          "pattern": "%d [%t] %-5p %c - %m%n"
+          "pattern": "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        }
+      },
+      "File": {
+        "name": "File-Appender",
+        "fileName": "logfile.log",
+        "PatternLayout": {
+          "pattern": "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
         }
       }
     },
     "loggers": {
+      "logger": {
+        "name": "log4j2json",
+        "level": "debug",
+        "appender-ref": [
+          {
+            "ref": "File-Appender",
+            "level": "error"
+          }
+        ]
+      },
       "root": {
         "level": "debug",
-        "AppenderRef": {
-          "ref": "STDOUT"
+        "appender-ref": {
+          /*"ref": "File-Appender"*/
+          "ref": "Console-Appender"
         }
       }
     }

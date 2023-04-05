@@ -34,19 +34,19 @@ public class SMWI implements SupermagDomain {
     @JsonProperty("SMSPECSTAT")
     SMSpecStatWI smSpecStatWI;
 
-    public SMDocumentWI getSmDocument() {
+    public SMDocumentWI getSmDocumentWI() {
         return smDocumentWI;
     }
 
-    public void setSmDocument(SMDocumentWI smDocumentWI) {
+    public void setSmDocumentWI(SMDocumentWI smDocumentWI) {
         this.smDocumentWI = smDocumentWI;
     }
 
-    public SMCommonBasesWI getSmCommonBases() {
+    public SMCommonBasesWI getSmCommonBasesWI() {
         return smCommonBasesWI;
     }
 
-    public void setSmCommonBases(SMCommonBasesWI smCommonBasesWI) {
+    public void setSmCommonBasesWI(SMCommonBasesWI smCommonBasesWI) {
         this.smCommonBasesWI = smCommonBasesWI;
     }
 
@@ -96,22 +96,6 @@ public class SMWI implements SupermagDomain {
 
     public void setSmSpecsBy(List<SMSpecBy> smSpecsBy) {
         this.smSpecsBy = smSpecsBy;
-    }
-
-    public SMDocumentWI getSmDocumentWI() {
-        return smDocumentWI;
-    }
-
-    public void setSmDocumentWI(SMDocumentWI smDocumentWI) {
-        this.smDocumentWI = smDocumentWI;
-    }
-
-    public SMCommonBasesWI getSmCommonBasesWI() {
-        return smCommonBasesWI;
-    }
-
-    public void setSmCommonBasesWI(SMCommonBasesWI smCommonBasesWI) {
-        this.smCommonBasesWI = smCommonBasesWI;
     }
 
     public SMDocTransport getSmDocTransport() {

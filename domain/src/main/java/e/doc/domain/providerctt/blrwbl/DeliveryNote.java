@@ -1,10 +1,13 @@
 package e.doc.domain.providerctt.blrwbl;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
+@JsonPropertyOrder({"DeliveryNoteType", "DocumentID", "CreationDateTime", "FunctionCode", "DeliveryNoteID", "DeliveryNoteDate", "ContractName", "ContractID",
+"ContractDate", "Shipper", "Receiver", "FreightPayer", "ShipFrom", "ShipTo", "Carrier", "TransportID", "Currency", "ExtraField", "LineItem", "Total"})
 public class DeliveryNote {
     @JsonProperty("DeliveryNoteType")
     protected String deliveryNoteType;
@@ -59,6 +62,7 @@ public class DeliveryNote {
     @JsonProperty("ExtraField")
     protected ExtraField extraField;
     @JacksonXmlElementWrapper(localName = "DespatchAdviceLogisticUnitLineItem")
+    @JsonProperty("LineItem")
     protected List<LineItem> lineItem;
     @JsonProperty("Total")
     protected Total total;
@@ -689,6 +693,10 @@ public class DeliveryNote {
             lineItem = new ArrayList<LineItem>();
         }
         return this.lineItem;
+    }
+
+    public void setLineItem(List<LineItem> lineItem) {
+        this.lineItem = lineItem;
     }
 
     /**

@@ -15,15 +15,16 @@ version '1'
 dependencies {
     api project(':service')
     implementation 'org.apache.commons:commons-text'
-    implementation 'org.apache.logging.log4j:log4j-api:2.19.0'
-    implementation 'org.apache.logging.log4j:log4j-core:2.19.0'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.2'
+
 }
 
 application {
     // Define the main class for the application.
-    mainClass = 'e.docs.docApp.EDocs'
+    mainClass = 'e.doc.docApp.EDocs'
 }
-mainClassName = "e.docs.docApp.EDocs"
+mainClassName = "e.doc.docApp.EDocs"
 jar {
     duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
     from {

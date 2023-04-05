@@ -1,12 +1,13 @@
 package e.doc.domain.providerctt.blrwbl;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
-@JsonIgnoreProperties(value = { "SpecialPart" })
+@JsonIgnoreProperties(value = { "SpecialPart", "SecurityShipper", "SecurityEnd" })
 public class BLRWBL {
 
     @JsonProperty("MessageHeader")
@@ -16,6 +17,7 @@ public class BLRWBL {
     @JsonProperty("DeliveryNote")
     protected DeliveryNote deliveryNote;
     @JsonProperty("SecurityEnd")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     protected List<SecurityEnd> securityEnd;
     /*@JsonProperty("SpecialPart")
     protected String specialPart;*/
@@ -64,7 +66,7 @@ public class BLRWBL {
      */
     public List<SecurityShipper> getSecurityShipper() {
         if (securityShipper == null) {
-            securityShipper = new ArrayList<SecurityShipper>();
+            securityShipper = new ArrayList<>();
         }
         return this.securityShipper;
     }

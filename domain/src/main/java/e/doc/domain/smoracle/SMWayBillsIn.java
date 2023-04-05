@@ -1,20 +1,20 @@
 package e.doc.domain.smoracle;
 
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
-@Entity(name = "SMWayBillsIn")
-public class SMWayBillsIn {
+@Entity()
+@Table(name = "SMWayBillsIn")
+public class SMWayBillsIn implements Serializable {
     @Id
     @Column(name = "ID")
     String id;
     @Column(name = "DOCTYPE")
     String doctype;
-    @JsonProperty("SUPPLIERDOC")
+    @Column(name = "SUPPLIERDOC")
     String supplierDoc;
 
     public String getId() {

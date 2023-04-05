@@ -11,7 +11,7 @@ public class FreightPayer {
     @JsonProperty("Address")
     protected String address;
     @JsonProperty("VATRegistrationNumber")
-    protected String vatRegistrationNumber;
+    protected String vatRegNumber;
 
     /**
      * Gets the value of the gln property.
@@ -85,28 +85,11 @@ public class FreightPayer {
         this.address = value;
     }
 
-    /**
-     * Gets the value of the vatRegistrationNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVATRegistrationNumber() {
-        return vatRegistrationNumber;
+    public String getVatRegNumber() {
+        return vatRegNumber;
     }
 
-    /**
-     * Sets the value of the vatRegistrationNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVATRegistrationNumber(String value) {
-        this.vatRegistrationNumber = value;
+    public void setVatRegNumber(String vatRegNumber) {
+        this.vatRegNumber = vatRegNumber;
     }
-
 }

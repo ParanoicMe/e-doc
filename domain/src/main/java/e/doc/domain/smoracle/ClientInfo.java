@@ -1,9 +1,9 @@
 package e.doc.domain.smoracle;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,7 +12,8 @@ import java.io.Serializable;
  * Time: 18:24
  * To change this template use File | Settings | File Templates.
  */
-@Entity(name = "SMClientInfo")
+@Entity()
+@Table(name = "SMClientInfo")
 public class ClientInfo implements Serializable {
     @Id
     @Column(name = "ID")
@@ -25,16 +26,16 @@ public class ClientInfo implements Serializable {
     private String name;
     @Column(name = "INN")
     private String inn;
+    @Column(name = "ADDRESS")
+    private String address;
     @Column(name = "OKPO")
     private String okpo;
     @Column(name = "COMMENTARY")
     private String comment;
     @Column(name = "GLN")
     private String gln;
-
-
-    public ClientInfo() {
-    }
+    @OneToMany(mappedBy="clientInfo")
+    private Set<ClientProperties> propertiesList;
 
     public Long getId() {
         return id;
@@ -68,6 +69,14 @@ public class ClientInfo implements Serializable {
         this.inn = inn;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getOkpo() {
         return okpo;
     }
@@ -75,14 +84,6 @@ public class ClientInfo implements Serializable {
     public void setOkpo(String okpo) {
         this.okpo = okpo;
     }
-/*
-    public Supplier getSupplier() {
-        return supplier;
-    }
-
-    public void setSupplier(Supplier supplier) {
-        this.supplier = supplier;
-    }*/
 
     public String getComment() {
         return comment;
@@ -98,5 +99,13 @@ public class ClientInfo implements Serializable {
 
     public void setGln(String gln) {
         this.gln = gln;
+    }
+
+    public Set<ClientProperties> getPropertiesList() {
+        return propertiesList;
+    }
+
+    public void setPropertiesList(Set<ClientProperties> propertiesList) {
+        this.propertiesList = propertiesList;
     }
 }

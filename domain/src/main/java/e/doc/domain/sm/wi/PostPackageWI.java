@@ -6,10 +6,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 @JacksonXmlRootElement(localName = "PACKAGE")
 public class PostPackageWI implements SupermagDomain {
-    
-    public PostPackageWI() {
-    }
-
     @JacksonXmlProperty(isAttribute = true)
     String name;
     @JsonProperty("POSTOBJECT")
@@ -23,11 +19,11 @@ public class PostPackageWI implements SupermagDomain {
         this.name = name;
     }
 
-    public PostObjectWI getPostObject() {
+    public PostObjectWI getPostObjectWI() {
         return postObjectWI;
     }
 
-    public void setPostObject(PostObjectWI postObjectWI) {
+    public void setPostObjectWI(PostObjectWI postObjectWI) {
         this.postObjectWI = postObjectWI;
     }
 }

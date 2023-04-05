@@ -1,31 +1,34 @@
 package e.doc.domain.providerctt.blrwbl;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.math.BigDecimal;
+
 public class Total {
     @JsonProperty("TotalAmountWithoutCharges")
-    protected Float totalAmountWithoutCharges;
+    protected BigDecimal totalAmountWithoutCharges;
     @JsonProperty("TotalAmountCharges")
-    protected Float totalAmountCharges;
+    protected BigDecimal totalAmountCharges;
     @JsonProperty("TotalAmount")
-    protected Float totalAmount;
+    protected BigDecimal totalAmount;
     @JsonProperty("TotalLineItem")
     protected Long totalLineItem;
     @JsonProperty("TotalLineItemQuantity")
-    protected Float totalLineItemQuantity;
+    protected BigDecimal totalLineItemQuantity;
     @JsonProperty("TotalGrossWeight")
-    protected Float totalGrossWeight;
+    protected BigDecimal totalGrossWeight;
     @JsonProperty("TotalDespatchUnitQuantity")
-    protected Float totalDespatchUnitQuantity;
+    protected BigDecimal totalDespatchUnitQuantity;
     @JsonProperty("TotalAmountExcise")
-    protected Float totalAmountExcise;
+    protected BigDecimal totalAmountExcise;
 
     /**
      * Gets the value of the totalAmountWithoutCharges property.
      *
      * @return possible object is
-     * {@link Float }
+     * {@link BigDecimal }
      */
-    public Float getTotalAmountWithoutCharges() {
+    public BigDecimal getTotalAmountWithoutCharges() {
         return totalAmountWithoutCharges;
     }
 
@@ -33,9 +36,9 @@ public class Total {
      * Sets the value of the totalAmountWithoutCharges property.
      *
      * @param value allowed object is
-     *              {@link Float }
+     *              {@link BigDecimal }
      */
-    public void setTotalAmountWithoutCharges(Float value) {
+    public void setTotalAmountWithoutCharges(BigDecimal value) {
         this.totalAmountWithoutCharges = value;
     }
 
@@ -43,9 +46,9 @@ public class Total {
      * Gets the value of the totalAmountCharges property.
      *
      * @return possible object is
-     * {@link Float }
+     * {@link BigDecimal }
      */
-    public Float getTotalAmountCharges() {
+    public BigDecimal getTotalAmountCharges() {
         return totalAmountCharges;
     }
 
@@ -53,9 +56,9 @@ public class Total {
      * Sets the value of the totalAmountCharges property.
      *
      * @param value allowed object is
-     *              {@link Float }
+     *              {@link BigDecimal }
      */
-    public void setTotalAmountCharges(Float value) {
+    public void setTotalAmountCharges(BigDecimal value) {
         this.totalAmountCharges = value;
     }
 
@@ -63,9 +66,9 @@ public class Total {
      * Gets the value of the totalAmount property.
      *
      * @return possible object is
-     * {@link Float }
+     * {@link BigDecimal }
      */
-    public Float getTotalAmount() {
+    public BigDecimal getTotalAmount() {
         return totalAmount;
     }
 
@@ -73,9 +76,9 @@ public class Total {
      * Sets the value of the totalAmount property.
      *
      * @param value allowed object is
-     *              {@link Float }
+     *              {@link BigDecimal }
      */
-    public void setTotalAmount(Float value) {
+    public void setTotalAmount(BigDecimal value) {
         this.totalAmount = value;
     }
 
@@ -103,9 +106,9 @@ public class Total {
      * Gets the value of the totalLineItemQuantity property.
      *
      * @return possible object is
-     * {@link Float }
+     * {@link BigDecimal }
      */
-    public Float getTotalLineItemQuantity() {
+    public BigDecimal getTotalLineItemQuantity() {
         return totalLineItemQuantity;
     }
 
@@ -113,9 +116,9 @@ public class Total {
      * Sets the value of the totalLineItemQuantity property.
      *
      * @param value allowed object is
-     *              {@link Float }
+     *              {@link BigDecimal }
      */
-    public void setTotalLineItemQuantity(Float value) {
+    public void setTotalLineItemQuantity(BigDecimal value) {
         this.totalLineItemQuantity = value;
     }
 
@@ -123,9 +126,9 @@ public class Total {
      * Gets the value of the totalGrossWeight property.
      *
      * @return possible object is
-     * {@link Float }
+     * {@link BigDecimal }
      */
-    public Float getTotalGrossWeight() {
+    public BigDecimal getTotalGrossWeight() {
         return totalGrossWeight;
     }
 
@@ -133,9 +136,9 @@ public class Total {
      * Sets the value of the totalGrossWeight property.
      *
      * @param value allowed object is
-     *              {@link Float }
+     *              {@link BigDecimal }
      */
-    public void setTotalGrossWeight(Float value) {
+    public void setTotalGrossWeight(BigDecimal value) {
         this.totalGrossWeight = value;
     }
 
@@ -143,9 +146,9 @@ public class Total {
      * Gets the value of the totalDespatchUnitQuantity property.
      *
      * @return possible object is
-     * {@link Float }
+     * {@link BigDecimal }
      */
-    public Float getTotalDespatchUnitQuantity() {
+    public BigDecimal getTotalDespatchUnitQuantity() {
         return totalDespatchUnitQuantity;
     }
 
@@ -153,9 +156,9 @@ public class Total {
      * Sets the value of the totalDespatchUnitQuantity property.
      *
      * @param value allowed object is
-     *              {@link Float }
+     *              {@link BigDecimal }
      */
-    public void setTotalDespatchUnitQuantity(Float value) {
+    public void setTotalDespatchUnitQuantity(BigDecimal value) {
         this.totalDespatchUnitQuantity = value;
     }
 
@@ -163,9 +166,9 @@ public class Total {
      * Gets the value of the totalAmountExcise property.
      *
      * @return possible object is
-     * {@link Float }
+     * {@link BigDecimal }
      */
-    public Float getTotalAmountExcise() {
+    public BigDecimal getTotalAmountExcise() {
         return totalAmountExcise;
     }
 
@@ -173,9 +176,9 @@ public class Total {
      * Sets the value of the totalAmountExcise property.
      *
      * @param value allowed object is
-     *              {@link Float }
+     *              {@link BigDecimal }
      */
-    public void setTotalAmountExcise(Float value) {
+    public void setTotalAmountExcise(BigDecimal value) {
         this.totalAmountExcise = value;
     }
 }

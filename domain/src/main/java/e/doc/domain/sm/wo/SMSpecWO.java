@@ -40,7 +40,7 @@ public class SMSpecWO implements SupermagDomain {
     @JsonProperty("CARDFULLNAME")
     String name;
     @JsonProperty("CARDMEASUREMENTCODEISO")
-    String measureCoed;
+    String measureCode;
 
     public String getDocId() {
         return docId;
@@ -178,11 +178,11 @@ public class SMSpecWO implements SupermagDomain {
         this.name = name;
     }
 
-    public String getMeasureCoed() {
-        return measureCoed;
+    public String getMeasureCode() {
+        return measureCode;
     }
 
-    public void setMeasureCoed(String measureCoed) {
-        this.measureCoed = measureCoed;
+    public void setMeasureCode(String measureCode) {
+        this.measureCode = measureCode;
     }
 }

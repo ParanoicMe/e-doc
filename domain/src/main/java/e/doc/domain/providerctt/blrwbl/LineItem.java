@@ -3,8 +3,6 @@ package e.doc.domain.providerctt.blrwbl;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LineItem {
 
