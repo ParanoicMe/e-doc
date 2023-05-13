@@ -3,15 +3,18 @@ package e.doc.service;
 import e.doc.dao.Dao;
 import e.doc.dao.DaoImpl;
 import e.doc.dao.exception.DaoException;
-import e.doc.domain.sm.wi.SMSpecBy;
+import e.doc.domain.providerctt.blrwbl.BLRWBL;
+import e.doc.domain.providerctt.blrwbl.LineItem;
 import e.doc.domain.sm.wo.SMSpecWO;
-import e.doc.domain.smoracle.ClientInfo;
-import e.doc.domain.smoracle.ClientProperties;
-import e.doc.domain.smoracle.SMCardProperties;
+import e.doc.domain.smoracle.*;
 import e.doc.domain.smoracle.hlp.ClientInfoHlp;
-import e.doc.domain.smoracle.SMWayBillsIn;
 import e.doc.service.config.PropertiesImpl;
 import e.doc.service.config.PropertyE;
+import e.doc.service.exception.ServiceErrorCode;
+import e.doc.service.exception.ServiceException;
+import e.doc.service.mail.PostGroup;
+import e.doc.service.mail.ServiceMail;
+import e.doc.service.sqllite.ServiceSQLLite;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.query.Query;
@@ -29,11 +32,15 @@ public class ServiceUtils {
     private static long smDocNUM;
     public Dao<SMWayBillsIn, Long> smWayBillsInLongDao;
     public Dao<ClientInfo, Long> clientInfoLongDao;
+    public Dao<SMStoreUnit, Long> smStoreUnitLongDao;
     public Dao<SMCardProperties, Long> smCardPropertiesLongDao;
     Properties convertProp;
+    ServiceSQLLite serviceSQLLite = new ServiceSQLLite();
+    ServiceMail serviceMail = new ServiceMail();
 
-    public ServiceUtils() {
+    public ServiceUtils() throws ServiceException {
         convertProp = getConverterProperty(PropertyE.CONVERTER);
+        smStoreUnitLongDao = getSmStoreUnitLongDao();
         //logger.info("utils - ");
 
     }
@@ -115,14 +122,15 @@ public class ServiceUtils {
         return getProviderId() + "-" + mainGln + "-" + docNumSM;
     }
 
-    public ClientInfoHlp getContractInfo(String gln) {
+    public ClientInfoHlp getContractInfo(String gln) throws ServiceException {
         ClientInfoHlp clientHlp = new ClientInfoHlp();
         int contractCh = Integer.valueOf(convertProp.getProperty("sm.wo.contract.info"));
         logger.info("contractInfo - " + clientHlp);
-        clientInfoLongDao = new DaoImpl<ClientInfo, Long>(ClientInfo.class);
-        switch (contractCh) {
-            case 1: {
-                try {
+        try {
+            clientInfoLongDao = new DaoImpl<ClientInfo, Long>(ClientInfo.class);
+            switch (contractCh) {
+                case 1: {
+
                     Query q = clientInfoLongDao.getQuery("from ClientInfo where gln = " + gln);
                     ClientInfo clientInfo = (ClientInfo) q.uniqueResult();
                     String contractInf = clientInfo.getComment();
@@ -134,14 +142,11 @@ public class ServiceUtils {
                         String date = matcher.group(2).trim();
                         clientHlp.setDate(date);
                         clientHlp.setNum(num);
-                        System.out.println("matcher1.find() = " + num + " __" + date);
+                        //System.out.println("matcher1.find() = " + num + " __" + date);
                     }
-                } catch (DaoException e) {
-                    logger.info(e);
+
                 }
-            }
-            case 2: {
-                try {
+                case 2: {
                     String propId = convertProp.getProperty("sm.wo.contract.info.properties.id");
                     Query q = clientInfoLongDao.getQuery("from ClientProperties cp " +
                             "where cp.clientInfo.gln = " + gln + " and cp.propId = " + propId);
@@ -154,49 +159,52 @@ public class ServiceUtils {
                         String date = matcher.group(2).trim();
                         clientHlp.setDate(date);
                         clientHlp.setNum(num);
-                        System.out.println("matcher1.find() = " + num + " __" + date + "++++ " + clientHlp.getAddress());
+                        //System.out.println("matcher1.find() = " + num + " __" + date + "++++ " + clientHlp.getAddress());
                     }
-                } catch (DaoException e) {
-                    logger.info(e);
                 }
             }
+        } catch (DaoException e) {
+            throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_000);
         }
         return clientHlp;
     }
 
-    public ClientInfo getClientInfoByGln(String gln) {
-        if (!(clientInfoLongDao instanceof Dao)) {
-            clientInfoLongDao = new DaoImpl<ClientInfo, Long>(ClientInfo.class);
-        }
+    public ClientInfo getClientInfoByGln(String gln) throws ServiceException {
         ClientInfo clientInfo = new ClientInfo();
         try {
+            //if (!(clientInfoLongDao instanceof Dao)) {
+            clientInfoLongDao = new DaoImpl<ClientInfo, Long>(ClientInfo.class);
+            //}
+
             Query q = clientInfoLongDao.getQuery("from ClientInfo where gln = " + gln);
             clientInfo = (ClientInfo) q.uniqueResult();
             String contractInf = clientInfo.getComment();
         } catch (DaoException e) {
-            logger.info(e);
+            throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_001);
         }
         return clientInfo;
     }
 
-    public List<SMCardProperties> getWeight(List<SMSpecWO> smSpecWOS) {
-        smCardPropertiesLongDao = new DaoImpl<>(SMCardProperties.class);
+    public List<SMCardProperties> getWeight(List<SMSpecWO> smSpecWOS) throws ServiceException {
         List<SMCardProperties> smCardProperties = new ArrayList<>();
-        String propId = convertProp.getProperty("sm.card.properties.gross.weight.value.id");
-        logger.info("propId -- " + propId);
-        List articles = new ArrayList();
-        int i = 0;
-        for (SMSpecWO swo : smSpecWOS) {
-            articles.add(swo.getArticle());
-        }
-        logger.info("Arrays.toString(s) -- " + articles);
+
         try {
+            smCardPropertiesLongDao = new DaoImpl<>(SMCardProperties.class);
+            String propId = convertProp.getProperty("sm.card.properties.gross.weight.value.id");
+            //logger.info("propId -- " + propId);
+            List articles = new ArrayList();
+            int i = 0;
+            for (SMSpecWO swo : smSpecWOS) {
+                articles.add(swo.getArticle());
+            }
+            logger.info("Arrays.toString(s) -- " + articles);
+
             Query q = smCardPropertiesLongDao.getQuery("from SMCardProperties where article in (:articles) and propid=:propId");
             q.setParameter("articles", articles);
             q.setParameter("propId", propId);
             smCardProperties = q.list();
         } catch (DaoException e) {
-            logger.info(e);
+            throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_002);
         }
         return smCardProperties;
     }
@@ -218,13 +226,73 @@ public class ServiceUtils {
                 }
                 logger.info("init smDocNUM - " + smDocNUM);
                 //logger.info("List<SMWayBillsIn> list - " + docId + "num - " + num);
-                smWayBillsInLongDao.closeSession();
+                //smWayBillsInLongDao.closeSession();
             } catch (DaoException e) {
                 logger.info(e);
                 smWayBillsInLongDao.closeSession();
             }
         }
         smDocNUM++;
+    }
+
+    boolean isExist(String num) {
+        try {
+            //logger.info("Create object");
+            smWayBillsInLongDao = new DaoImpl<SMWayBillsIn, Long>(SMWayBillsIn.class);
+            Query q = smWayBillsInLongDao.getQuery("FROM SMWayBillsIn where supplierDoc=:num");
+            q.setParameter("num", num);
+            //and supplierDoc like 'еПН'
+            List<SMWayBillsIn> smWayBillsIns = q.list();
+            System.out.println("num - " + num + "smWayBillsIn ==" + smWayBillsIns.toString());
+            if (smWayBillsIns.isEmpty()) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (DaoException e) {
+            logger.info(e);
+            smWayBillsInLongDao.closeSession();
+        }
+        //smWayBillsInLongDao.closeSession();
+        return false;
+    }
+
+
+
+    public List<String> getBarcodesByArticles(List<String> articles) throws ServiceException {
+        List<String> cardsBarcodes = new ArrayList<>();
+        try {
+            Query qArticle = smStoreUnitLongDao.getQuery("select barcode FROM SMStoreUnit where article in(:articles)");
+            qArticle.setParameter("articles", articles);
+            cardsBarcodes = qArticle.getResultList();
+        } catch (DaoException e) {
+            throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_016);
+        }
+        return cardsBarcodes;
+    }
+
+    public List<String> getArticlesByBarcodes(List<String> barcodes) throws ServiceException {
+        List<String> articles = new ArrayList<>();
+        try {
+            Query qBarcode = smStoreUnitLongDao.getQuery("select article FROM SMStoreUnit where barcode in(:barcodes)");
+            qBarcode.setParameter("barcodes", barcodes);
+            articles = qBarcode.getResultList();
+        } catch (DaoException e) {
+            throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_016);
+        }
+        return articles;
+    }
+
+    public String findBarcode(String barcode) throws ServiceException {
+        String b;
+        try {
+            Query q = smStoreUnitLongDao.getQuery("select barcode FROM SMStoreUnit where barcode=:barcode");
+            q.setParameter("barcode", barcode);
+            b = (String) q.uniqueResult();
+        } catch (DaoException e) {
+            throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_019);
+        }
+        return b;
     }
 
     String getBase64String(File f) {
@@ -248,4 +316,54 @@ public class ServiceUtils {
         return s;//fullNum.substring(2,fullNum.length());
     }
 
+    List getBarcodes(List<LineItem> list) {
+        ArrayList<String> barcodes = new ArrayList<>();
+        for (LineItem li : list) {
+            barcodes.add(li.getLineItemID());
+        }
+        return barcodes;
+    }
+
+    void writeHoldsBarcode(List<String> barcodes, String filename) throws ServiceException {
+        for (String b : barcodes)
+            serviceSQLLite.writeHoldBarcode(b, filename);
+    }
+
+    void mailbarcode(List<String> barcodes, List<LineItem> lis) throws ServiceException {
+        StringBuffer textMail = new StringBuffer();
+        if (barcodes.size() > 1)
+            textMail.append("Список отсутствующих, в Супермаг, товаров:\n");
+        else
+            textMail.append("Отсутствующий, в Супермаге, товар:\n");
+        for (String b : barcodes) {
+            for (LineItem li : lis) {
+                if (b.equals(li.getLineItemID())) {
+                    textMail.append(b);
+                    textMail.append(" ");
+                    textMail.append(li.getLineItemName());
+                    textMail.append(" НДС -");
+                    textMail.append(li.getTaxRate());
+                    textMail.append("\n");
+                }
+            }
+        }
+        //System.out.println(textMail.toString());
+        serviceMail.sendMail(textMail.toString(), PostGroup.CARDS, "Отсутствующие ШК по эТТН");
+    }
+
+    public Dao<SMStoreUnit, Long> getSmStoreUnitLongDao() throws ServiceException {
+        try {
+            if (smStoreUnitLongDao == null)
+                return new DaoImpl<SMStoreUnit, Long>(SMStoreUnit.class);
+            else
+                return smStoreUnitLongDao;
+        } catch (DaoException e) {
+            throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_018);
+        }
+
+    }
+
+    public void setSmStoreUnitLongDao(Dao<SMStoreUnit, Long> smStoreUnitLongDao) {
+        this.smStoreUnitLongDao = smStoreUnitLongDao;
+    }
 }

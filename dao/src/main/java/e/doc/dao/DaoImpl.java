@@ -4,6 +4,7 @@ import e.doc.dao.exception.DaoErrorCode;
 import e.doc.dao.exception.DaoException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,7 +26,7 @@ public class DaoImpl<T, PK extends Serializable> implements Dao<T, PK> {
     private Class<T> type;
     private String typeName;
 
-    public DaoImpl(Class<T> type) {
+    public DaoImpl(Class<T> type) throws DaoException {
         this.type = type;
         this.typeName = type.getName();
         log.debug(String.format("Created Dao for %s.", typeName));
@@ -37,8 +38,8 @@ public class DaoImpl<T, PK extends Serializable> implements Dao<T, PK> {
         log.debug(String.format("Get all <%s>.", typeName));
         List<T> list = new ArrayList<T>();
         try {
-            //Criteria criteria = getSession().createCriteria(type);
-            //list = criteria.list();
+            Criteria criteria = getSession().createCriteria(type);
+            list = criteria.list();
             log.debug(String.format("Got %d products", list == null ? 0 : list.size()));
         } catch (HibernateException e) {
             throw new DaoException(e, DaoErrorCode.HU_DAO_001, typeName);
@@ -69,7 +70,7 @@ public class DaoImpl<T, PK extends Serializable> implements Dao<T, PK> {
             closeSession();
             return get(id);
         } catch (HibernateException e) {
-            throw new DaoException(e, DaoErrorCode.HU_DAO_000, o);
+            throw new DaoException(e, DaoErrorCode.HU_DAO_002, o.toString());
         }
     }
 
@@ -81,7 +82,7 @@ public class DaoImpl<T, PK extends Serializable> implements Dao<T, PK> {
             log.debug(String.format("Updated %s: %s.", typeName, o));
             closeSession();
         } catch (HibernateException e) {
-            throw new DaoException(e, DaoErrorCode.HU_DAO_000, o);
+            throw new DaoException(e, DaoErrorCode.HU_DAO_003, o.toString());
         }
     }
 
@@ -95,7 +96,7 @@ public class DaoImpl<T, PK extends Serializable> implements Dao<T, PK> {
                 closeSession();
             }
         } catch (HibernateException e) {
-            throw new DaoException(e, DaoErrorCode.HU_DAO_000, o);
+            throw new DaoException(e, DaoErrorCode.HU_DAO_004, o.toString());
         }
     }
 
@@ -106,7 +107,7 @@ public class DaoImpl<T, PK extends Serializable> implements Dao<T, PK> {
             log.debug(String.format("Created query: %s.", hql));
             return query;
         } catch (HibernateException e) {
-            throw new DaoException(e, DaoErrorCode.HU_DAO_000, hql);
+            throw new DaoException(e, DaoErrorCode.HU_DAO_005, hql);
         }
     }
 

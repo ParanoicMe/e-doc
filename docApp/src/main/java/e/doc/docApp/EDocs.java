@@ -3,13 +3,26 @@
  */
 package e.doc.docApp;
 
+import e.doc.service.exception.ServiceException;
+import e.doc.service.sqllite.ServiceSQLLite;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class EDocs {
-    //private static Logger logger = LogManager.getLogger(EDocs.class);
+    private static Logger logger = LogManager.getLogger(EDocs.class);
+
     public static void main(String[] args) {
-        System.setProperty("log4j2.disable.jmx", Boolean.TRUE.toString());
-        //System.setProperty("log4j2.disable.jmx", Boolean.TRUE.toString());
-        //logger.info("Start scaners");
+        //ListenerOutFolder loutf = new ListenerOutFolder();
+        try {
+            ServiceSQLLite serviceSQLLite = new ServiceSQLLite();
+            serviceSQLLite.initDB();
+            //ListenerWeb listenerWeb = new ListenerWeb();
+            //ListenerInFolder linf = new ListenerInFolder();
+            ListenerHolderFolder listenerHolderFolder= new ListenerHolderFolder();
+        } catch (ServiceException e) {
+            logger.error("Application Error - " + e.getMessage());
+        }
         //ListenerInFolder linf = new ListenerInFolder();
-        ListenerOutFolder loutf = new ListenerOutFolder();
+        //ListenerOutFolder loutf = new ListenerOutFolder();
     }
 }

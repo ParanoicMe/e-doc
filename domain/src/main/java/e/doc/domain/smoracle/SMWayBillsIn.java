@@ -40,4 +40,13 @@ public class SMWayBillsIn implements Serializable {
     public void setSupplierDoc(String supplierDoc) {
         this.supplierDoc = supplierDoc;
     }
+
+    @Override
+    public String toString() {
+        return "SMWayBillsIn{" +
+                "id='" + id + '\'' +
+                ", doctype='" + doctype + '\'' +
+                ", supplierDoc='" + supplierDoc + '\'' +
+                '}';
+    }
 }

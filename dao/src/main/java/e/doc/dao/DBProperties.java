@@ -1,5 +1,7 @@
 package e.doc.dao;
 
+import e.doc.dao.exception.DaoErrorCode;
+import e.doc.dao.exception.DaoException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -8,10 +10,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
-public class DBProperties implements DBProperty{
+public class DBProperties implements DBProperty {
     private static Logger logger = LogManager.getLogger(DBProperties.class);
+
     @Override
-    public Properties getOracleProperties() {
+    public Properties getOracleProperties() throws DaoException {
         Properties property = new Properties();
         InputStreamReader fis;
         try {
@@ -23,7 +26,7 @@ public class DBProperties implements DBProperty{
                     "UTF-8");
             property.load(fis);
         } catch (IOException e) {
-            logger.error("Error: File oracle.properties does not exist!" + e);
+            throw new DaoException(e, DaoErrorCode.HU_DAO_012);
         }
         return property;
     }

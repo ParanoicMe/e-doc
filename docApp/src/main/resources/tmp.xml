@@ -1,100 +1,554 @@
 <BLRWBL version="0.1">
     <MessageHeader>
-        <MessageID>1673011146725</MessageID>
-        <MsgDateTime>20230106161906</MsgDateTime>
+        <MessageID>2002027866</MessageID>
+        <MsgDateTime>20230511125615</MsgDateTime>
         <MessageType>BLRWBL</MessageType>
-        <MsgSenderID>4810391900003</MsgSenderID>
-        <MsgReceiverID>4819052230008</MsgReceiverID>
+        <MsgSenderID>4812787900000</MsgSenderID>
+        <MsgReceiverID>4819032440007</MsgReceiverID>
     </MessageHeader>
     <DeliveryNote>
         <DeliveryNoteType>700</DeliveryNoteType>
-        <DocumentID>919ce51bba9c4106b08ac018cc4e02fd</DocumentID>
-        <CreationDateTime>20230106161837</CreationDateTime>
+        <DocumentID>2002027793</DocumentID>
+        <CreationDateTime>20230512125447</CreationDateTime>
         <FunctionCode>9</FunctionCode>
-        <DeliveryNoteID>002-4810391900003-0000018445</DeliveryNoteID>
-        <DeliveryNoteDate>20230109</DeliveryNoteDate>
+        <DeliveryNoteID>001-4812787900000-2002027793</DeliveryNoteID>
+        <DeliveryNoteDate>20230512</DeliveryNoteDate>
         <ContractName>Договор</ContractName>
-        <ContractID>2/53СБ</ContractID>
-        <ContractDate>20200505</ContractDate>
-        <WaybillID>146</WaybillID>
+        <ContractID>№268</ContractID>
+        <ContractDate>20181218</ContractDate>
+        <WaybillID>МНГ0173255</WaybillID>
+        <Document>
+            <DocumentID>001-4812787900000-2002027793</DocumentID>
+            <DocumentDate>20230512</DocumentDate>
+            <DocumentName>ЭТТН</DocumentName>
+        </Document>
         <Shipper>
-            <GLN>4810391900003</GLN>
-            <Name>Открытое акционерное общество "Лунинецкий молочный завод"</Name>
-            <Address>225643, Брестская обл., г.Лунинец, ул. Давыдова, дом № 2</Address>
-            <VATRegistrationNumber>200106617</VATRegistrationNumber>
-            <Contact>Экономист по сбыту Благодёров Александр Александрович</Contact>
+            <GLN>4812787900000</GLN>
+            <Country>BY</Country>
+            <Name>СП "Санта Импэкс Брест" ООО</Name>
+            <Address>224701, Брестская обл., г.Брест, ул. Катин Бор, 106А.</Address>
+            <VATRegistrationNumber>200216443</VATRegistrationNumber>
+            <Contact>Начальник торг.отдела Седова Наталия Алексеевна</Contact>
         </Shipper>
         <Receiver>
-            <GLN>4819052230008</GLN>
-            <Name>ООО "ПОСТТОРГ 2"</Name>
-            <Address>220070, г. Минск, ул. Клумова, 3, пом. 46</Address>
-            <VATRegistrationNumber>193416315</VATRegistrationNumber>
+            <GLN>4819032440007</GLN>
+            <Name>ОАО "Постторг", РБ</Name>
+            <Address>220070, г.Минск, ул. Клумова, 3</Address>
+            <VATRegistrationNumber>100036531</VATRegistrationNumber>
         </Receiver>
         <FreightPayer>
-            <GLN>4810391900003</GLN>
-            <Name>Открытое акционерное общество "Лунинецкий молочный завод"</Name>
-            <Address>225643, Брестская обл., г.Лунинец, ул. Давыдова, дом № 2</Address>
-            <VATRegistrationNumber>200106617</VATRegistrationNumber>
+            <GLN>4812787900000</GLN>
+            <Name>СП "Санта Импэкс Брест" ООО</Name>
+            <Address>224701, Брестская обл., г.Брест, ул. Катин Бор, 106А.</Address>
+            <VATRegistrationNumber>200216443</VATRegistrationNumber>
         </FreightPayer>
         <ShipFrom>
-            <GLN>4810391900003</GLN>
-            <Address>225643, Брестская обл., г.Лунинец, ул. Давыдова, дом № 2</Address>
-            <Contact>Кладовщик Курилович Оксана Федоровна</Contact>
+            <GLN>4812787900116</GLN>
+            <Address>г.Минск, ул.Промышленная, 20/1</Address>
+            <Contact>зав.складом Шабан Ольга Вячеславовна</Contact>
         </ShipFrom>
         <ShipTo>
-            <GLN>4819052230022</GLN>
-            <Address>магазин ТПС №3 ООО Постторг 2 ул. Берестянская 5 г.Минск</Address>
+            <GLN>4819032440069</GLN>
+            <Address>г. Минск,ул. Карвата В.Н.,30 маг. № 33 тел.385-06-80</Address>
         </ShipTo>
         <Carrier>
-            <TransportContact>Бушило Иван Иванович</TransportContact>
-            <DeliveryContact>Бушило Иван Иванович</DeliveryContact>
+            <TransportContact>Смокот Александр Петрович</TransportContact>
+            <DeliveryContact>Водитель Смокот Александр Петрович</DeliveryContact>
         </Carrier>
         <QuantityTrip>1</QuantityTrip>
-        <TransportOwnerName>ОАО "Лунинецкий МЗ"</TransportOwnerName>
-        <TransportID>МАЗ 447143, АК 1850 - 1</TransportID>
-        <OrderID>000297608</OrderID>
+        <TransportOwnerName>СП "Санта Импэкс Брест" ООО</TransportOwnerName>
+        <TransportID>Iveco Daily-FAH 4408-1</TransportID>
         <Currency>BYN</Currency>
-        <ExtraField>
-            <FieldName>Данные входящего документа</FieldName>
-            <FieldCode>INDATA</FieldCode>
-            <FieldValue>00000001184 от 20230109</FieldValue>
-        </ExtraField>
         <DespatchAdviceLogisticUnitLineItem>
             <LineItem>
                 <LineItemNumber>1</LineItemNumber>
                 <LineItemSign>PROD</LineItemSign>
-                <LineItemID>4810391002851</LineItemID>
-                <LineItemName>Масло сладкосливочное несоленое"Золото Полесья" "Лунинецкое" м.д. жира 84 % 180 г
+                <LineItemID>4810168037284</LineItemID>
+                <LineItemSupplierID>COF47999</LineItemSupplierID>
+                <LineItemName>"ТОП КЛУБНИКА" Мороженое сливочное с ароматом ванили и наполнителем клубничным в вафельном
+                    стаканчике 1/0,070 1*52 (Беларусь)
                 </LineItemName>
-                <GrossWeightValue>0.00864</GrossWeightValue>
-                <QuantityDespatched>48.000</QuantityDespatched>
+                <GrossWeightValue>0.008008</GrossWeightValue>
+                <QuantityDespatched>104</QuantityDespatched>
                 <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
                 <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
-                <TaxRate>10</TaxRate>
-                <AdditionalInformation>Прейскурант №8 от 14.09.2022 г. (дата введения 01.10.2022 г.). Цена
-                    произв.=3,01BYN. Опт.надб.=0%
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240222</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 0,85 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 270 от 22.02.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 02322 от 10.05.2022 до 09.05.2027 СП "Санта Бремор" ООО
                 </AdditionalInformation>
-                <LineItemAmountWithoutCharges>144.48</LineItemAmountWithoutCharges>
-                <LineItemAmountCharges>14.45</LineItemAmountCharges>
-                <LineItemAmount>158.93</LineItemAmount>
-                <LineItemPrice>3.01</LineItemPrice>
+                <LineItemProductDate>20230222</LineItemProductDate>
+                <LineItemAmountWithoutCharges>88.4</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>17.68</LineItemAmountCharges>
+                <LineItemAmount>106.08</LineItemAmount>
+                <LineItemPrice>0.85</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20008562</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>2</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168037277</LineItemID>
+                <LineItemSupplierID>COF47998</LineItemSupplierID>
+                <LineItemName>"ТОП ЧЕРНИКА" Мороженое сливочное с ароматом черники и вареньем черничным в вафельном
+                    стаканчике 1/0,070 1*52 (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.008008</GrossWeightValue>
+                <QuantityDespatched>104</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240209</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 0,85 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 189 от 09.02.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 02322 от 10.05.2022 до 09.05.2027 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230209</LineItemProductDate>
+                <LineItemAmountWithoutCharges>88.4</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>17.68</LineItemAmountCharges>
+                <LineItemAmount>106.08</LineItemAmount>
+                <LineItemPrice>0.85</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20008561</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>3</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168043032</LineItemID>
+                <LineItemSupplierID>COF50749</LineItemSupplierID>
+                <LineItemName>"SOLETTO ГРАНАТ ЛИМОН" Мороженое сливочное фруктовое с ароматом "лимон-лайм", наполнителем
+                    малина-гранат и глазурью кондитерской в вафельном сахарном рожке 1/75 (сод.м.ж.7 мас.% или более)
+                    полим.упак. (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.005376</GrossWeightValue>
+                <QuantityDespatched>64</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240412</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 1,09 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 660 от 12.04.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 00574 от 09.06.2021 до 08.06.2026 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230412</LineItemProductDate>
+                <LineItemAmountWithoutCharges>69.76</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>13.95</LineItemAmountCharges>
+                <LineItemAmount>83.71</LineItemAmount>
+                <LineItemPrice>1.09</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20013142</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>4</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168052928</LineItemID>
+                <LineItemSupplierID>COF50746</LineItemSupplierID>
+                <LineItemName>"SOLETTO ЛАВАНДА ЧЕРНИКА " Мороженое сливочное с ароматом лаванды и чизкейка, черничным
+                    вареньем и глазурью кондитерской в вафельном сахарном рожке, 1/75 (сод.м.ж. 7 мас.% или более )
+                    полим.упак. (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.005376</GrossWeightValue>
+                <QuantityDespatched>64</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240410</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 1,09 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 639 от 10.04.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 00574 от 09.06.2021 до 08.06.2026 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230410</LineItemProductDate>
+                <LineItemAmountWithoutCharges>69.76</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>13.95</LineItemAmountCharges>
+                <LineItemAmount>83.71</LineItemAmount>
+                <LineItemPrice>1.09</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20013147</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>5</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168060046</LineItemID>
+                <LineItemSupplierID>COF51529</LineItemSupplierID>
+                <LineItemName>"SOLETTO РИКОТТА АПЕЛЬСИН" Мороженое сливочное с ароматом "рикотта", наполнителем
+                    апельсиновым и глазурью какаосодержащей с экстрактом корицы в вафельном сахарном рожке, 1/75
+                    (сод.м.ж.7 мас.% или более) полим.упак. (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.005376</GrossWeightValue>
+                <QuantityDespatched>64</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240327</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 1,09 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 526 от 27.03.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 02322 от 10.05.2022 до 09.05.2027 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230327</LineItemProductDate>
+                <LineItemAmountWithoutCharges>69.76</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>13.95</LineItemAmountCharges>
+                <LineItemAmount>83.71</LineItemAmount>
+                <LineItemPrice>1.09</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20014089</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>6</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168037147</LineItemID>
+                <LineItemSupplierID>COF50747</LineItemSupplierID>
+                <LineItemName>"SOLETTO ФИСТАШКИ И МАРЦИПАН " Мороженое сливочное фисташковое с наполнителем молочным с
+                    ароматом марципана и глазурью кондитерской в вафельном сахарном рожке , 1/75 (сод.м.ж.7 мас.% или
+                    более) полим.упак. (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.005376</GrossWeightValue>
+                <QuantityDespatched>64</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240319</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 1,09 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 453 от 19.03.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 00574 от 09.06.2021 до 08.06.2026 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230319</LineItemProductDate>
+                <LineItemAmountWithoutCharges>69.76</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>13.95</LineItemAmountCharges>
+                <LineItemAmount>83.71</LineItemAmount>
+                <LineItemPrice>1.09</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20013148</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>7</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168051563</LineItemID>
+                <LineItemSupplierID>COF50741</LineItemSupplierID>
+                <LineItemName>"БАБЛ БУМ" Мороженое двухслойное молочное с ароматом жевательной резинки, 1/50 (сод.м.ж.3
+                    мас.% или более, но менее 7 мас.%) полим.упак. (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.00684</GrossWeightValue>
+                <QuantityDespatched>120</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240329</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 0,61 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 534/535 от 29.03.2023 СП "Санта Бремор" ООО 224701,
+                    г. Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 00648 от 28.06.2021 до 27.06.2026 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230329</LineItemProductDate>
+                <LineItemAmountWithoutCharges>73.2</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>14.64</LineItemAmountCharges>
+                <LineItemAmount>87.84</LineItemAmount>
+                <LineItemPrice>0.61</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20013146</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>8</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168053079</LineItemID>
+                <LineItemSupplierID>COF49878</LineItemSupplierID>
+                <LineItemName>"ВЕСЕЛЫЕ ПЧЕЛКИ АНАНАС МАРАКУЙЯ" Сладкий пищевой лед фруктовый ананасовый с маракуйей,
+                    1/70 (не содержит мол.жира) полим.упак. (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.0076</GrossWeightValue>
+                <QuantityDespatched>100</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240128</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 0,73 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 1 от 28.01.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP021 004.02 00984 от 27.08.2021 до 26.08.2026 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230128</LineItemProductDate>
+                <LineItemAmountWithoutCharges>73</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>14.6</LineItemAmountCharges>
+                <LineItemAmount>87.6</LineItemAmount>
+                <LineItemPrice>0.73</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20011637</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>9</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168053345</LineItemID>
+                <LineItemSupplierID>COF49907</LineItemSupplierID>
+                <LineItemName>"ТОП АРБУЗ" Сладкий пищевой лед фруктовый с ароматом арбуза, 1/70 (не содержит мол.жира)
+                    полим.упак (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.008624</GrossWeightValue>
+                <QuantityDespatched>112</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240419</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 0,50 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 141 от 19.04.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP021 004.02 00984 от 27.08.2021 до 26.08.2026 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230419</LineItemProductDate>
+                <LineItemAmountWithoutCharges>56</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>11.2</LineItemAmountCharges>
+                <LineItemAmount>67.2</LineItemAmount>
+                <LineItemPrice>0.5</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20011730</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>10</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168050528</LineItemID>
+                <LineItemSupplierID>COF49367</LineItemSupplierID>
+                <LineItemName>"Аэрофлотское"Мороженое пломбир шоколадный с ароматом ванили в глазури жировой
+                    какаосодержащей с крошкой конфет неглазированных "Аэрофлотские" эскимо, 1/65 (сод.м.ж.7 мас.% или
+                    более) полим.упак (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.006132</GrossWeightValue>
+                <QuantityDespatched>84</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240413</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 1,02 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 670 от 13.04.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    ТР033 004 12049 от 05.08.2019 до 04.08.2024 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230413</LineItemProductDate>
+                <LineItemAmountWithoutCharges>85.68</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>17.14</LineItemAmountCharges>
+                <LineItemAmount>102.82</LineItemAmount>
+                <LineItemPrice>1.02</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20010557</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>11</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168037192</LineItemID>
+                <LineItemSupplierID>COF48087</LineItemSupplierID>
+                <LineItemName>"Коровка" Мороженое сливочное крем-брюле в глазури жировой карамельной с вафельной сушкой
+                    эскимо 1/0,065 1*42 (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.006</GrossWeightValue>
+                <QuantityDespatched>84</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240218</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 0,90 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 252 от 18.02.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 02149 от 24.03.2022 до 23.03.2027 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230218</LineItemProductDate>
+                <LineItemAmountWithoutCharges>75.6</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>15.12</LineItemAmountCharges>
+                <LineItemAmount>90.72</LineItemAmount>
+                <LineItemPrice>0.9</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20008585</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>12</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168037208</LineItemID>
+                <LineItemSupplierID>COF48001</LineItemSupplierID>
+                <LineItemName>"МОЯ АЛЕНКА" Мороженое сливочное с ароматом ванили в глазури какао-молочной эскимо 1/0,065
+                    1*42 (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.006132</GrossWeightValue>
+                <QuantityDespatched>84</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240216</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 0,90 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 233 от 16.02.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 02322 от 10.05.2022 до 09.05.2027 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230216</LineItemProductDate>
+                <LineItemAmountWithoutCharges>75.6</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>15.12</LineItemAmountCharges>
+                <LineItemAmount>90.72</LineItemAmount>
+                <LineItemPrice>0.9</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20008619</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>13</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168038250</LineItemID>
+                <LineItemSupplierID>COF48082</LineItemSupplierID>
+                <LineItemName>"Птичье молоко " Мороженое пломбир с ароматом сливочного крема в глазури жировой с какао
+                    эскимо 1/0,065 1*42 (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.006</GrossWeightValue>
+                <QuantityDespatched>84</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240307</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 1,02 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 359 от 07.03.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 02149 от 24.03.2022 до 23.03.2027 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230307</LineItemProductDate>
+                <LineItemAmountWithoutCharges>85.68</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>17.14</LineItemAmountCharges>
+                <LineItemAmount>102.82</LineItemAmount>
+                <LineItemPrice>1.02</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20008586</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>14</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168045432</LineItemID>
+                <LineItemSupplierID>COF48081</LineItemSupplierID>
+                <LineItemName>"Трюфель" Мороженое сливочное с какао с ароматом ванили и начинкой какаосодержащей со
+                    вкусом "трюфель" в глазури жировой с какао со вкусом "трюфель" эскимо 1/0,065*42 (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.005628</GrossWeightValue>
+                <QuantityDespatched>84</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>2</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240302</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 1,02 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 321 от 02.03.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 02322 от 10.05.2022 до 09.05.2027 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230302</LineItemProductDate>
+                <LineItemAmountWithoutCharges>85.68</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>17.14</LineItemAmountCharges>
+                <LineItemAmount>102.82</LineItemAmount>
+                <LineItemPrice>1.02</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20008647</FieldValue>
+                </LineItemExtraField>
+            </LineItem>
+            <LineItem>
+                <LineItemNumber>15</LineItemNumber>
+                <LineItemSign>PROD</LineItemSign>
+                <LineItemID>4810168037062</LineItemID>
+                <LineItemSupplierID>COF48346</LineItemSupplierID>
+                <LineItemName>"БИГ ТОП КЛУБНИКА КРАСНАЯ СМОРОДИНА" Мороженое сливочное с ароматом клубники с топпингом
+                    из красной смородины, 1/250 (сод.м.ж.7 мас.% или более) полим.упак. (Беларусь)
+                </LineItemName>
+                <GrossWeightValue>0.00336</GrossWeightValue>
+                <QuantityDespatched>12</QuantityDespatched>
+                <LineItemQuantityUOM>PCE</LineItemQuantityUOM>
+                <DespatchUnitQuantityDespatched>1</DespatchUnitQuantityDespatched>
+                <CountryOfOrigin>BY</CountryOfOrigin>
+                <BestBeforeDate>20240409</BestBeforeDate>
+                <TaxRate>20</TaxRate>
+                <AdditionalInformation>цена изг.(импорт.) 2,86 руб прейск.цен №311-m от 11.05.23, франко-станция
+                    назначения Страна происхождения : Беларусь, УКиБ 631 от 09.04.2023 СП "Санта Бремор" ООО 224701, г.
+                    Брест, ул. Катин Бор, 106, тел. (0162) 29-90-29 www.bremor.com/cert/ Декларация ЕАС BY/112 11.01.
+                    TP033 004.02 02322 от 10.05.2022 до 09.05.2027 СП "Санта Бремор" ООО
+                </AdditionalInformation>
+                <LineItemProductDate>20230409</LineItemProductDate>
+                <LineItemAmountWithoutCharges>34.32</LineItemAmountWithoutCharges>
+                <LineItemAmountCharges>6.86</LineItemAmountCharges>
+                <LineItemAmount>41.18</LineItemAmount>
+                <LineItemPrice>2.86</LineItemPrice>
+                <LineItemExtraField>
+                    <FieldName>Код SAP</FieldName>
+                    <FieldCode>TSI001</FieldCode>
+                    <FieldValue>20009336</FieldValue>
+                </LineItemExtraField>
             </LineItem>
         </DespatchAdviceLogisticUnitLineItem>
         <Total>
-            <TotalAmountWithoutCharges>144.48</TotalAmountWithoutCharges>
-            <TotalAmountCharges>14.45</TotalAmountCharges>
-            <TotalAmount>158.93</TotalAmount>
-            <TotalLineItem>1</TotalLineItem>
-            <TotalLineItemQuantity>48.000</TotalLineItemQuantity>
-            <TotalGrossWeight>0.00864</TotalGrossWeight>
-            <TotalDespatchUnitQuantity>2</TotalDespatchUnitQuantity>
+            <TotalAmountWithoutCharges>1100.6</TotalAmountWithoutCharges>
+            <TotalAmountCharges>220.12</TotalAmountCharges>
+            <TotalAmount>1320.72</TotalAmount>
+            <TotalLineItem>15</TotalLineItem>
+            <TotalLineItemQuantity>1228</TotalLineItemQuantity>
+            <TotalGrossWeight>0.093836</TotalGrossWeight>
+            <TotalDespatchUnitQuantity>29</TotalDespatchUnitQuantity>
         </Total>
     </DeliveryNote>
     <SpecialPart>
         <Signature>
             <SecurityID>1</SecurityID>
+            <CertificateID>40E5E6EBF3238519001962A9</CertificateID>
+            <SecurityPartyID>BE13ADD948D4E6FD500C4898CAEB1769F18D160E</SecurityPartyID>
+            <SignatureDateTime>20230511125619</SignatureDateTime>
             <SignatureValue>
-                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
+                MIJ2+QYJKoZIhvcNAQcCoIJ26jCCduYCAQExDzANBgkqcAACACJlH1EFADCCbg8GCSqGSIb3DQEHAaCCbgAEgm38PERlbGl2ZXJ5Tm90ZT48RGVsaXZlcnlOb3RlVHlwZT43MDA8L0RlbGl2ZXJ5Tm90ZVR5cGU+PERvY3VtZW50SUQ+MjAwMjAyNzc5MzwvRG9jdW1lbnRJRD48Q3JlYXRpb25EYXRlVGltZT4yMDIzMDUxMjEyNTQ0NzwvQ3JlYXRpb25EYXRlVGltZT48RnVuY3Rpb25Db2RlPjk8L0Z1bmN0aW9uQ29kZT48RGVsaXZlcnlOb3RlSUQ+MDAxLTQ4MTI3ODc5MDAwMDAtMjAwMjAyNzc5MzwvRGVsaXZlcnlOb3RlSUQ+PERlbGl2ZXJ5Tm90ZURhdGU+MjAyMzA1MTI8L0RlbGl2ZXJ5Tm90ZURhdGU+PENvbnRyYWN0TmFtZT7QlNC+0LPQvtCy0L7RgDwvQ29udHJhY3ROYW1lPjxDb250cmFjdElEPuKEljI2ODwvQ29udHJhY3RJRD48Q29udHJhY3REYXRlPjIwMTgxMjE4PC9Db250cmFjdERhdGU+PFdheWJpbGxJRD7QnNCd0JMwMTczMjU1PC9XYXliaWxsSUQ+PERvY3VtZW50PjxEb2N1bWVudElEPjAwMS00ODEyNzg3OTAwMDAwLTIwMDIwMjc3OTM8L0RvY3VtZW50SUQ+PERvY3VtZW50RGF0ZT4yMDIzMDUxMjwvRG9jdW1lbnREYXRlPjxEb2N1bWVudE5hbWU+0K3QotCi0J08L0RvY3VtZW50TmFtZT48L0RvY3VtZW50PjxTaGlwcGVyPjxHTE4+NDgxMjc4NzkwMDAwMDwvR0xOPjxDb3VudHJ5PkJZPC9Db3VudHJ5PjxOYW1lPtCh0J8gItCh0LDQvdGC0LAg0JjQvNC/0Y3QutGBINCR0YDQtdGB0YIiINCe0J7QnjwvTmFtZT48QWRkcmVzcz4yMjQ3MDEsINCR0YDQtdGB0YLRgdC60LDRjyDQvtCx0LsuLCDQsy7QkdGA0LXRgdGCLCDRg9C7LiDQmtCw0YLQuNC9INCR0L7RgCwgMTA20JAuPC9BZGRyZXNzPjxWQVRSZWdpc3RyYXRpb25OdW1iZXI+MjAwMjE2NDQzPC9WQVRSZWdpc3RyYXRpb25OdW1iZXI+PENvbnRhY3Q+0J3QsNGH0LDQu9GM0L3QuNC6INGC0L7RgNCzLtC+0YLQtNC10LvQsCDQodC10LTQvtCy0LAg0J3QsNGC0LDQu9C40Y8g0JDQu9C10LrRgdC10LXQstC90LA8L0NvbnRhY3Q+PC9TaGlwcGVyPjxSZWNlaXZlcj48R0xOPjQ4MTkwMzI0NDAwMDc8L0dMTj48TmFtZT7QntCQ0J4gItCf0L7RgdGC0YLQvtGA0LMiLCDQoNCRPC9OYW1lPjxBZGRyZXNzPjIyMDA3MCwg0LMu0JzQuNC90YHQuiwg0YPQuy4g0JrQu9GD0LzQvtCy0LAsIDM8L0FkZHJlc3M+PFZBVFJlZ2lzdHJhdGlvbk51bWJlcj4xMDAwMzY1MzE8L1ZBVFJlZ2lzdHJhdGlvbk51bWJlcj48L1JlY2VpdmVyPjxGcmVpZ2h0UGF5ZXI+PEdMTj40ODEyNzg3OTAwMDAwPC9HTE4+PE5hbWU+0KHQnyAi0KHQsNC90YLQsCDQmNC80L/RjdC60YEg0JHRgNC10YHRgiIg0J7QntCePC9OYW1lPjxBZGRyZXNzPjIyNDcwMSwg0JHRgNC10YHRgtGB0LrQsNGPINC+0LHQuy4sINCzLtCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDbQkC48L0FkZHJlc3M+PFZBVFJlZ2lzdHJhdGlvbk51bWJlcj4yMDAyMTY0NDM8L1ZBVFJlZ2lzdHJhdGlvbk51bWJlcj48L0ZyZWlnaHRQYXllcj48U2hpcEZyb20+PEdMTj40ODEyNzg3OTAwMTE2PC9HTE4+PEFkZHJlc3M+0LMu0JzQuNC90YHQuiwg0YPQuy7Qn9GA0L7QvNGL0YjQu9C10L3QvdCw0Y8sIDIwLzE8L0FkZHJlc3M+PENvbnRhY3Q+0LfQsNCyLtGB0LrQu9Cw0LTQvtC8INCo0LDQsdCw0L0g0J7Qu9GM0LPQsCDQktGP0YfQtdGB0LvQsNCy0L7QstC90LA8L0NvbnRhY3Q+PC9TaGlwRnJvbT48U2hpcFRvPjxHTE4+NDgxOTAzMjQ0MDA2OTwvR0xOPjxBZGRyZXNzPtCzLiDQnNC40L3RgdC6LNGD0LsuINCa0LDRgNCy0LDRgtCwINCSLtCdLiwzMCDQvNCw0LMuIOKEliAzMyDRgtC10LsuMzg1LTA2LTgwPC9BZGRyZXNzPjwvU2hpcFRvPjxDYXJyaWVyPjxUcmFuc3BvcnRDb250YWN0PtCh0LzQvtC60L7RgiDQkNC70LXQutGB0LDQvdC00YAg0J/QtdGC0YDQvtCy0LjRhzwvVHJhbnNwb3J0Q29udGFjdD48RGVsaXZlcnlDb250YWN0PtCS0L7QtNC40YLQtdC70Ywg0KHQvNC+0LrQvtGCINCQ0LvQtdC60YHQsNC90LTRgCDQn9C10YLRgNC+0LLQuNGHPC9EZWxpdmVyeUNvbnRhY3Q+PC9DYXJyaWVyPjxRdWFudGl0eVRyaXA+MTwvUXVhbnRpdHlUcmlwPjxUcmFuc3BvcnRPd25lck5hbWU+0KHQnyAi0KHQsNC90YLQsCDQmNC80L/RjdC60YEg0JHRgNC10YHRgiIg0J7QntCePC9UcmFuc3BvcnRPd25lck5hbWU+PFRyYW5zcG9ydElEPkl2ZWNvIERhaWx5LUZBSCA0NDA4LTE8L1RyYW5zcG9ydElEPjxDdXJyZW5jeT5CWU48L0N1cnJlbmN5PjxEZXNwYXRjaEFkdmljZUxvZ2lzdGljVW5pdExpbmVJdGVtPjxMaW5lSXRlbT48TGluZUl0ZW1OdW1iZXI+MTwvTGluZUl0ZW1OdW1iZXI+PExpbmVJdGVtU2lnbj5QUk9EPC9MaW5lSXRlbVNpZ24+PExpbmVJdGVtSUQ+NDgxMDE2ODAzNzI4NDwvTGluZUl0ZW1JRD48TGluZUl0ZW1TdXBwbGllcklEPkNPRjQ3OTk5PC9MaW5lSXRlbVN1cHBsaWVySUQ+PExpbmVJdGVtTmFtZT4i0KLQntCfINCa0JvQo9CR0J3QmNCa0JAiINCc0L7RgNC+0LbQtdC90L7QtSDRgdC70LjQstC+0YfQvdC+0LUg0YEg0LDRgNC+0LzQsNGC0L7QvCDQstCw0L3QuNC70Lgg0Lgg0L3QsNC/0L7Qu9C90LjRgtC10LvQtdC8INC60LvRg9Cx0L3QuNGH0L3Ri9C8INCyINCy0LDRhNC10LvRjNC90L7QvCDRgdGC0LDQutCw0L3Rh9C40LrQtSAgMS8wLDA3MCAxKjUyICjQkdC10LvQsNGA0YPRgdGMKTwvTGluZUl0ZW1OYW1lPjxHcm9zc1dlaWdodFZhbHVlPjAuMDA4MDA4PC9Hcm9zc1dlaWdodFZhbHVlPjxRdWFudGl0eURlc3BhdGNoZWQ+MTA0PC9RdWFudGl0eURlc3BhdGNoZWQ+PExpbmVJdGVtUXVhbnRpdHlVT00+UENFPC9MaW5lSXRlbVF1YW50aXR5VU9NPjxEZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+MjwvRGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjxDb3VudHJ5T2ZPcmlnaW4+Qlk8L0NvdW50cnlPZk9yaWdpbj48QmVzdEJlZm9yZURhdGU+MjAyNDAyMjI8L0Jlc3RCZWZvcmVEYXRlPjxUYXhSYXRlPjIwPC9UYXhSYXRlPjxBZGRpdGlvbmFsSW5mb3JtYXRpb24+0YbQtdC90LAg0LjQt9CzLijQuNC80L/QvtGA0YIuKSAwLDg1INGA0YPQsSDQv9GA0LXQudGB0Lou0YbQtdC9IOKEljMxMS1tINC+0YIgMTEuMDUuMjMsINGE0YDQsNC90LrQvi3RgdGC0LDQvdGG0LjRjyDQvdCw0LfQvdCw0YfQtdC90LjRjyAg0KHRgtGA0LDQvdCwINC/0YDQvtC40YHRhdC+0LbQtNC10L3QuNGPIDog0JHQtdC70LDRgNGD0YHRjCwg0KPQmtC40JEgMjcwINC+0YIgMjIuMDIuMjAyMyDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCeIDIyNDcwMSwg0LMuINCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDYsINGC0LXQuy4gKDAxNjIpIDI5LTkwLTI5IHd3dy5icmVtb3IuY29tL2NlcnQvINCU0LXQutC70LDRgNCw0YbQuNGPINCV0JDQoSBCWS8xMTIgMTEuMDEuIFRQMDMzIDAwNC4wMiAwMjMyMiDQvtGCIDEwLjA1LjIwMjIgINC00L4gMDkuMDUuMjAyNyAg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QnjwvQWRkaXRpb25hbEluZm9ybWF0aW9uPjxMaW5lSXRlbVByb2R1Y3REYXRlPjIwMjMwMjIyPC9MaW5lSXRlbVByb2R1Y3REYXRlPjxMaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjg4LjQ8L0xpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+PExpbmVJdGVtQW1vdW50Q2hhcmdlcz4xNy42ODwvTGluZUl0ZW1BbW91bnRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudD4xMDYuMDg8L0xpbmVJdGVtQW1vdW50PjxMaW5lSXRlbVByaWNlPjAuODU8L0xpbmVJdGVtUHJpY2U+PExpbmVJdGVtRXh0cmFGaWVsZD48RmllbGROYW1lPtCa0L7QtCBTQVA8L0ZpZWxkTmFtZT48RmllbGRDb2RlPlRTSTAwMTwvRmllbGRDb2RlPjxGaWVsZFZhbHVlPjIwMDA4NTYyPC9GaWVsZFZhbHVlPjwvTGluZUl0ZW1FeHRyYUZpZWxkPjwvTGluZUl0ZW0+PExpbmVJdGVtPjxMaW5lSXRlbU51bWJlcj4yPC9MaW5lSXRlbU51bWJlcj48TGluZUl0ZW1TaWduPlBST0Q8L0xpbmVJdGVtU2lnbj48TGluZUl0ZW1JRD40ODEwMTY4MDM3Mjc3PC9MaW5lSXRlbUlEPjxMaW5lSXRlbVN1cHBsaWVySUQ+Q09GNDc5OTg8L0xpbmVJdGVtU3VwcGxpZXJJRD48TGluZUl0ZW1OYW1lPiLQotCe0J8g0KfQldCg0J3QmNCa0JAiINCc0L7RgNC+0LbQtdC90L7QtSDRgdC70LjQstC+0YfQvdC+0LUg0YEg0LDRgNC+0LzQsNGC0L7QvCDRh9C10YDQvdC40LrQuCDQuCDQstCw0YDQtdC90YzQtdC8INGH0LXRgNC90LjRh9C90YvQvCDQsiDQstCw0YTQtdC70YzQvdC+0Lwg0YHRgtCw0LrQsNC90YfQuNC60LUgMS8wLDA3MCAxKjUyICjQkdC10LvQsNGA0YPRgdGMKTwvTGluZUl0ZW1OYW1lPjxHcm9zc1dlaWdodFZhbHVlPjAuMDA4MDA4PC9Hcm9zc1dlaWdodFZhbHVlPjxRdWFudGl0eURlc3BhdGNoZWQ+MTA0PC9RdWFudGl0eURlc3BhdGNoZWQ+PExpbmVJdGVtUXVhbnRpdHlVT00+UENFPC9MaW5lSXRlbVF1YW50aXR5VU9NPjxEZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+MjwvRGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjxDb3VudHJ5T2ZPcmlnaW4+Qlk8L0NvdW50cnlPZk9yaWdpbj48QmVzdEJlZm9yZURhdGU+MjAyNDAyMDk8L0Jlc3RCZWZvcmVEYXRlPjxUYXhSYXRlPjIwPC9UYXhSYXRlPjxBZGRpdGlvbmFsSW5mb3JtYXRpb24+0YbQtdC90LAg0LjQt9CzLijQuNC80L/QvtGA0YIuKSAwLDg1INGA0YPQsSDQv9GA0LXQudGB0Lou0YbQtdC9IOKEljMxMS1tINC+0YIgMTEuMDUuMjMsINGE0YDQsNC90LrQvi3RgdGC0LDQvdGG0LjRjyDQvdCw0LfQvdCw0YfQtdC90LjRjyAg0KHRgtGA0LDQvdCwINC/0YDQvtC40YHRhdC+0LbQtNC10L3QuNGPIDog0JHQtdC70LDRgNGD0YHRjCwg0KPQmtC40JEgMTg5INC+0YIgMDkuMDIuMjAyMyDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCeIDIyNDcwMSwg0LMuINCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDYsINGC0LXQuy4gKDAxNjIpIDI5LTkwLTI5IHd3dy5icmVtb3IuY29tL2NlcnQvINCU0LXQutC70LDRgNCw0YbQuNGPINCV0JDQoSBCWS8xMTIgMTEuMDEuIFRQMDMzIDAwNC4wMiAwMjMyMiDQvtGCIDEwLjA1LjIwMjIgINC00L4gMDkuMDUuMjAyNyAg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QnjwvQWRkaXRpb25hbEluZm9ybWF0aW9uPjxMaW5lSXRlbVByb2R1Y3REYXRlPjIwMjMwMjA5PC9MaW5lSXRlbVByb2R1Y3REYXRlPjxMaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjg4LjQ8L0xpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+PExpbmVJdGVtQW1vdW50Q2hhcmdlcz4xNy42ODwvTGluZUl0ZW1BbW91bnRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudD4xMDYuMDg8L0xpbmVJdGVtQW1vdW50PjxMaW5lSXRlbVByaWNlPjAuODU8L0xpbmVJdGVtUHJpY2U+PExpbmVJdGVtRXh0cmFGaWVsZD48RmllbGROYW1lPtCa0L7QtCBTQVA8L0ZpZWxkTmFtZT48RmllbGRDb2RlPlRTSTAwMTwvRmllbGRDb2RlPjxGaWVsZFZhbHVlPjIwMDA4NTYxPC9GaWVsZFZhbHVlPjwvTGluZUl0ZW1FeHRyYUZpZWxkPjwvTGluZUl0ZW0+PExpbmVJdGVtPjxMaW5lSXRlbU51bWJlcj4zPC9MaW5lSXRlbU51bWJlcj48TGluZUl0ZW1TaWduPlBST0Q8L0xpbmVJdGVtU2lnbj48TGluZUl0ZW1JRD40ODEwMTY4MDQzMDMyPC9MaW5lSXRlbUlEPjxMaW5lSXRlbVN1cHBsaWVySUQ+Q09GNTA3NDk8L0xpbmVJdGVtU3VwcGxpZXJJRD48TGluZUl0ZW1OYW1lPiJTT0xFVFRPINCT0KDQkNCd0JDQoiDQm9CY0JzQntCdIiAg0JzQvtGA0L7QttC10L3QvtC1INGB0LvQuNCy0L7Rh9C90L7QtSDRhNGA0YPQutGC0L7QstC+0LUg0YEg0LDRgNC+0LzQsNGC0L7QvCAi0LvQuNC80L7QvS3Qu9Cw0LnQvCIsINC90LDQv9C+0LvQvdC40YLQtdC70LXQvCDQvNCw0LvQuNC90LAt0LPRgNCw0L3QsNGCINC4INCz0LvQsNC30YPRgNGM0Y4g0LrQvtC90LTQuNGC0LXRgNGB0LrQvtC5ICDQsiDQstCw0YTQtdC70YzQvdC+0Lwg0YHQsNGF0LDRgNC90L7QvCAg0YDQvtC20LrQtSAgMS83NSAo0YHQvtC0LtC8LtC2Ljcg0LzQsNGBLiUg0LjQu9C4INCx0L7Qu9C10LUpINC/0L7Qu9C40Lwu0YPQv9Cw0LouICjQkdC10LvQsNGA0YPRgdGMKTwvTGluZUl0ZW1OYW1lPjxHcm9zc1dlaWdodFZhbHVlPjAuMDA1Mzc2PC9Hcm9zc1dlaWdodFZhbHVlPjxRdWFudGl0eURlc3BhdGNoZWQ+NjQ8L1F1YW50aXR5RGVzcGF0Y2hlZD48TGluZUl0ZW1RdWFudGl0eVVPTT5QQ0U8L0xpbmVJdGVtUXVhbnRpdHlVT00+PERlc3BhdGNoVW5pdFF1YW50aXR5RGVzcGF0Y2hlZD4yPC9EZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+PENvdW50cnlPZk9yaWdpbj5CWTwvQ291bnRyeU9mT3JpZ2luPjxCZXN0QmVmb3JlRGF0ZT4yMDI0MDQxMjwvQmVzdEJlZm9yZURhdGU+PFRheFJhdGU+MjA8L1RheFJhdGU+PEFkZGl0aW9uYWxJbmZvcm1hdGlvbj7RhtC10L3QsCDQuNC30LMuKNC40LzQv9C+0YDRgi4pIDEsMDkg0YDRg9CxINC/0YDQtdC50YHQui7RhtC10L0g4oSWMzExLW0g0L7RgiAxMS4wNS4yMywg0YTRgNCw0L3QutC+LdGB0YLQsNC90YbQuNGPINC90LDQt9C90LDRh9C10L3QuNGPICDQodGC0YDQsNC90LAg0L/RgNC+0LjRgdGF0L7QttC00LXQvdC40Y8gOiDQkdC10LvQsNGA0YPRgdGMLCDQo9Ca0LjQkSA2NjAg0L7RgiAxMi4wNC4yMDIzINCh0J8gItCh0LDQvdGC0LAg0JHRgNC10LzQvtGAIiDQntCe0J4gMjI0NzAxLCDQsy4g0JHRgNC10YHRgiwg0YPQuy4g0JrQsNGC0LjQvSDQkdC+0YAsIDEwNiwg0YLQtdC7LiAoMDE2MikgMjktOTAtMjkgd3d3LmJyZW1vci5jb20vY2VydC8g0JTQtdC60LvQsNGA0LDRhtC40Y8g0JXQkNChIEJZLzExMiAxMS4wMS4gVFAwMzMgMDA0LjAyIDAwNTc0INC+0YIgMDkuMDYuMjAyMSAg0LTQviAwOC4wNi4yMDI2ICDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCePC9BZGRpdGlvbmFsSW5mb3JtYXRpb24+PExpbmVJdGVtUHJvZHVjdERhdGU+MjAyMzA0MTI8L0xpbmVJdGVtUHJvZHVjdERhdGU+PExpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+NjkuNzY8L0xpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+PExpbmVJdGVtQW1vdW50Q2hhcmdlcz4xMy45NTwvTGluZUl0ZW1BbW91bnRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudD44My43MTwvTGluZUl0ZW1BbW91bnQ+PExpbmVJdGVtUHJpY2U+MS4wOTwvTGluZUl0ZW1QcmljZT48TGluZUl0ZW1FeHRyYUZpZWxkPjxGaWVsZE5hbWU+0JrQvtC0IFNBUDwvRmllbGROYW1lPjxGaWVsZENvZGU+VFNJMDAxPC9GaWVsZENvZGU+PEZpZWxkVmFsdWU+MjAwMTMxNDI8L0ZpZWxkVmFsdWU+PC9MaW5lSXRlbUV4dHJhRmllbGQ+PC9MaW5lSXRlbT48TGluZUl0ZW0+PExpbmVJdGVtTnVtYmVyPjQ8L0xpbmVJdGVtTnVtYmVyPjxMaW5lSXRlbVNpZ24+UFJPRDwvTGluZUl0ZW1TaWduPjxMaW5lSXRlbUlEPjQ4MTAxNjgwNTI5Mjg8L0xpbmVJdGVtSUQ+PExpbmVJdGVtU3VwcGxpZXJJRD5DT0Y1MDc0NjwvTGluZUl0ZW1TdXBwbGllcklEPjxMaW5lSXRlbU5hbWU+IlNPTEVUVE8g0JvQkNCS0JDQndCU0JAg0KfQldCg0J3QmNCa0JAgIiDQnNC+0YDQvtC20LXQvdC+0LUg0YHQu9C40LLQvtGH0L3QvtC1INGBINCw0YDQvtC80LDRgtC+0Lwg0LvQsNCy0LDQvdC00Ysg0Lgg0YfQuNC30LrQtdC50LrQsCwg0YfQtdGA0L3QuNGH0L3Ri9C8INCy0LDRgNC10L3RjNC10Lwg0Lgg0LPQu9Cw0LfRg9GA0YzRjiDQutC+0L3QtNC40YLQtdGA0YHQutC+0Lkg0LIg0LLQsNGE0LXQu9GM0L3QvtC8INGB0LDRhdCw0YDQvdC+0Lwg0YDQvtC20LrQtSwgMS83NSAo0YHQvtC0LtC8LtC2LiA3INC80LDRgS4lINC40LvQuCDQsdC+0LvQtdC1ICkg0L/QvtC70LjQvC7Rg9C/0LDQui4gKNCR0LXQu9Cw0YDRg9GB0YwpPC9MaW5lSXRlbU5hbWU+PEdyb3NzV2VpZ2h0VmFsdWU+MC4wMDUzNzY8L0dyb3NzV2VpZ2h0VmFsdWU+PFF1YW50aXR5RGVzcGF0Y2hlZD42NDwvUXVhbnRpdHlEZXNwYXRjaGVkPjxMaW5lSXRlbVF1YW50aXR5VU9NPlBDRTwvTGluZUl0ZW1RdWFudGl0eVVPTT48RGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjI8L0Rlc3BhdGNoVW5pdFF1YW50aXR5RGVzcGF0Y2hlZD48Q291bnRyeU9mT3JpZ2luPkJZPC9Db3VudHJ5T2ZPcmlnaW4+PEJlc3RCZWZvcmVEYXRlPjIwMjQwNDEwPC9CZXN0QmVmb3JlRGF0ZT48VGF4UmF0ZT4yMDwvVGF4UmF0ZT48QWRkaXRpb25hbEluZm9ybWF0aW9uPtGG0LXQvdCwINC40LfQsy4o0LjQvNC/0L7RgNGCLikgMSwwOSDRgNGD0LEg0L/RgNC10LnRgdC6LtGG0LXQvSDihJYzMTEtbSDQvtGCIDExLjA1LjIzLCDRhNGA0LDQvdC60L4t0YHRgtCw0L3RhtC40Y8g0L3QsNC30L3QsNGH0LXQvdC40Y8gINCh0YLRgNCw0L3QsCDQv9GA0L7QuNGB0YXQvtC20LTQtdC90LjRjyA6INCR0LXQu9Cw0YDRg9GB0YwsINCj0JrQuNCRIDYzOSDQvtGCIDEwLjA0LjIwMjMg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QniAyMjQ3MDEsINCzLiDQkdGA0LXRgdGCLCDRg9C7LiDQmtCw0YLQuNC9INCR0L7RgCwgMTA2LCDRgtC10LsuICgwMTYyKSAyOS05MC0yOSB3d3cuYnJlbW9yLmNvbS9jZXJ0LyDQlNC10LrQu9Cw0YDQsNGG0LjRjyDQldCQ0KEgQlkvMTEyIDExLjAxLiBUUDAzMyAwMDQuMDIgMDA1NzQg0L7RgiAwOS4wNi4yMDIxICDQtNC+IDA4LjA2LjIwMjYgINCh0J8gItCh0LDQvdGC0LAg0JHRgNC10LzQvtGAIiDQntCe0J48L0FkZGl0aW9uYWxJbmZvcm1hdGlvbj48TGluZUl0ZW1Qcm9kdWN0RGF0ZT4yMDIzMDQxMDwvTGluZUl0ZW1Qcm9kdWN0RGF0ZT48TGluZUl0ZW1BbW91bnRXaXRob3V0Q2hhcmdlcz42OS43NjwvTGluZUl0ZW1BbW91bnRXaXRob3V0Q2hhcmdlcz48TGluZUl0ZW1BbW91bnRDaGFyZ2VzPjEzLjk1PC9MaW5lSXRlbUFtb3VudENoYXJnZXM+PExpbmVJdGVtQW1vdW50PjgzLjcxPC9MaW5lSXRlbUFtb3VudD48TGluZUl0ZW1QcmljZT4xLjA5PC9MaW5lSXRlbVByaWNlPjxMaW5lSXRlbUV4dHJhRmllbGQ+PEZpZWxkTmFtZT7QmtC+0LQgU0FQPC9GaWVsZE5hbWU+PEZpZWxkQ29kZT5UU0kwMDE8L0ZpZWxkQ29kZT48RmllbGRWYWx1ZT4yMDAxMzE0NzwvRmllbGRWYWx1ZT48L0xpbmVJdGVtRXh0cmFGaWVsZD48L0xpbmVJdGVtPjxMaW5lSXRlbT48TGluZUl0ZW1OdW1iZXI+NTwvTGluZUl0ZW1OdW1iZXI+PExpbmVJdGVtU2lnbj5QUk9EPC9MaW5lSXRlbVNpZ24+PExpbmVJdGVtSUQ+NDgxMDE2ODA2MDA0NjwvTGluZUl0ZW1JRD48TGluZUl0ZW1TdXBwbGllcklEPkNPRjUxNTI5PC9MaW5lSXRlbVN1cHBsaWVySUQ+PExpbmVJdGVtTmFtZT4iU09MRVRUTyDQoNCY0JrQntCi0KLQkCDQkNCf0JXQm9Cs0KHQmNCdIiAg0JzQvtGA0L7QttC10L3QvtC1INGB0LvQuNCy0L7Rh9C90L7QtSDRgSDQsNGA0L7QvNCw0YLQvtC8ICAi0YDQuNC60L7RgtGC0LAiLCDQvdCw0L/QvtC70L3QuNGC0LXQu9C10Lwg0LDQv9C10LvRjNGB0LjQvdC+0LLRi9C8INC4INCz0LvQsNC30YPRgNGM0Y4g0LrQsNC60LDQvtGB0L7QtNC10YDQttCw0YnQtdC5INGBINGN0LrRgdGC0YDQsNC60YLQvtC8INC60L7RgNC40YbRiyDQsiDQstCw0YTQtdC70YzQvdC+0Lwg0YHQsNGF0LDRgNC90L7QvCAg0YDQvtC20LrQtSwgIDEvNzUgKNGB0L7QtC7QvC7Qti43INC80LDRgS4lINC40LvQuCDQsdC+0LvQtdC1KSDQv9C+0LvQuNC8LtGD0L/QsNC6LiAo0JHQtdC70LDRgNGD0YHRjCk8L0xpbmVJdGVtTmFtZT48R3Jvc3NXZWlnaHRWYWx1ZT4wLjAwNTM3NjwvR3Jvc3NXZWlnaHRWYWx1ZT48UXVhbnRpdHlEZXNwYXRjaGVkPjY0PC9RdWFudGl0eURlc3BhdGNoZWQ+PExpbmVJdGVtUXVhbnRpdHlVT00+UENFPC9MaW5lSXRlbVF1YW50aXR5VU9NPjxEZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+MjwvRGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjxDb3VudHJ5T2ZPcmlnaW4+Qlk8L0NvdW50cnlPZk9yaWdpbj48QmVzdEJlZm9yZURhdGU+MjAyNDAzMjc8L0Jlc3RCZWZvcmVEYXRlPjxUYXhSYXRlPjIwPC9UYXhSYXRlPjxBZGRpdGlvbmFsSW5mb3JtYXRpb24+0YbQtdC90LAg0LjQt9CzLijQuNC80L/QvtGA0YIuKSAxLDA5INGA0YPQsSDQv9GA0LXQudGB0Lou0YbQtdC9IOKEljMxMS1tINC+0YIgMTEuMDUuMjMsINGE0YDQsNC90LrQvi3RgdGC0LDQvdGG0LjRjyDQvdCw0LfQvdCw0YfQtdC90LjRjyAg0KHRgtGA0LDQvdCwINC/0YDQvtC40YHRhdC+0LbQtNC10L3QuNGPIDog0JHQtdC70LDRgNGD0YHRjCwg0KPQmtC40JEgNTI2INC+0YIgMjcuMDMuMjAyMyDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCeIDIyNDcwMSwg0LMuINCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDYsINGC0LXQuy4gKDAxNjIpIDI5LTkwLTI5IHd3dy5icmVtb3IuY29tL2NlcnQvINCU0LXQutC70LDRgNCw0YbQuNGPINCV0JDQoSBCWS8xMTIgMTEuMDEuIFRQMDMzIDAwNC4wMiAwMjMyMiDQvtGCIDEwLjA1LjIwMjIgINC00L4gMDkuMDUuMjAyNyAg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QnjwvQWRkaXRpb25hbEluZm9ybWF0aW9uPjxMaW5lSXRlbVByb2R1Y3REYXRlPjIwMjMwMzI3PC9MaW5lSXRlbVByb2R1Y3REYXRlPjxMaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjY5Ljc2PC9MaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudENoYXJnZXM+MTMuOTU8L0xpbmVJdGVtQW1vdW50Q2hhcmdlcz48TGluZUl0ZW1BbW91bnQ+ODMuNzE8L0xpbmVJdGVtQW1vdW50PjxMaW5lSXRlbVByaWNlPjEuMDk8L0xpbmVJdGVtUHJpY2U+PExpbmVJdGVtRXh0cmFGaWVsZD48RmllbGROYW1lPtCa0L7QtCBTQVA8L0ZpZWxkTmFtZT48RmllbGRDb2RlPlRTSTAwMTwvRmllbGRDb2RlPjxGaWVsZFZhbHVlPjIwMDE0MDg5PC9GaWVsZFZhbHVlPjwvTGluZUl0ZW1FeHRyYUZpZWxkPjwvTGluZUl0ZW0+PExpbmVJdGVtPjxMaW5lSXRlbU51bWJlcj42PC9MaW5lSXRlbU51bWJlcj48TGluZUl0ZW1TaWduPlBST0Q8L0xpbmVJdGVtU2lnbj48TGluZUl0ZW1JRD40ODEwMTY4MDM3MTQ3PC9MaW5lSXRlbUlEPjxMaW5lSXRlbVN1cHBsaWVySUQ+Q09GNTA3NDc8L0xpbmVJdGVtU3VwcGxpZXJJRD48TGluZUl0ZW1OYW1lPiJTT0xFVFRPINCk0JjQodCi0JDQqNCa0Jgg0Jgg0JzQkNCg0KbQmNCf0JDQnSAiINCc0L7RgNC+0LbQtdC90L7QtSDRgdC70LjQstC+0YfQvdC+0LUg0YTQuNGB0YLQsNGI0LrQvtCy0L7QtSDRgSDQvdCw0L/QvtC70L3QuNGC0LXQu9C10Lwg0LzQvtC70L7Rh9C90YvQvCDRgSDQsNGA0L7QvNCw0YLQvtC8INC80LDRgNGG0LjQv9Cw0L3QsCDQuCDQs9C70LDQt9GD0YDRjNGOINC60L7QvdC00LjRgtC10YDRgdC60L7QuSAg0LIg0LLQsNGE0LXQu9GM0L3QvtC8INGB0LDRhdCw0YDQvdC+0Lwg0YDQvtC20LrQtSAsIDEvNzUgKNGB0L7QtC7QvC7Qti43INC80LDRgS4lINC40LvQuCDQsdC+0LvQtdC1KSDQv9C+0LvQuNC8LtGD0L/QsNC6LiAo0JHQtdC70LDRgNGD0YHRjCk8L0xpbmVJdGVtTmFtZT48R3Jvc3NXZWlnaHRWYWx1ZT4wLjAwNTM3NjwvR3Jvc3NXZWlnaHRWYWx1ZT48UXVhbnRpdHlEZXNwYXRjaGVkPjY0PC9RdWFudGl0eURlc3BhdGNoZWQ+PExpbmVJdGVtUXVhbnRpdHlVT00+UENFPC9MaW5lSXRlbVF1YW50aXR5VU9NPjxEZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+MjwvRGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjxDb3VudHJ5T2ZPcmlnaW4+Qlk8L0NvdW50cnlPZk9yaWdpbj48QmVzdEJlZm9yZURhdGU+MjAyNDAzMTk8L0Jlc3RCZWZvcmVEYXRlPjxUYXhSYXRlPjIwPC9UYXhSYXRlPjxBZGRpdGlvbmFsSW5mb3JtYXRpb24+0YbQtdC90LAg0LjQt9CzLijQuNC80L/QvtGA0YIuKSAxLDA5INGA0YPQsSDQv9GA0LXQudGB0Lou0YbQtdC9IOKEljMxMS1tINC+0YIgMTEuMDUuMjMsINGE0YDQsNC90LrQvi3RgdGC0LDQvdGG0LjRjyDQvdCw0LfQvdCw0YfQtdC90LjRjyAg0KHRgtGA0LDQvdCwINC/0YDQvtC40YHRhdC+0LbQtNC10L3QuNGPIDog0JHQtdC70LDRgNGD0YHRjCwg0KPQmtC40JEgNDUzINC+0YIgMTkuMDMuMjAyMyDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCeIDIyNDcwMSwg0LMuINCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDYsINGC0LXQuy4gKDAxNjIpIDI5LTkwLTI5IHd3dy5icmVtb3IuY29tL2NlcnQvINCU0LXQutC70LDRgNCw0YbQuNGPINCV0JDQoSBCWS8xMTIgMTEuMDEuIFRQMDMzIDAwNC4wMiAwMDU3NCDQvtGCIDA5LjA2LjIwMjEgINC00L4gMDguMDYuMjAyNiAg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QnjwvQWRkaXRpb25hbEluZm9ybWF0aW9uPjxMaW5lSXRlbVByb2R1Y3REYXRlPjIwMjMwMzE5PC9MaW5lSXRlbVByb2R1Y3REYXRlPjxMaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjY5Ljc2PC9MaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudENoYXJnZXM+MTMuOTU8L0xpbmVJdGVtQW1vdW50Q2hhcmdlcz48TGluZUl0ZW1BbW91bnQ+ODMuNzE8L0xpbmVJdGVtQW1vdW50PjxMaW5lSXRlbVByaWNlPjEuMDk8L0xpbmVJdGVtUHJpY2U+PExpbmVJdGVtRXh0cmFGaWVsZD48RmllbGROYW1lPtCa0L7QtCBTQVA8L0ZpZWxkTmFtZT48RmllbGRDb2RlPlRTSTAwMTwvRmllbGRDb2RlPjxGaWVsZFZhbHVlPjIwMDEzMTQ4PC9GaWVsZFZhbHVlPjwvTGluZUl0ZW1FeHRyYUZpZWxkPjwvTGluZUl0ZW0+PExpbmVJdGVtPjxMaW5lSXRlbU51bWJlcj43PC9MaW5lSXRlbU51bWJlcj48TGluZUl0ZW1TaWduPlBST0Q8L0xpbmVJdGVtU2lnbj48TGluZUl0ZW1JRD40ODEwMTY4MDUxNTYzPC9MaW5lSXRlbUlEPjxMaW5lSXRlbVN1cHBsaWVySUQ+Q09GNTA3NDE8L0xpbmVJdGVtU3VwcGxpZXJJRD48TGluZUl0ZW1OYW1lPiLQkdCQ0JHQmyDQkdCj0JwiINCc0L7RgNC+0LbQtdC90L7QtSDQtNCy0YPRhdGB0LvQvtC50L3QvtC1INC80L7Qu9C+0YfQvdC+0LUg0YEg0LDRgNC+0LzQsNGC0L7QvCDQttC10LLQsNGC0LXQu9GM0L3QvtC5INGA0LXQt9C40L3QutC4LCAxLzUwICjRgdC+0LQu0Lwu0LYuMyDQvNCw0YEuJSDQuNC70Lgg0LHQvtC70LXQtSwg0L3QviDQvNC10L3QtdC1IDcg0LzQsNGBLiUpINC/0L7Qu9C40Lwu0YPQv9Cw0LouICjQkdC10LvQsNGA0YPRgdGMKTwvTGluZUl0ZW1OYW1lPjxHcm9zc1dlaWdodFZhbHVlPjAuMDA2ODQ8L0dyb3NzV2VpZ2h0VmFsdWU+PFF1YW50aXR5RGVzcGF0Y2hlZD4xMjA8L1F1YW50aXR5RGVzcGF0Y2hlZD48TGluZUl0ZW1RdWFudGl0eVVPTT5QQ0U8L0xpbmVJdGVtUXVhbnRpdHlVT00+PERlc3BhdGNoVW5pdFF1YW50aXR5RGVzcGF0Y2hlZD4yPC9EZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+PENvdW50cnlPZk9yaWdpbj5CWTwvQ291bnRyeU9mT3JpZ2luPjxCZXN0QmVmb3JlRGF0ZT4yMDI0MDMyOTwvQmVzdEJlZm9yZURhdGU+PFRheFJhdGU+MjA8L1RheFJhdGU+PEFkZGl0aW9uYWxJbmZvcm1hdGlvbj7RhtC10L3QsCDQuNC30LMuKNC40LzQv9C+0YDRgi4pIDAsNjEg0YDRg9CxINC/0YDQtdC50YHQui7RhtC10L0g4oSWMzExLW0g0L7RgiAxMS4wNS4yMywg0YTRgNCw0L3QutC+LdGB0YLQsNC90YbQuNGPINC90LDQt9C90LDRh9C10L3QuNGPICDQodGC0YDQsNC90LAg0L/RgNC+0LjRgdGF0L7QttC00LXQvdC40Y8gOiDQkdC10LvQsNGA0YPRgdGMLCDQo9Ca0LjQkSA1MzQvNTM1INC+0YIgMjkuMDMuMjAyMyDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCeIDIyNDcwMSwg0LMuINCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDYsINGC0LXQuy4gKDAxNjIpIDI5LTkwLTI5IHd3dy5icmVtb3IuY29tL2NlcnQvINCU0LXQutC70LDRgNCw0YbQuNGPINCV0JDQoSBCWS8xMTIgMTEuMDEuIFRQMDMzIDAwNC4wMiAwMDY0OCDQvtGCIDI4LjA2LjIwMjEgINC00L4gMjcuMDYuMjAyNiAg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QnjwvQWRkaXRpb25hbEluZm9ybWF0aW9uPjxMaW5lSXRlbVByb2R1Y3REYXRlPjIwMjMwMzI5PC9MaW5lSXRlbVByb2R1Y3REYXRlPjxMaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjczLjI8L0xpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+PExpbmVJdGVtQW1vdW50Q2hhcmdlcz4xNC42NDwvTGluZUl0ZW1BbW91bnRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudD44Ny44NDwvTGluZUl0ZW1BbW91bnQ+PExpbmVJdGVtUHJpY2U+MC42MTwvTGluZUl0ZW1QcmljZT48TGluZUl0ZW1FeHRyYUZpZWxkPjxGaWVsZE5hbWU+0JrQvtC0IFNBUDwvRmllbGROYW1lPjxGaWVsZENvZGU+VFNJMDAxPC9GaWVsZENvZGU+PEZpZWxkVmFsdWU+MjAwMTMxNDY8L0ZpZWxkVmFsdWU+PC9MaW5lSXRlbUV4dHJhRmllbGQ+PC9MaW5lSXRlbT48TGluZUl0ZW0+PExpbmVJdGVtTnVtYmVyPjg8L0xpbmVJdGVtTnVtYmVyPjxMaW5lSXRlbVNpZ24+UFJPRDwvTGluZUl0ZW1TaWduPjxMaW5lSXRlbUlEPjQ4MTAxNjgwNTMwNzk8L0xpbmVJdGVtSUQ+PExpbmVJdGVtU3VwcGxpZXJJRD5DT0Y0OTg3ODwvTGluZUl0ZW1TdXBwbGllcklEPjxMaW5lSXRlbU5hbWU+ItCS0JXQodCV0JvQq9CVINCf0KfQldCb0JrQmCDQkNCd0JDQndCQ0KEg0JzQkNCg0JDQmtCj0JnQryIg0KHQu9Cw0LTQutC40Lkg0L/QuNGJ0LXQstC+0Lkg0LvQtdC0INGE0YDRg9C60YLQvtCy0YvQuSDQsNC90LDQvdCw0YHQvtCy0YvQuSDRgSDQvNCw0YDQsNC60YPQudC10LksIDEvNzAgKNC90LUg0YHQvtC00LXRgNC20LjRgiDQvNC+0Lsu0LbQuNGA0LApINC/0L7Qu9C40Lwu0YPQv9Cw0LouICjQkdC10LvQsNGA0YPRgdGMKTwvTGluZUl0ZW1OYW1lPjxHcm9zc1dlaWdodFZhbHVlPjAuMDA3NjwvR3Jvc3NXZWlnaHRWYWx1ZT48UXVhbnRpdHlEZXNwYXRjaGVkPjEwMDwvUXVhbnRpdHlEZXNwYXRjaGVkPjxMaW5lSXRlbVF1YW50aXR5VU9NPlBDRTwvTGluZUl0ZW1RdWFudGl0eVVPTT48RGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjI8L0Rlc3BhdGNoVW5pdFF1YW50aXR5RGVzcGF0Y2hlZD48Q291bnRyeU9mT3JpZ2luPkJZPC9Db3VudHJ5T2ZPcmlnaW4+PEJlc3RCZWZvcmVEYXRlPjIwMjQwMTI4PC9CZXN0QmVmb3JlRGF0ZT48VGF4UmF0ZT4yMDwvVGF4UmF0ZT48QWRkaXRpb25hbEluZm9ybWF0aW9uPtGG0LXQvdCwINC40LfQsy4o0LjQvNC/0L7RgNGCLikgMCw3MyDRgNGD0LEg0L/RgNC10LnRgdC6LtGG0LXQvSDihJYzMTEtbSDQvtGCIDExLjA1LjIzLCDRhNGA0LDQvdC60L4t0YHRgtCw0L3RhtC40Y8g0L3QsNC30L3QsNGH0LXQvdC40Y8gINCh0YLRgNCw0L3QsCDQv9GA0L7QuNGB0YXQvtC20LTQtdC90LjRjyA6INCR0LXQu9Cw0YDRg9GB0YwsINCj0JrQuNCRIDEg0L7RgiAyOC4wMS4yMDIzINCh0J8gItCh0LDQvdGC0LAg0JHRgNC10LzQvtGAIiDQntCe0J4gMjI0NzAxLCDQsy4g0JHRgNC10YHRgiwg0YPQuy4g0JrQsNGC0LjQvSDQkdC+0YAsIDEwNiwg0YLQtdC7LiAoMDE2MikgMjktOTAtMjkgd3d3LmJyZW1vci5jb20vY2VydC8g0JTQtdC60LvQsNGA0LDRhtC40Y8g0JXQkNChIEJZLzExMiAxMS4wMS4gVFAwMjEgMDA0LjAyIDAwOTg0INC+0YIgMjcuMDguMjAyMSAg0LTQviAyNi4wOC4yMDI2ICDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCePC9BZGRpdGlvbmFsSW5mb3JtYXRpb24+PExpbmVJdGVtUHJvZHVjdERhdGU+MjAyMzAxMjg8L0xpbmVJdGVtUHJvZHVjdERhdGU+PExpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+NzM8L0xpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+PExpbmVJdGVtQW1vdW50Q2hhcmdlcz4xNC42PC9MaW5lSXRlbUFtb3VudENoYXJnZXM+PExpbmVJdGVtQW1vdW50Pjg3LjY8L0xpbmVJdGVtQW1vdW50PjxMaW5lSXRlbVByaWNlPjAuNzM8L0xpbmVJdGVtUHJpY2U+PExpbmVJdGVtRXh0cmFGaWVsZD48RmllbGROYW1lPtCa0L7QtCBTQVA8L0ZpZWxkTmFtZT48RmllbGRDb2RlPlRTSTAwMTwvRmllbGRDb2RlPjxGaWVsZFZhbHVlPjIwMDExNjM3PC9GaWVsZFZhbHVlPjwvTGluZUl0ZW1FeHRyYUZpZWxkPjwvTGluZUl0ZW0+PExpbmVJdGVtPjxMaW5lSXRlbU51bWJlcj45PC9MaW5lSXRlbU51bWJlcj48TGluZUl0ZW1TaWduPlBST0Q8L0xpbmVJdGVtU2lnbj48TGluZUl0ZW1JRD40ODEwMTY4MDUzMzQ1PC9MaW5lSXRlbUlEPjxMaW5lSXRlbVN1cHBsaWVySUQ+Q09GNDk5MDc8L0xpbmVJdGVtU3VwcGxpZXJJRD48TGluZUl0ZW1OYW1lPiLQotCe0J8g0JDQoNCR0KPQlyIg0KHQu9Cw0LTQutC40Lkg0L/QuNGJ0LXQstC+0Lkg0LvQtdC0INGE0YDRg9C60YLQvtCy0YvQuSDRgSDQsNGA0L7QvNCw0YLQvtC8INCw0YDQsdGD0LfQsCwgMS83MCAo0L3QtSDRgdC+0LTQtdGA0LbQuNGCINC80L7Quy7QttC40YDQsCkg0L/QvtC70LjQvC7Rg9C/0LDQuiAo0JHQtdC70LDRgNGD0YHRjCk8L0xpbmVJdGVtTmFtZT48R3Jvc3NXZWlnaHRWYWx1ZT4wLjAwODYyNDwvR3Jvc3NXZWlnaHRWYWx1ZT48UXVhbnRpdHlEZXNwYXRjaGVkPjExMjwvUXVhbnRpdHlEZXNwYXRjaGVkPjxMaW5lSXRlbVF1YW50aXR5VU9NPlBDRTwvTGluZUl0ZW1RdWFudGl0eVVPTT48RGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjI8L0Rlc3BhdGNoVW5pdFF1YW50aXR5RGVzcGF0Y2hlZD48Q291bnRyeU9mT3JpZ2luPkJZPC9Db3VudHJ5T2ZPcmlnaW4+PEJlc3RCZWZvcmVEYXRlPjIwMjQwNDE5PC9CZXN0QmVmb3JlRGF0ZT48VGF4UmF0ZT4yMDwvVGF4UmF0ZT48QWRkaXRpb25hbEluZm9ybWF0aW9uPtGG0LXQvdCwINC40LfQsy4o0LjQvNC/0L7RgNGCLikgMCw1MCDRgNGD0LEg0L/RgNC10LnRgdC6LtGG0LXQvSDihJYzMTEtbSDQvtGCIDExLjA1LjIzLCDRhNGA0LDQvdC60L4t0YHRgtCw0L3RhtC40Y8g0L3QsNC30L3QsNGH0LXQvdC40Y8gINCh0YLRgNCw0L3QsCDQv9GA0L7QuNGB0YXQvtC20LTQtdC90LjRjyA6INCR0LXQu9Cw0YDRg9GB0YwsINCj0JrQuNCRIDE0MSDQvtGCIDE5LjA0LjIwMjMg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QniAyMjQ3MDEsINCzLiDQkdGA0LXRgdGCLCDRg9C7LiDQmtCw0YLQuNC9INCR0L7RgCwgMTA2LCDRgtC10LsuICgwMTYyKSAyOS05MC0yOSB3d3cuYnJlbW9yLmNvbS9jZXJ0LyDQlNC10LrQu9Cw0YDQsNGG0LjRjyDQldCQ0KEgQlkvMTEyIDExLjAxLiBUUDAyMSAwMDQuMDIgMDA5ODQg0L7RgiAyNy4wOC4yMDIxICDQtNC+IDI2LjA4LjIwMjYgINCh0J8gItCh0LDQvdGC0LAg0JHRgNC10LzQvtGAIiDQntCe0J48L0FkZGl0aW9uYWxJbmZvcm1hdGlvbj48TGluZUl0ZW1Qcm9kdWN0RGF0ZT4yMDIzMDQxOTwvTGluZUl0ZW1Qcm9kdWN0RGF0ZT48TGluZUl0ZW1BbW91bnRXaXRob3V0Q2hhcmdlcz41NjwvTGluZUl0ZW1BbW91bnRXaXRob3V0Q2hhcmdlcz48TGluZUl0ZW1BbW91bnRDaGFyZ2VzPjExLjI8L0xpbmVJdGVtQW1vdW50Q2hhcmdlcz48TGluZUl0ZW1BbW91bnQ+NjcuMjwvTGluZUl0ZW1BbW91bnQ+PExpbmVJdGVtUHJpY2U+MC41PC9MaW5lSXRlbVByaWNlPjxMaW5lSXRlbUV4dHJhRmllbGQ+PEZpZWxkTmFtZT7QmtC+0LQgU0FQPC9GaWVsZE5hbWU+PEZpZWxkQ29kZT5UU0kwMDE8L0ZpZWxkQ29kZT48RmllbGRWYWx1ZT4yMDAxMTczMDwvRmllbGRWYWx1ZT48L0xpbmVJdGVtRXh0cmFGaWVsZD48L0xpbmVJdGVtPjxMaW5lSXRlbT48TGluZUl0ZW1OdW1iZXI+MTA8L0xpbmVJdGVtTnVtYmVyPjxMaW5lSXRlbVNpZ24+UFJPRDwvTGluZUl0ZW1TaWduPjxMaW5lSXRlbUlEPjQ4MTAxNjgwNTA1Mjg8L0xpbmVJdGVtSUQ+PExpbmVJdGVtU3VwcGxpZXJJRD5DT0Y0OTM2NzwvTGluZUl0ZW1TdXBwbGllcklEPjxMaW5lSXRlbU5hbWU+ItCQ0Y3RgNC+0YTQu9C+0YLRgdC60L7QtSLQnNC+0YDQvtC20LXQvdC+0LUg0L/Qu9C+0LzQsdC40YAg0YjQvtC60L7Qu9Cw0LTQvdGL0Lkg0YEg0LDRgNC+0LzQsNGC0L7QvCDQstCw0L3QuNC70Lgg0LIg0LPQu9Cw0LfRg9GA0Lgg0LbQuNGA0L7QstC+0Lkg0LrQsNC60LDQvtGB0L7QtNC10YDQttCw0YnQtdC5INGBINC60YDQvtGI0LrQvtC5INC60L7QvdGE0LXRgiDQvdC10LPQu9Cw0LfQuNGA0L7QstCw0L3QvdGL0YUgItCQ0Y3RgNC+0YTQu9C+0YLRgdC60LjQtSIg0Y3RgdC60LjQvNC+LCAxLzY1ICjRgdC+0LQu0Lwu0LYuNyDQvNCw0YEuJSDQuNC70Lgg0LHQvtC70LXQtSkg0L/QvtC70LjQvC7Rg9C/0LDQuiAo0JHQtdC70LDRgNGD0YHRjCk8L0xpbmVJdGVtTmFtZT48R3Jvc3NXZWlnaHRWYWx1ZT4wLjAwNjEzMjwvR3Jvc3NXZWlnaHRWYWx1ZT48UXVhbnRpdHlEZXNwYXRjaGVkPjg0PC9RdWFudGl0eURlc3BhdGNoZWQ+PExpbmVJdGVtUXVhbnRpdHlVT00+UENFPC9MaW5lSXRlbVF1YW50aXR5VU9NPjxEZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+MjwvRGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjxDb3VudHJ5T2ZPcmlnaW4+Qlk8L0NvdW50cnlPZk9yaWdpbj48QmVzdEJlZm9yZURhdGU+MjAyNDA0MTM8L0Jlc3RCZWZvcmVEYXRlPjxUYXhSYXRlPjIwPC9UYXhSYXRlPjxBZGRpdGlvbmFsSW5mb3JtYXRpb24+0YbQtdC90LAg0LjQt9CzLijQuNC80L/QvtGA0YIuKSAxLDAyINGA0YPQsSDQv9GA0LXQudGB0Lou0YbQtdC9IOKEljMxMS1tINC+0YIgMTEuMDUuMjMsINGE0YDQsNC90LrQvi3RgdGC0LDQvdGG0LjRjyDQvdCw0LfQvdCw0YfQtdC90LjRjyAg0KHRgtGA0LDQvdCwINC/0YDQvtC40YHRhdC+0LbQtNC10L3QuNGPIDog0JHQtdC70LDRgNGD0YHRjCwg0KPQmtC40JEgNjcwINC+0YIgMTMuMDQuMjAyMyDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCeIDIyNDcwMSwg0LMuINCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDYsINGC0LXQuy4gKDAxNjIpIDI5LTkwLTI5IHd3dy5icmVtb3IuY29tL2NlcnQvINCU0LXQutC70LDRgNCw0YbQuNGPINCV0JDQoSBCWS8xMTIgMTEuMDEuINCi0KAwMzMgMDA0IDEyMDQ5INC+0YIgMDUuMDguMjAxOSAg0LTQviAwNC4wOC4yMDI0ICDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCePC9BZGRpdGlvbmFsSW5mb3JtYXRpb24+PExpbmVJdGVtUHJvZHVjdERhdGU+MjAyMzA0MTM8L0xpbmVJdGVtUHJvZHVjdERhdGU+PExpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+ODUuNjg8L0xpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+PExpbmVJdGVtQW1vdW50Q2hhcmdlcz4xNy4xNDwvTGluZUl0ZW1BbW91bnRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudD4xMDIuODI8L0xpbmVJdGVtQW1vdW50PjxMaW5lSXRlbVByaWNlPjEuMDI8L0xpbmVJdGVtUHJpY2U+PExpbmVJdGVtRXh0cmFGaWVsZD48RmllbGROYW1lPtCa0L7QtCBTQVA8L0ZpZWxkTmFtZT48RmllbGRDb2RlPlRTSTAwMTwvRmllbGRDb2RlPjxGaWVsZFZhbHVlPjIwMDEwNTU3PC9GaWVsZFZhbHVlPjwvTGluZUl0ZW1FeHRyYUZpZWxkPjwvTGluZUl0ZW0+PExpbmVJdGVtPjxMaW5lSXRlbU51bWJlcj4xMTwvTGluZUl0ZW1OdW1iZXI+PExpbmVJdGVtU2lnbj5QUk9EPC9MaW5lSXRlbVNpZ24+PExpbmVJdGVtSUQ+NDgxMDE2ODAzNzE5MjwvTGluZUl0ZW1JRD48TGluZUl0ZW1TdXBwbGllcklEPkNPRjQ4MDg3PC9MaW5lSXRlbVN1cHBsaWVySUQ+PExpbmVJdGVtTmFtZT4i0JrQvtGA0L7QstC60LAiINCc0L7RgNC+0LbQtdC90L7QtSDRgdC70LjQstC+0YfQvdC+0LUg0LrRgNC10Lwt0LHRgNGO0LvQtSDQsiDQs9C70LDQt9GD0YDQuCDQttC40YDQvtCy0L7QuSDQutCw0YDQsNC80LXQu9GM0L3QvtC5INGBINCy0LDRhNC10LvRjNC90L7QuSDRgdGD0YjQutC+0Lkg0Y3RgdC60LjQvNC+IDEvMCwwNjUgMSo0MiAo0JHQtdC70LDRgNGD0YHRjCk8L0xpbmVJdGVtTmFtZT48R3Jvc3NXZWlnaHRWYWx1ZT4wLjAwNjwvR3Jvc3NXZWlnaHRWYWx1ZT48UXVhbnRpdHlEZXNwYXRjaGVkPjg0PC9RdWFudGl0eURlc3BhdGNoZWQ+PExpbmVJdGVtUXVhbnRpdHlVT00+UENFPC9MaW5lSXRlbVF1YW50aXR5VU9NPjxEZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+MjwvRGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjxDb3VudHJ5T2ZPcmlnaW4+Qlk8L0NvdW50cnlPZk9yaWdpbj48QmVzdEJlZm9yZURhdGU+MjAyNDAyMTg8L0Jlc3RCZWZvcmVEYXRlPjxUYXhSYXRlPjIwPC9UYXhSYXRlPjxBZGRpdGlvbmFsSW5mb3JtYXRpb24+0YbQtdC90LAg0LjQt9CzLijQuNC80L/QvtGA0YIuKSAwLDkwINGA0YPQsSDQv9GA0LXQudGB0Lou0YbQtdC9IOKEljMxMS1tINC+0YIgMTEuMDUuMjMsINGE0YDQsNC90LrQvi3RgdGC0LDQvdGG0LjRjyDQvdCw0LfQvdCw0YfQtdC90LjRjyAg0KHRgtGA0LDQvdCwINC/0YDQvtC40YHRhdC+0LbQtNC10L3QuNGPIDog0JHQtdC70LDRgNGD0YHRjCwg0KPQmtC40JEgMjUyINC+0YIgMTguMDIuMjAyMyDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCeIDIyNDcwMSwg0LMuINCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDYsINGC0LXQuy4gKDAxNjIpIDI5LTkwLTI5IHd3dy5icmVtb3IuY29tL2NlcnQvINCU0LXQutC70LDRgNCw0YbQuNGPINCV0JDQoSBCWS8xMTIgMTEuMDEuIFRQMDMzIDAwNC4wMiAwMjE0OSDQvtGCIDI0LjAzLjIwMjIgINC00L4gMjMuMDMuMjAyNyAg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QnjwvQWRkaXRpb25hbEluZm9ybWF0aW9uPjxMaW5lSXRlbVByb2R1Y3REYXRlPjIwMjMwMjE4PC9MaW5lSXRlbVByb2R1Y3REYXRlPjxMaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjc1LjY8L0xpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+PExpbmVJdGVtQW1vdW50Q2hhcmdlcz4xNS4xMjwvTGluZUl0ZW1BbW91bnRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudD45MC43MjwvTGluZUl0ZW1BbW91bnQ+PExpbmVJdGVtUHJpY2U+MC45PC9MaW5lSXRlbVByaWNlPjxMaW5lSXRlbUV4dHJhRmllbGQ+PEZpZWxkTmFtZT7QmtC+0LQgU0FQPC9GaWVsZE5hbWU+PEZpZWxkQ29kZT5UU0kwMDE8L0ZpZWxkQ29kZT48RmllbGRWYWx1ZT4yMDAwODU4NTwvRmllbGRWYWx1ZT48L0xpbmVJdGVtRXh0cmFGaWVsZD48L0xpbmVJdGVtPjxMaW5lSXRlbT48TGluZUl0ZW1OdW1iZXI+MTI8L0xpbmVJdGVtTnVtYmVyPjxMaW5lSXRlbVNpZ24+UFJPRDwvTGluZUl0ZW1TaWduPjxMaW5lSXRlbUlEPjQ4MTAxNjgwMzcyMDg8L0xpbmVJdGVtSUQ+PExpbmVJdGVtU3VwcGxpZXJJRD5DT0Y0ODAwMTwvTGluZUl0ZW1TdXBwbGllcklEPjxMaW5lSXRlbU5hbWU+ItCc0J7QryDQkNCb0JXQndCa0JAiICDQnNC+0YDQvtC20LXQvdC+0LUg0YHQu9C40LLQvtGH0L3QvtC1INGBINCw0YDQvtC80LDRgtC+0Lwg0LLQsNC90LjQu9C4INCyINCz0LvQsNC30YPRgNC4INC60LDQutCw0L4t0LzQvtC70L7Rh9C90L7QuSDRjdGB0LrQuNC80L4gMS8wLDA2NSAxKjQyICjQkdC10LvQsNGA0YPRgdGMKTwvTGluZUl0ZW1OYW1lPjxHcm9zc1dlaWdodFZhbHVlPjAuMDA2MTMyPC9Hcm9zc1dlaWdodFZhbHVlPjxRdWFudGl0eURlc3BhdGNoZWQ+ODQ8L1F1YW50aXR5RGVzcGF0Y2hlZD48TGluZUl0ZW1RdWFudGl0eVVPTT5QQ0U8L0xpbmVJdGVtUXVhbnRpdHlVT00+PERlc3BhdGNoVW5pdFF1YW50aXR5RGVzcGF0Y2hlZD4yPC9EZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+PENvdW50cnlPZk9yaWdpbj5CWTwvQ291bnRyeU9mT3JpZ2luPjxCZXN0QmVmb3JlRGF0ZT4yMDI0MDIxNjwvQmVzdEJlZm9yZURhdGU+PFRheFJhdGU+MjA8L1RheFJhdGU+PEFkZGl0aW9uYWxJbmZvcm1hdGlvbj7RhtC10L3QsCDQuNC30LMuKNC40LzQv9C+0YDRgi4pIDAsOTAg0YDRg9CxINC/0YDQtdC50YHQui7RhtC10L0g4oSWMzExLW0g0L7RgiAxMS4wNS4yMywg0YTRgNCw0L3QutC+LdGB0YLQsNC90YbQuNGPINC90LDQt9C90LDRh9C10L3QuNGPICDQodGC0YDQsNC90LAg0L/RgNC+0LjRgdGF0L7QttC00LXQvdC40Y8gOiDQkdC10LvQsNGA0YPRgdGMLCDQo9Ca0LjQkSAyMzMg0L7RgiAxNi4wMi4yMDIzINCh0J8gItCh0LDQvdGC0LAg0JHRgNC10LzQvtGAIiDQntCe0J4gMjI0NzAxLCDQsy4g0JHRgNC10YHRgiwg0YPQuy4g0JrQsNGC0LjQvSDQkdC+0YAsIDEwNiwg0YLQtdC7LiAoMDE2MikgMjktOTAtMjkgd3d3LmJyZW1vci5jb20vY2VydC8g0JTQtdC60LvQsNGA0LDRhtC40Y8g0JXQkNChIEJZLzExMiAxMS4wMS4gVFAwMzMgMDA0LjAyIDAyMzIyINC+0YIgMTAuMDUuMjAyMiAg0LTQviAwOS4wNS4yMDI3ICDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCePC9BZGRpdGlvbmFsSW5mb3JtYXRpb24+PExpbmVJdGVtUHJvZHVjdERhdGU+MjAyMzAyMTY8L0xpbmVJdGVtUHJvZHVjdERhdGU+PExpbmVJdGVtQW1vdW50V2l0aG91dENoYXJnZXM+NzUuNjwvTGluZUl0ZW1BbW91bnRXaXRob3V0Q2hhcmdlcz48TGluZUl0ZW1BbW91bnRDaGFyZ2VzPjE1LjEyPC9MaW5lSXRlbUFtb3VudENoYXJnZXM+PExpbmVJdGVtQW1vdW50PjkwLjcyPC9MaW5lSXRlbUFtb3VudD48TGluZUl0ZW1QcmljZT4wLjk8L0xpbmVJdGVtUHJpY2U+PExpbmVJdGVtRXh0cmFGaWVsZD48RmllbGROYW1lPtCa0L7QtCBTQVA8L0ZpZWxkTmFtZT48RmllbGRDb2RlPlRTSTAwMTwvRmllbGRDb2RlPjxGaWVsZFZhbHVlPjIwMDA4NjE5PC9GaWVsZFZhbHVlPjwvTGluZUl0ZW1FeHRyYUZpZWxkPjwvTGluZUl0ZW0+PExpbmVJdGVtPjxMaW5lSXRlbU51bWJlcj4xMzwvTGluZUl0ZW1OdW1iZXI+PExpbmVJdGVtU2lnbj5QUk9EPC9MaW5lSXRlbVNpZ24+PExpbmVJdGVtSUQ+NDgxMDE2ODAzODI1MDwvTGluZUl0ZW1JRD48TGluZUl0ZW1TdXBwbGllcklEPkNPRjQ4MDgyPC9MaW5lSXRlbVN1cHBsaWVySUQ+PExpbmVJdGVtTmFtZT4i0J/RgtC40YfRjNC1INC80L7Qu9C+0LrQviAiINCc0L7RgNC+0LbQtdC90L7QtSDQv9C70L7QvNCx0LjRgCDRgSDQsNGA0L7QvNCw0YLQvtC8INGB0LvQuNCy0L7Rh9C90L7Qs9C+INC60YDQtdC80LAg0LIg0LPQu9Cw0LfRg9GA0Lgg0LbQuNGA0L7QstC+0Lkg0YEg0LrQsNC60LDQviAg0Y3RgdC60LjQvNC+IDEvMCwwNjUgMSo0MiAo0JHQtdC70LDRgNGD0YHRjCk8L0xpbmVJdGVtTmFtZT48R3Jvc3NXZWlnaHRWYWx1ZT4wLjAwNjwvR3Jvc3NXZWlnaHRWYWx1ZT48UXVhbnRpdHlEZXNwYXRjaGVkPjg0PC9RdWFudGl0eURlc3BhdGNoZWQ+PExpbmVJdGVtUXVhbnRpdHlVT00+UENFPC9MaW5lSXRlbVF1YW50aXR5VU9NPjxEZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+MjwvRGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjxDb3VudHJ5T2ZPcmlnaW4+Qlk8L0NvdW50cnlPZk9yaWdpbj48QmVzdEJlZm9yZURhdGU+MjAyNDAzMDc8L0Jlc3RCZWZvcmVEYXRlPjxUYXhSYXRlPjIwPC9UYXhSYXRlPjxBZGRpdGlvbmFsSW5mb3JtYXRpb24+0YbQtdC90LAg0LjQt9CzLijQuNC80L/QvtGA0YIuKSAxLDAyINGA0YPQsSDQv9GA0LXQudGB0Lou0YbQtdC9IOKEljMxMS1tINC+0YIgMTEuMDUuMjMsINGE0YDQsNC90LrQvi3RgdGC0LDQvdGG0LjRjyDQvdCw0LfQvdCw0YfQtdC90LjRjyAg0KHRgtGA0LDQvdCwINC/0YDQvtC40YHRhdC+0LbQtNC10L3QuNGPIDog0JHQtdC70LDRgNGD0YHRjCwg0KPQmtC40JEgMzU5INC+0YIgMDcuMDMuMjAyMyDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCeIDIyNDcwMSwg0LMuINCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDYsINGC0LXQuy4gKDAxNjIpIDI5LTkwLTI5IHd3dy5icmVtb3IuY29tL2NlcnQvINCU0LXQutC70LDRgNCw0YbQuNGPINCV0JDQoSBCWS8xMTIgMTEuMDEuIFRQMDMzIDAwNC4wMiAwMjE0OSDQvtGCIDI0LjAzLjIwMjIgINC00L4gMjMuMDMuMjAyNyAg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QnjwvQWRkaXRpb25hbEluZm9ybWF0aW9uPjxMaW5lSXRlbVByb2R1Y3REYXRlPjIwMjMwMzA3PC9MaW5lSXRlbVByb2R1Y3REYXRlPjxMaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjg1LjY4PC9MaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudENoYXJnZXM+MTcuMTQ8L0xpbmVJdGVtQW1vdW50Q2hhcmdlcz48TGluZUl0ZW1BbW91bnQ+MTAyLjgyPC9MaW5lSXRlbUFtb3VudD48TGluZUl0ZW1QcmljZT4xLjAyPC9MaW5lSXRlbVByaWNlPjxMaW5lSXRlbUV4dHJhRmllbGQ+PEZpZWxkTmFtZT7QmtC+0LQgU0FQPC9GaWVsZE5hbWU+PEZpZWxkQ29kZT5UU0kwMDE8L0ZpZWxkQ29kZT48RmllbGRWYWx1ZT4yMDAwODU4NjwvRmllbGRWYWx1ZT48L0xpbmVJdGVtRXh0cmFGaWVsZD48L0xpbmVJdGVtPjxMaW5lSXRlbT48TGluZUl0ZW1OdW1iZXI+MTQ8L0xpbmVJdGVtTnVtYmVyPjxMaW5lSXRlbVNpZ24+UFJPRDwvTGluZUl0ZW1TaWduPjxMaW5lSXRlbUlEPjQ4MTAxNjgwNDU0MzI8L0xpbmVJdGVtSUQ+PExpbmVJdGVtU3VwcGxpZXJJRD5DT0Y0ODA4MTwvTGluZUl0ZW1TdXBwbGllcklEPjxMaW5lSXRlbU5hbWU+ItCi0YDRjtGE0LXQu9GMIiDQnNC+0YDQvtC20LXQvdC+0LUg0YHQu9C40LLQvtGH0L3QvtC1INGBINC60LDQutCw0L4g0YEg0LDRgNC+0LzQsNGC0L7QvCDQstCw0L3QuNC70Lgg0Lgg0L3QsNGH0LjQvdC60L7QuSDQutCw0LrQsNC+0YHQvtC00LXRgNC20LDRidC10Lkg0YHQviDQstC60YPRgdC+0LwgItGC0YDRjtGE0LXQu9GMIiDQsiDQs9C70LDQt9GD0YDQuCDQttC40YDQvtCy0L7QuSDRgSDQutCw0LrQsNC+INGB0L4g0LLQutGD0YHQvtC8ICLRgtGA0Y7RhNC10LvRjCIg0Y3RgdC60LjQvNC+IDEvMCwwNjUqNDIgKNCR0LXQu9Cw0YDRg9GB0YwpPC9MaW5lSXRlbU5hbWU+PEdyb3NzV2VpZ2h0VmFsdWU+MC4wMDU2Mjg8L0dyb3NzV2VpZ2h0VmFsdWU+PFF1YW50aXR5RGVzcGF0Y2hlZD44NDwvUXVhbnRpdHlEZXNwYXRjaGVkPjxMaW5lSXRlbVF1YW50aXR5VU9NPlBDRTwvTGluZUl0ZW1RdWFudGl0eVVPTT48RGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjI8L0Rlc3BhdGNoVW5pdFF1YW50aXR5RGVzcGF0Y2hlZD48Q291bnRyeU9mT3JpZ2luPkJZPC9Db3VudHJ5T2ZPcmlnaW4+PEJlc3RCZWZvcmVEYXRlPjIwMjQwMzAyPC9CZXN0QmVmb3JlRGF0ZT48VGF4UmF0ZT4yMDwvVGF4UmF0ZT48QWRkaXRpb25hbEluZm9ybWF0aW9uPtGG0LXQvdCwINC40LfQsy4o0LjQvNC/0L7RgNGCLikgMSwwMiDRgNGD0LEg0L/RgNC10LnRgdC6LtGG0LXQvSDihJYzMTEtbSDQvtGCIDExLjA1LjIzLCDRhNGA0LDQvdC60L4t0YHRgtCw0L3RhtC40Y8g0L3QsNC30L3QsNGH0LXQvdC40Y8gINCh0YLRgNCw0L3QsCDQv9GA0L7QuNGB0YXQvtC20LTQtdC90LjRjyA6INCR0LXQu9Cw0YDRg9GB0YwsINCj0JrQuNCRIDMyMSDQvtGCIDAyLjAzLjIwMjMg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QniAyMjQ3MDEsINCzLiDQkdGA0LXRgdGCLCDRg9C7LiDQmtCw0YLQuNC9INCR0L7RgCwgMTA2LCDRgtC10LsuICgwMTYyKSAyOS05MC0yOSB3d3cuYnJlbW9yLmNvbS9jZXJ0LyDQlNC10LrQu9Cw0YDQsNGG0LjRjyDQldCQ0KEgQlkvMTEyIDExLjAxLiBUUDAzMyAwMDQuMDIgMDIzMjIg0L7RgiAxMC4wNS4yMDIyICDQtNC+IDA5LjA1LjIwMjcgINCh0J8gItCh0LDQvdGC0LAg0JHRgNC10LzQvtGAIiDQntCe0J48L0FkZGl0aW9uYWxJbmZvcm1hdGlvbj48TGluZUl0ZW1Qcm9kdWN0RGF0ZT4yMDIzMDMwMjwvTGluZUl0ZW1Qcm9kdWN0RGF0ZT48TGluZUl0ZW1BbW91bnRXaXRob3V0Q2hhcmdlcz44NS42ODwvTGluZUl0ZW1BbW91bnRXaXRob3V0Q2hhcmdlcz48TGluZUl0ZW1BbW91bnRDaGFyZ2VzPjE3LjE0PC9MaW5lSXRlbUFtb3VudENoYXJnZXM+PExpbmVJdGVtQW1vdW50PjEwMi44MjwvTGluZUl0ZW1BbW91bnQ+PExpbmVJdGVtUHJpY2U+MS4wMjwvTGluZUl0ZW1QcmljZT48TGluZUl0ZW1FeHRyYUZpZWxkPjxGaWVsZE5hbWU+0JrQvtC0IFNBUDwvRmllbGROYW1lPjxGaWVsZENvZGU+VFNJMDAxPC9GaWVsZENvZGU+PEZpZWxkVmFsdWU+MjAwMDg2NDc8L0ZpZWxkVmFsdWU+PC9MaW5lSXRlbUV4dHJhRmllbGQ+PC9MaW5lSXRlbT48TGluZUl0ZW0+PExpbmVJdGVtTnVtYmVyPjE1PC9MaW5lSXRlbU51bWJlcj48TGluZUl0ZW1TaWduPlBST0Q8L0xpbmVJdGVtU2lnbj48TGluZUl0ZW1JRD40ODEwMTY4MDM3MDYyPC9MaW5lSXRlbUlEPjxMaW5lSXRlbVN1cHBsaWVySUQ+Q09GNDgzNDY8L0xpbmVJdGVtU3VwcGxpZXJJRD48TGluZUl0ZW1OYW1lPiLQkdCY0JMg0KLQntCfINCa0JvQo9CR0J3QmNCa0JAg0JrQoNCQ0KHQndCQ0K8g0KHQnNCe0KDQntCU0JjQndCQIiDQnNC+0YDQvtC20LXQvdC+0LUg0YHQu9C40LLQvtGH0L3QvtC1INGBINCw0YDQvtC80LDRgtC+0Lwg0LrQu9GD0LHQvdC40LrQuCDRgSDRgtC+0L/Qv9C40L3Qs9C+0Lwg0LjQtyDQutGA0LDRgdC90L7QuSDRgdC80L7RgNC+0LTQuNC90YssIDEvMjUwICjRgdC+0LQu0Lwu0LYuNyDQvNCw0YEuJSDQuNC70Lgg0LHQvtC70LXQtSkg0L/QvtC70LjQvC7Rg9C/0LDQui4gKNCR0LXQu9Cw0YDRg9GB0YwpPC9MaW5lSXRlbU5hbWU+PEdyb3NzV2VpZ2h0VmFsdWU+MC4wMDMzNjwvR3Jvc3NXZWlnaHRWYWx1ZT48UXVhbnRpdHlEZXNwYXRjaGVkPjEyPC9RdWFudGl0eURlc3BhdGNoZWQ+PExpbmVJdGVtUXVhbnRpdHlVT00+UENFPC9MaW5lSXRlbVF1YW50aXR5VU9NPjxEZXNwYXRjaFVuaXRRdWFudGl0eURlc3BhdGNoZWQ+MTwvRGVzcGF0Y2hVbml0UXVhbnRpdHlEZXNwYXRjaGVkPjxDb3VudHJ5T2ZPcmlnaW4+Qlk8L0NvdW50cnlPZk9yaWdpbj48QmVzdEJlZm9yZURhdGU+MjAyNDA0MDk8L0Jlc3RCZWZvcmVEYXRlPjxUYXhSYXRlPjIwPC9UYXhSYXRlPjxBZGRpdGlvbmFsSW5mb3JtYXRpb24+0YbQtdC90LAg0LjQt9CzLijQuNC80L/QvtGA0YIuKSAyLDg2INGA0YPQsSDQv9GA0LXQudGB0Lou0YbQtdC9IOKEljMxMS1tINC+0YIgMTEuMDUuMjMsINGE0YDQsNC90LrQvi3RgdGC0LDQvdGG0LjRjyDQvdCw0LfQvdCw0YfQtdC90LjRjyAg0KHRgtGA0LDQvdCwINC/0YDQvtC40YHRhdC+0LbQtNC10L3QuNGPIDog0JHQtdC70LDRgNGD0YHRjCwg0KPQmtC40JEgNjMxINC+0YIgMDkuMDQuMjAyMyDQodCfICLQodCw0L3RgtCwINCR0YDQtdC80L7RgCIg0J7QntCeIDIyNDcwMSwg0LMuINCR0YDQtdGB0YIsINGD0LsuINCa0LDRgtC40L0g0JHQvtGALCAxMDYsINGC0LXQuy4gKDAxNjIpIDI5LTkwLTI5IHd3dy5icmVtb3IuY29tL2NlcnQvINCU0LXQutC70LDRgNCw0YbQuNGPINCV0JDQoSBCWS8xMTIgMTEuMDEuIFRQMDMzIDAwNC4wMiAwMjMyMiDQvtGCIDEwLjA1LjIwMjIgINC00L4gMDkuMDUuMjAyNyAg0KHQnyAi0KHQsNC90YLQsCDQkdGA0LXQvNC+0YAiINCe0J7QnjwvQWRkaXRpb25hbEluZm9ybWF0aW9uPjxMaW5lSXRlbVByb2R1Y3REYXRlPjIwMjMwNDA5PC9MaW5lSXRlbVByb2R1Y3REYXRlPjxMaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjM0LjMyPC9MaW5lSXRlbUFtb3VudFdpdGhvdXRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudENoYXJnZXM+Ni44NjwvTGluZUl0ZW1BbW91bnRDaGFyZ2VzPjxMaW5lSXRlbUFtb3VudD40MS4xODwvTGluZUl0ZW1BbW91bnQ+PExpbmVJdGVtUHJpY2U+Mi44NjwvTGluZUl0ZW1QcmljZT48TGluZUl0ZW1FeHRyYUZpZWxkPjxGaWVsZE5hbWU+0JrQvtC0IFNBUDwvRmllbGROYW1lPjxGaWVsZENvZGU+VFNJMDAxPC9GaWVsZENvZGU+PEZpZWxkVmFsdWU+MjAwMDkzMzY8L0ZpZWxkVmFsdWU+PC9MaW5lSXRlbUV4dHJhRmllbGQ+PC9MaW5lSXRlbT48L0Rlc3BhdGNoQWR2aWNlTG9naXN0aWNVbml0TGluZUl0ZW0+PFRvdGFsPjxUb3RhbEFtb3VudFdpdGhvdXRDaGFyZ2VzPjEx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
             </SignatureValue>
         </Signature>
     </SpecialPart>

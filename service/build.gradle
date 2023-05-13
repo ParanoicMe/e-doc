@@ -35,5 +35,13 @@ dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml
     implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.14.1'
 
+    // https://mvnrepository.com/artifact/javax.mail/javax.mail-api
+    implementation group: 'javax.mail', name: 'javax.mail-api', version: '1.5.5'
+    // https://mvnrepository.com/artifact/javax.activation/activation
+    implementation group: 'javax.activation', name: 'activation', version: '1.1.1'
+// https://mvnrepository.com/artifact/com.sun.mail/javax.mail
+    implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.5.5'
+
+
 
 }

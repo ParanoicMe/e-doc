@@ -21,7 +21,7 @@
     "loggers": {
       "logger": {
         "name": "log4j2json",
-        "level": "debug",
+        "level": "info",
         "appender-ref": [
           {
             "ref": "File-Appender",

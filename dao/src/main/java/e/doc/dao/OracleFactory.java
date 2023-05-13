@@ -1,5 +1,6 @@
 package e.doc.dao;
 
+import e.doc.dao.exception.DaoException;
 import e.doc.domain.smoracle.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +18,7 @@ public class OracleFactory {
     private Properties oracleProperties;
     private SessionFactory factory;
 
-    public OracleFactory() {
+    public OracleFactory() throws DaoException {
         //logger.debug("OracleFactory const");
         Configuration configuration = new Configuration();
         oracleProperties = new DBProperties().getOracleProperties();
@@ -28,6 +29,7 @@ public class OracleFactory {
         configuration.addAnnotatedClass(ClientPropertiesPK.class);
         configuration.addAnnotatedClass(SMCardProperties.class);
         configuration.addAnnotatedClass(SMCardtPropertiesPK.class);
+        configuration.addAnnotatedClass(SMStoreUnit.class);
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties())
                 .build();
@@ -36,7 +38,7 @@ public class OracleFactory {
         logger.debug("OracleFactory const end");
     }
 
-    public static synchronized OracleFactory getINSTANCE() {
+    public static synchronized OracleFactory getINSTANCE() throws DaoException{
         if(OracleFactory.INSTANCE == null){
             synchronized (OracleFactory.class) {
                 if (INSTANCE == null) {

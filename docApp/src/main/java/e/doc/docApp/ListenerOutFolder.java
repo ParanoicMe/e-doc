@@ -4,14 +4,12 @@
 package e.doc.docApp;
 
 import e.doc.service.Service;
-import e.doc.service.ServiceCTTImpl;
+import e.doc.service.ServiceImpl;
+import e.doc.service.exception.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.util.Arrays;
+import java.io.*;
 import java.util.Properties;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
@@ -22,7 +20,7 @@ class ListenerOutFolder implements Runnable {
     final String TAG = "ListenerOutFolder";
     private Thread thread;
     Properties properties;
-    Service service = new ServiceCTTImpl();
+    Service service = new ServiceImpl();
 
     String pathOutPost;
     String pathOutBackup;
@@ -30,7 +28,7 @@ class ListenerOutFolder implements Runnable {
     String regexSmToProvider;
     int provederId;
 
-    public ListenerOutFolder() {
+    public ListenerOutFolder() throws ServiceException {
         thread = new Thread(this, "out");
         properties = service.getAppProperty();
         pathOutPost = properties.getProperty("path.out.post");
@@ -44,54 +42,71 @@ class ListenerOutFolder implements Runnable {
     @Override
     public void run() {
         logger.info(TAG, "Out thread: ");
-        //while (true) {
-            /*try {
+        while (true) {
+            try {
                 Thread.sleep(10000);
             } catch (InterruptedException e) {
                 logger.info("e" + e);
                 throw new RuntimeException(e);
-            }*/
-
-        File dirin = new File(pathOutPost);
-        String[] files = dirin.list();
-        logger.info("files - " + Arrays.toString(files));
-        for (String s : files) {
-            logger.info("Check file - " + s);
-            File file = new File(pathOutPost + s);
-            if (Pattern.compile("^[\\d,_]+\\.(XML)$")
-                    .matcher(s)
-                    .matches()) {
-                logger.info("Start convert SM to CTT file - " + pathOutPost + s + ".");
-                String fileName = new ServiceCTTImpl().convertFormSM(file, pathOut);
-                zipFile(fileName);
-            } else if(Pattern.compile(".*\\.(Reply)\\.(xml)$")
-                    .matcher(s)
-                    .matches()) {
-
-                logger.info("else - " + s);
             }
-            file.delete();
+            File dirin = new File(pathOutPost);
+            String[] files = dirin.list();
+            //logger.info("files - " + Arrays.toString(files));
+            for (String s : files) {
+                //logger.info("Check file - " + s);
+                File file = new File(pathOutPost + s);
+                if (Pattern.compile("^[\\d,_]+\\.(XML)$")
+                        .matcher(s)
+                        .matches()) {
+                    //logger.info("Start convert SM to CTT file - " + pathOutPost + s + ".");
+                    String fileName = null;
+                    try {
+                        fileName = new ServiceImpl().convertFormSM(file, pathOut);
+                    } catch (ServiceException e) {
+                        logger.info("Convert Form");
+                    }
+                    zipFile(fileName);
+                } else if (Pattern.compile(".*\\.(Reply)\\.(xml)$")
+                        .matcher(s)
+                        .matches()) {
+
+                    //logger.info("else - " + s);
+                }
+                file.delete();
+            }
         }
-        //}
     }
 
-    void zipFile(String fileName){
-        if(fileName!=null)
-        try(ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(pathOut + fileName.substring(0,fileName.length()-4)+".zip"));
-            FileInputStream fis= new FileInputStream(fileName);)
-        {
-            ZipEntry entry1=new ZipEntry(pathOut+fileName);
-            zout.putNextEntry(entry1);
-            // считываем содержимое файла в массив byte
-            byte[] buffer = new byte[fis.available()];
-            fis.read(buffer);
-            // добавляем содержимое к архиву
-            zout.write(buffer);
-            // закрываем текущую запись для новой записи
-            zout.closeEntry();
-        }
-        catch(Exception ex){
-            System.out.println(ex.getMessage());
+    void zipFile(String fileName) {
+        if (fileName != null) {
+            try {
+                FileOutputStream fos = new FileOutputStream(pathOut + fileName.substring(0, fileName.length() - 4) + ".zip");
+                BufferedOutputStream bos = new BufferedOutputStream(fos);
+                ZipOutputStream zos = new ZipOutputStream(bos);
+                zos.putNextEntry(new ZipEntry(fileName));
+                InputStream in = new FileInputStream(pathOut + fileName);
+                File f = new File(pathOut + fileName);
+                try {
+                    byte[] buffer = new byte[1024];
+                    while (true) {
+                        int readCount = in.read(buffer);
+                        if (readCount < 0) {
+                            break;
+                        }
+                        zos.write(buffer, 0, readCount);
+                    }
+                } finally {
+                    in.close();
+                    f.delete();
+                }
+                zos.close();
+                fos.close();
+                bos.close();
+            } catch (FileNotFoundException e) {
+                logger.info(e);
+            } catch (IOException ex) {
+                logger.info(ex);
+            }
         }
     }
 }

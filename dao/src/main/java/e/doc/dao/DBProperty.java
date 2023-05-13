@@ -1,7 +1,9 @@
 package e.doc.dao;
 
+import e.doc.dao.exception.DaoException;
+
 import java.util.Properties;
 
 public interface DBProperty {
-    Properties getOracleProperties();
+    Properties getOracleProperties() throws DaoException;
 }
