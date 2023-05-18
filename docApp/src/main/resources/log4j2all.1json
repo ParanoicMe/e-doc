@@ -33,6 +33,7 @@
         "level": "debug",
         "appender-ref": {
           "ref": "File-Appender"
+          "ref": "Console-Appender"
         }
       }
     }

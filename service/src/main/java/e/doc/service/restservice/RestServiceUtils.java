@@ -31,7 +31,7 @@ public class RestServiceUtils {
     String getStartTime() throws ServiceException {
         String startTime = serviceSQLLite.getStartTime(PARSTARTTIME);
         if (startTime != null && !startTime.equals("null") && startTime.length() > 0) {
-            logger.debug("if start time NOT empty return startDate - " + startTime);
+            //logger.debug("if start time NOT empty return startDate - " + startTime);
             return startTime;
         } else {
             //System.out.println("Calendar");
@@ -44,16 +44,17 @@ public class RestServiceUtils {
             int day = calendar.get(Calendar.DATE);
             int hour = calendar.get(Calendar.AM_PM) == 0 ? calendar.get(Calendar.HOUR) : calendar.get(Calendar.HOUR) + 12;
             int minut = calendar.get(Calendar.MINUTE);
-            calendar.set(year, month, day, hour, minut, 0);
+            calendar.set(year, month, day, hour-1, minut-30, 0);
             Date date = calendar.getTime();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss'Z'");
-            logger.debug("if start time NOT empty return calendar time " + dateFormat.format(date));
-            return dateFormat.format(date);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
+            //logger.debug("if start time empty return calendar time " + dateFormat.format(date));
+            startTime = dateFormat.format(date);
+            return startTime;
         }
     }
 
     public String getTime() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss'Z'");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
         return dateFormat.format(new Date());
     }
 

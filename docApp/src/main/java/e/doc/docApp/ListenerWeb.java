@@ -31,26 +31,29 @@ public class ListenerWeb implements Runnable {
     @Override
     public void run() {
         try {
-            restService = new RestService();
             ListenerInFolder listenerInFolder;
+            String uuid = null;
+            restService = new RestService();
 
             while (true) {
-                Thread.sleep(10000);
                 serviceSchedule.checkSchedule();
                 String filePath = "";
-                String uuid = restService.getConnection();
-                if (!uuid.isEmpty()) {
+                if (uuid!=null && !uuid.isEmpty()) {
                     JsonBLRWBL[] jsonBlrwbl = restService.getEWayBill();
                     if (jsonBlrwbl.length > 0) {
                         int[] arrE = restService.getServiceUtils().convertEWayBill(jsonBlrwbl);
                         if (arrE.length > 0) {
                             restService.downloadEWayBill(arrE);
                             if (serviceSchedule.checkSchedule()) {
-                                //listenerInFolder = new ListenerInFolder();
+                                listenerInFolder = new ListenerInFolder();
                             }
                         }
                     }
+                }else {
+                    uuid = restService.getConnection();
+                    continue;
                 }
+                Thread.sleep(600000);
             }
         } catch (ServiceException e) {
             logger.info(e.toString());

@@ -7,7 +7,6 @@ import e.doc.service.Service;
 import e.doc.service.ServiceImpl;
 import e.doc.service.exception.ServiceErrorCode;
 import e.doc.service.exception.ServiceException;
-import e.doc.service.mail.PostGroup;
 import e.doc.service.mail.ServiceMail;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,7 +32,8 @@ public class RestService {
     private static String AUTHNAME = "Authorization";
     private static String CODEFORMAT = "UTF-8";
     private Service service = new ServiceImpl();
-    private Properties properties = service.getAppProperty();;
+    private Properties properties = service.getAppProperty();
+    ;
     private JsonAutentificateUser user;
     private ServiceMail serviceMail = new ServiceMail();
     private String startTime;
@@ -46,11 +46,12 @@ public class RestService {
 
     public String getConnection() {
         URL url = null;
+        HttpURLConnection connection = null;
         try {
             String jsonCredential = new JsonCredential(properties.getProperty("provider.web.username"), properties.getProperty("provider.web.password")).toString();
             url = new URL(properties.getProperty("provider.web.base.url") + properties.getProperty("provider.web.auth"));
             // Open a connection(?) on the URL(??) and cast the response(???)
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection = (HttpURLConnection) url.openConnection();
             // Now it's "open", we can set the request method, headers etc.
             connection.setRequestMethod(TYPEPOST);
             connection.setRequestProperty(PROPACCEPT, PROPACCEPTVAL);
@@ -72,12 +73,12 @@ public class RestService {
             } else {
                 br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String responseBody = br.lines().collect(Collectors.joining());
-                //System.out.println("responseBody -- " + responseBody);
+                //logger.debug("responseBody -- " + responseBody);
                 ObjectMapper mapper = new ObjectMapper();
                 user = mapper.readValue(responseBody, JsonAutentificateUser.class);
                 //System.out.println("Connection success. User.toString() -- " + user.toString());
                 br.close();
-                connection.disconnect();
+
                 return user.getUuid();
             }
 
@@ -87,13 +88,17 @@ public class RestService {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } finally {
+            if (connection != null)
+                connection.disconnect();
         }
+
     }
 
     // Request /api/EWAYBILL/{documentState}/filteredList
-    public JsonBLRWBL[] getEWayBill() throws ServiceException{
+    public JsonBLRWBL[] getEWayBill() throws ServiceException {
         JsonBLRWBL[] rb = null;
-        URL url = null;
+        HttpURLConnection connection = null;
         try {
             startTime = startTime == null ? serviceUtils.getStartTime() : startTime;
             nowTime = serviceUtils.getTime();
@@ -108,9 +113,9 @@ public class RestService {
             jsonListWayBill.setDocumentDateEnd(nowTime);
             jsonListWayBill.setDocumentType(EDOCTYPE);
             jsonListWayBill.setDocumentStage("ALL");
-            url = new URL(properties.getProperty("provider.web.base.url") + properties.getProperty("provider.web.edoc.incoming.list"));
+            URL url = new URL(properties.getProperty("provider.web.base.url") + properties.getProperty("provider.web.edoc.incoming.list"));
 
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection = (HttpURLConnection) url.openConnection();
             // Now it's "open", we can set the request method, headers etc.
             connection.setRequestMethod(TYPEPOST);
             connection.setRequestProperty(AUTHNAME, user.getUuid());
@@ -118,17 +123,19 @@ public class RestService {
             connection.setRequestProperty(CONTENTTYPE, CONTENTTYPEVAL);
             connection.setDoOutput(true);
             connection.setDoInput(true);
+            //connection.connect();
+            //logger.debug("jsonListWayBill.toString().getBytes(CODEFORMAT) " + jsonListWayBill.toString());
+            //logger.debug(toCurlRequest(connection, jsonListWayBill.toString().getBytes(CODEFORMAT)));
             OutputStream os = connection.getOutputStream();
             os.write(jsonListWayBill.toString().getBytes(CODEFORMAT));
-            os.close();
 
             int responseCode = connection.getResponseCode();
             BufferedReader br = null;
             logger.debug("getEWayBill responseCode - " + responseCode);
             if (responseCode != HttpURLConnection.HTTP_OK) {
                 br = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-                logger.error("getEWayBill. Connection Failed. ResponseCode is - " + responseCode);
-                logger.error("BufferedReader is - " + br.lines().collect(Collectors.joining()));
+                //logger.error("getEWayBill. Connection Failed. ResponseCode is - " + responseCode);
+                //logger.error("BufferedReader is - " + br.lines().collect(Collectors.joining()));
             } else {
                 br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String responseBody = br.lines().collect(Collectors.joining());
@@ -136,6 +143,7 @@ public class RestService {
                 ObjectMapper mapper = new ObjectMapper();
                 rb = mapper.readValue(responseBody, JsonBLRWBL[].class);
             }
+            os.close();
             br.close();
             connection.disconnect();
             logger.debug("getEWayBill JsonBLRWBL[] rb - " + Arrays.toString(rb));
@@ -145,23 +153,26 @@ public class RestService {
             System.out.println(ue);
         } catch (IOException ioe) {
             System.out.println(ioe);
+        } finally {
+            if (connection != null)
+                connection.disconnect();
         }
         return rb;
     }
 
     public String downloadEWayBill(int[] ids) throws ServiceException {
-        URL url = null;
+        HttpURLConnection connection = null;
         int BUFFER_SIZE = 4096;
         try {
-            url = new URL(properties.getProperty("provider.web.base.url") + properties.getProperty("provider.web.edoc.download.xml"));//?exportFormatType=XML&printEds=false&shortForm=true
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            URL url = new URL(properties.getProperty("provider.web.base.url") + properties.getProperty("provider.web.edoc.download.xml"));//?exportFormatType=XML&printEds=false&shortForm=true
+            connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod(TYPEPOST);
             connection.setRequestProperty(AUTHNAME, user.getUuid());
             connection.setRequestProperty(PROPACCEPT, PROPACCEPTVAL);
             connection.setRequestProperty(CONTENTTYPE, CONTENTTYPEVAL);
             connection.setDoOutput(true);
             connection.setDoInput(true);
-            //System.out.println("CURL" + toCurlRequest(connection, Arrays.toString(ids).getBytes("UTF-8")));
+            logger.debug(toCurlRequest(connection, ids.toString().getBytes(CODEFORMAT)));
             OutputStream os = connection.getOutputStream();
             os.write(Arrays.toString(ids).getBytes(CODEFORMAT));
             os.close();
@@ -214,6 +225,9 @@ public class RestService {
             throw new ServiceException(ue, ServiceErrorCode.HU_SERVICE_011);
         } catch (IOException ioe) {
             throw new ServiceException(ioe, ServiceErrorCode.HU_SERVICE_012);
+        } finally {
+            if (connection != null)
+                connection.disconnect();
         }
     }
 
@@ -221,11 +235,12 @@ public class RestService {
         return serviceUtils;
     }
 
-    /*public static String toCurlRequest(HttpURLConnection connection, byte[] body) {
+    public static String toCurlRequest(HttpURLConnection connection, byte[] body) {
         StringBuilder builder = new StringBuilder("curl -v ");
 
         // Method
         builder.append("-X ").append(connection.getRequestMethod()).append(" \\\n  ");
+        logger.debug("connection.getRequestProperties() " + connection.getRequestProperties().toString());
         // Headers
         for (Map.Entry<String, List<String>> entry : connection.getRequestProperties().entrySet()) {
             builder.append("-H \"").append(entry.getKey()).append(":");
@@ -242,5 +257,5 @@ public class RestService {
         builder.append("\"").append(connection.getURL()).append("\"");
 
         return builder.toString();
-    }*/
+    }
 }

@@ -19,60 +19,49 @@ class ListenerOutFolder implements Runnable {
     private static Logger logger = LogManager.getLogger(ListenerOutFolder.class);
     final String TAG = "ListenerOutFolder";
     private Thread thread;
-    Properties properties;
     Service service = new ServiceImpl();
-
-    String pathOutPost;
-    String pathOutBackup;
-    String pathOut;
-    String regexSmToProvider;
-    int provederId;
+    Properties properties = service.getAppProperty();
+    String pathOutPost = properties.getProperty("path.out.post");
+    String pathOutBackup = properties.getProperty("path.out.backup");
+    String pathOut = properties.getProperty("path.out");
 
     public ListenerOutFolder() throws ServiceException {
         thread = new Thread(this, "out");
-        properties = service.getAppProperty();
-        pathOutPost = properties.getProperty("path.out.post");
-        pathOutBackup = properties.getProperty("path.out.backup");
-        pathOut = properties.getProperty("path.out");
-        regexSmToProvider = properties.getProperty("xml.regexp.out.post");
-        provederId = Integer.parseInt(properties.getProperty("provider.id"));
         thread.start();
     }
 
     @Override
     public void run() {
-        logger.info(TAG, "Out thread: ");
+        //logger.info(TAG, "Out thread: ");
         while (true) {
             try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                logger.info("e" + e);
-                throw new RuntimeException(e);
-            }
-            File dirin = new File(pathOutPost);
-            String[] files = dirin.list();
-            //logger.info("files - " + Arrays.toString(files));
-            for (String s : files) {
-                //logger.info("Check file - " + s);
-                File file = new File(pathOutPost + s);
-                if (Pattern.compile("^[\\d,_]+\\.(XML)$")
-                        .matcher(s)
-                        .matches()) {
-                    //logger.info("Start convert SM to CTT file - " + pathOutPost + s + ".");
-                    String fileName = null;
-                    try {
-                        fileName = new ServiceImpl().convertFormSM(file, pathOut);
-                    } catch (ServiceException e) {
-                        logger.info("Convert Form");
+                File dirin = new File(pathOutPost);
+                String[] files = dirin.list();
+                //logger.info("files - " + Arrays.toString(files));
+                for (String s : files) {
+                    //logger.info("Check file - " + s);
+                    File file = new File(pathOutPost + s);
+                    if (Pattern.compile("^[\\d,_]+\\.(XML)$")
+                            .matcher(s)
+                            .matches()) {
+                        logger.debug("Start convert SM to CTT file - " + pathOutPost + s + ".");
+                        String fileName = null;
+                        fileName = service.convertFormSM(file);
+                        zipFile(fileName);
+                    } else if (Pattern.compile(".*\\.(Reply)\\.(xml)$")
+                            .matcher(s)
+                            .matches()) {
+                        logger.debug("Start convert Reply" + s);
+                        service.convertSMReply(file);
                     }
-                    zipFile(fileName);
-                } else if (Pattern.compile(".*\\.(Reply)\\.(xml)$")
-                        .matcher(s)
-                        .matches()) {
-
-                    //logger.info("else - " + s);
+                    file.delete();
                 }
-                file.delete();
+                Thread.sleep(60000);
+            } catch (ServiceException e) {
+                logger.info("OUT " + e.getMessage());
+            } catch (InterruptedException e) {
+                logger.info("e" + e.getMessage());
+                throw new RuntimeException(e);
             }
         }
     }

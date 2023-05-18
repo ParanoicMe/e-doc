@@ -38,27 +38,25 @@ public class ListenerHolderFolder implements Runnable {
     public void run() {
         try {
             while (true) {
-                Thread.sleep(30000);
+                Thread.sleep(1800000);
                 File dirholder = new File(pathHolder);
                 String[] files = dirholder.list();
-                if(!serviceSchedule.checkSchedule())
-                    Thread.sleep(3600000);
-                if (files.length < 0) {
-                    Thread.sleep(30000);
-                } else {
-                    for(String f : files){
-                        logger.debug("Check file" + f);
-                        if (service.checkFileBarcode(f)){
-                            logger.debug("Check file success " + f);
-                            Files.move(Paths.get(pathHolder + f), Paths.get(pathInPost +f));
-                        }
+                if (!serviceSchedule.checkSchedule())
+                    Thread.sleep(1800000);
+
+                for (String f : files) {
+                    logger.debug("Check file" + f);
+                    if (service.checkFileBarcode(f)) {
+                        logger.debug("Check file success " + f);
+                        Files.move(Paths.get(pathHolder + f), Paths.get(pathInPost + f));
                     }
+                }
                     /*fixFiles = service.getFixFiles();
                     for (String fn : fixFiles) {
                         Files.move(Paths.get(pathHolder + fn), Paths.get(pathInPost));
                     }*/
-                }
             }
+
         } catch (ServiceException e) {
             logger.error(TAG, "Holder error");
 

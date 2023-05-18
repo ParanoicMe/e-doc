@@ -21,8 +21,6 @@ public class ListenerInFolder implements Runnable {
     Service service = new ServiceImpl();
     Properties properties = service.getAppProperty();
     String pathin = properties.getProperty("path.in");
-    String pathinbackup = properties.getProperty("path.in.backup");
-    //String pathout = properties.getProperty("path.out");
     String pathHolder;
     String regexXML = properties.getProperty("xml.regexp.in");
     String regexZIP = properties.getProperty("xml.regexp.in.zip");
@@ -37,17 +35,12 @@ public class ListenerInFolder implements Runnable {
     public void run() {
         while (true) {
             try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                //logger.info("e" + e);
-                throw new RuntimeException(e);
-            }
-            File dirin = new File(pathin);
-            String[] files = dirin.list();
-            if (files.length == 0) {
-                break;
-            }
-            try {
+                File dirin = new File(pathin);
+                String[] files = dirin.list();
+                if (files.length == 0) {
+                    logger.debug("Break listen in folder");
+                    break;
+                }
                 for (String s : files) {
                     //logger.info("Check file - " + s);
                     File file = new File(pathin + s);
@@ -56,56 +49,31 @@ public class ListenerInFolder implements Runnable {
                             .matches()) {
                         logger.debug("Start to convert file - " + pathin + s + ".");
                         try {
-                            new ServiceImpl().convertChain(file); //check and convert
+                            service.convertChain(file); //check and convert
                         } catch (ServiceException e) {
                             logger.info("ListenerInFolder. Error convert Chain" + pathin + s + ".");
                         }
-                        makeBackUp(file);
                     } else if (Pattern.compile(regexZIP)
                             .matcher(s)
                             .matches()) {
                         unzip(file);
+                        continue;
                     } else {
+                        logger.debug("file.delete();");
                         file.delete();
                         //break;
                     }
+                    file.delete();
                 }
                 //System.out.println(" While");
-                Thread.sleep(500);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 logger.error(TAG, "In thread stoped");
             }
         }
     }
 
-    void makeBackUp(File f) {
-        logger.debug("Make backup file" + pathinbackup + f.getName());
-        FileInputStream fis = null;
-        FileOutputStream fos = null;
-        try {
-            fis = new FileInputStream(f);
-            fos = new FileOutputStream(pathinbackup + f.getName());
-            byte[] buffer = new byte[1024];
-            int len;
-            while (true) {
-                if (!((len = fis.read(buffer)) > 0)) break;
-                fos.write(buffer, 0, len);
-            }
-            fos.close();
-            fis.close();
-            while (true) {
-                if (f.delete()) {
-                    break;
-                } else if (!f.exists()) {
-                    break;
-                }
-            }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 
     void unzip(File f) {
         try {

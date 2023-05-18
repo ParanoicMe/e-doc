@@ -21,9 +21,8 @@ public class SQLLite {
 
     public SQLLite(String filePath) {
         url = "jdbc:sqlite:" + filePath;
-        //System.out.println(url);
         this.filePath = filePath;
-        file = new File(filePath);
+        //System.out.println(url);
         //System.out.println("Constructor file.exists() - " + file.exists());
     }
 
@@ -43,7 +42,7 @@ public class SQLLite {
     }
 
     public void init() throws DaoException {
-
+        file = new File(filePath);
         //System.out.println("file.exists() - " + file.exists());
         if (!file.exists()) {
             Connection conn = getConnect();
@@ -51,7 +50,6 @@ public class SQLLite {
             //createDatabase(conn);
             createTables();
         }
-
     }
 
     /*public void createDatabase(Connection conn) {
@@ -101,18 +99,18 @@ public class SQLLite {
     public String getParameter(String name) throws DaoException {
         logger.debug("Get Parameter name - " + name);
         String startDate = "";
+        Statement stmt = null;
+        ResultSet rs = null;
         try {
             String query = "SELECT value FROM parameter WHERE name='" + name + "'";
             connection = getConnect();
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-
+            stmt = connection.createStatement();
+            rs = stmt.executeQuery(query);
             while (rs.next()) {
                 startDate = rs.getString("value");
             }
-            rs.close();
             stmt.close();
-
+            rs.close();
         } catch (SQLException e) {
             throw new DaoException(e, DaoErrorCode.HU_DAO_009);
         }

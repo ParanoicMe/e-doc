@@ -12,17 +12,14 @@ public class EDocs {
     private static Logger logger = LogManager.getLogger(EDocs.class);
 
     public static void main(String[] args) {
-        //ListenerOutFolder loutf = new ListenerOutFolder();
         try {
             ServiceSQLLite serviceSQLLite = new ServiceSQLLite();
             serviceSQLLite.initDB();
-            //ListenerWeb listenerWeb = new ListenerWeb();
-            //ListenerInFolder linf = new ListenerInFolder();
+            ListenerWeb listenerWeb = new ListenerWeb();
+            //ListenerOutFolder loutf = new ListenerOutFolder();
             ListenerHolderFolder listenerHolderFolder= new ListenerHolderFolder();
         } catch (ServiceException e) {
             logger.error("Application Error - " + e.getMessage());
         }
-        //ListenerInFolder linf = new ListenerInFolder();
-        //ListenerOutFolder loutf = new ListenerOutFolder();
     }
 }

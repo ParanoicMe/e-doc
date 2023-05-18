@@ -3,6 +3,7 @@ package e.doc.service;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import e.doc.domain.providerctt.blrwbl.BLRWBL;
+import e.doc.domain.sm.post.ReplyError;
 import e.doc.domain.sm.wi.PostPackageWI;
 import e.doc.domain.sm.wo.PostPackageWO;
 import e.doc.domain.sm.wo.SMDocPropWO;
@@ -17,6 +18,7 @@ import e.doc.service.buildersm.SMDocBuilderImpl;
 import e.doc.service.config.PropertyE;
 import e.doc.service.exception.ServiceErrorCode;
 import e.doc.service.exception.ServiceException;
+import e.doc.service.mail.PostGroup;
 import e.doc.service.sqllite.ServiceSQLLite;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,8 +29,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,11 +40,14 @@ import java.util.regex.Pattern;
 public class ServiceImpl implements Service {
 
     private static Logger logger = LogManager.getLogger(ServiceImpl.class);
+    private static final String ERRORMESSAGE = "Ошибка при загрузке накладной";
+    private static final String SUCCESMESSAGE = "Загружена Новая накладная";
     ServiceUtils serviceUtils = new ServiceUtils();
     Properties properties = this.getAppProperty();
     String pathHolder = properties.getProperty("path.holder");
     String pathPost = properties.getProperty("path.in.post");
-
+    String pathinbackup = properties.getProperty("path.in.backup");
+    String pathOut = properties.getProperty("path.out");
     SMDocBuilder smDocBuilder = new SMDocBuilderImpl();
     ServiceSQLLite serviceSQLLite = new ServiceSQLLite();
 
@@ -67,7 +71,7 @@ public class ServiceImpl implements Service {
         if (serviceUtils.isExist(blrwbl.getDeliveryNote().getDeliveryNoteID())) {
             logger.info("Try to write existed document - " + blrwbl.getDeliveryNote().getDeliveryNoteID());
         } else {
-            convert(f, blrwbl, pathPost);
+            convert(f, blrwbl);
         }
         /*String packageName = serviceUtils.createPackageName(blrwbl.getDeliveryNote().getDeliveryNoteID());
 
@@ -93,13 +97,12 @@ public class ServiceImpl implements Service {
 */
     }
 
-    public void convert(File f, BLRWBL blrwbl, String pathPost) throws ServiceException {
+    public void convert(File f, BLRWBL blrwbl) throws ServiceException {
         logger.info("Convert file for SM " + f.getName());
         serviceUtils.initSmDocNum();
         smDocBuilder.setDocId(serviceUtils.getDocId());
 
         smDocBuilder.setDocType(serviceUtils.getDocType());
-        XmlMapper xmlMapper = new XmlMapper();
         String packageName = serviceUtils.createPackageName(blrwbl.getDeliveryNote().getDeliveryNoteID());
         smDocBuilder.reset();
         smDocBuilder.fillPostPackage(packageName);
@@ -117,25 +120,56 @@ public class ServiceImpl implements Service {
         smDocBuilder.fillSMWI();
 
         PostPackageWI pp = smDocBuilder.getPostPackage();
+        XmlMapper xmlMapper = new XmlMapper();
         xmlMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         List<String> barcodes = null;
 
         barcodes = checkBarcodes(serviceUtils.getBarcodes(blrwbl.getDeliveryNote().getLineItem()));
         try {
             if (barcodes.isEmpty()) {
-                xmlMapper.writeValue(new File(pathPost + packageName + ".xml"), pp);
+                logger.info("Write file to post folder" + pathPost + packageName + ".xml");
+                File smXML = new File(pathPost + packageName + ".xml");
+                xmlMapper.writeValue(smXML, pp);
+                backupFile(new File(pathPost + packageName + ".xml"));
+                //smXML.delete();
                 //System.out.println("writefor SM - " + pathPost + packageName + ".xml");
             } else {
                 logger.info("Missed barcodes for eTTN" + blrwbl.getDeliveryNote().getDeliveryNoteID() + ", " + barcodes.toString());
                 serviceUtils.writeHoldsBarcode(barcodes, packageName + ".xml");
                 serviceUtils.mailbarcode(barcodes, blrwbl.getDeliveryNote().getLineItem());
-                xmlMapper.writeValue(new File(pathHolder + packageName + ".xml"), pp);
+                File smXMLH = new File(pathHolder + packageName + ".xml");
+                xmlMapper.writeValue(smXMLH, pp);
+                backupFile(new File(pathHolder + packageName + ".xml"));
+                //smXMLH.delete();
             }
         } catch (IOException e) {
-            logger.info("WRITE ERROR - " + e.toString());
+            logger.info("WRITE ERROR - " + e.getMessage());
             throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_014);
         }
+        //f.delete();
+    }
 
+    void backupFile(File f) {
+        logger.debug("Make backup file" + pathinbackup + f.getName());
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        try {
+            fis = new FileInputStream(f);
+            fos = new FileOutputStream(pathinbackup + f.getName());
+            byte[] buffer = new byte[1024];
+            int len;
+            while (true) {
+                if (!((len = fis.read(buffer)) > 0)) break;
+                fos.write(buffer, 0, len);
+            }
+            fos.close();
+            fis.close();
+            //f.delete();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -153,7 +187,7 @@ public class ServiceImpl implements Service {
         }
     }
 
-    public String convertFormSM(File f, String pathOut) throws ServiceException {
+    public String convertFormSM(File f) throws ServiceException {
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;
         Document doc = null;
@@ -229,8 +263,8 @@ public class ServiceImpl implements Service {
                 //logger.info("ci.getDate" + contractInfo.getDate());
                 //logger.info(pp.toString());
             } else {
+                logger.debug("Node WO null. Irs WI " + " s " + nList.getLength() + "   " + f.getName());
                 return null;
-                //logger.info("Node null " + " s " + nList.getLength() + "   " + f.getName());
                 //XmlMapper xmlMapper = new XmlMapper();
                 //PostPackageWI pp = xmlMapper.readValue(f, PostPackageWI.class);
                 //logger.info(pp.toString());
@@ -241,6 +275,29 @@ public class ServiceImpl implements Service {
             throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_004);
         } catch (ParserConfigurationException e) {
             throw new ServiceException(e, ServiceErrorCode.HU_SERVICE_005);
+        }
+    }
+
+    public void convertSMReply(File f) {
+        try {
+            XmlMapper xmlMapper = new XmlMapper();
+            xmlMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+            ReplyError replyError = xmlMapper.readValue(f, ReplyError.class);
+            StringBuffer message = new StringBuffer();
+            if (replyError.getPostobjectReply() != null) {
+                logger.info("edoc does not load in Supermag. error " + replyError.getPostobjectReply().getError().toString());
+                message.append(replyError.getName());
+                message.append(replyError.getPostobjectReply().getError().toString());
+                serviceUtils.serviceMail.sendMail(message.toString(), PostGroup.ADMIN, ERRORMESSAGE);
+            } else {
+                logger.info("edoc loaded in Supermag" + replyError.getName());
+                message.append(replyError.getName());
+                serviceUtils.serviceMail.sendMail(message.toString(), PostGroup.SHOP, SUCCESMESSAGE);
+            }
+        } catch (ServiceException e) {
+            logger.error(e.getMessage());
+        } catch (IOException e) {
+            logger.error(e.getMessage());
         }
     }
 

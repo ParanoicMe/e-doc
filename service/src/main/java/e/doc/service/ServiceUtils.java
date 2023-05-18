@@ -46,7 +46,7 @@ public class ServiceUtils {
     }
 
     String createPackageName(String pname) {
-        return getDocId() + pname.substring(pname.lastIndexOf("-"));
+        return getDocId() + pname.substring(pname.indexOf("-"));
     }
 
     Properties getApplicationProperty(PropertyE p) {
