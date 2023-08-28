@@ -1,6 +1,8 @@
 package e.doc.docApp;
 
 import e.doc.domain.web.JsonBLRWBL;
+import e.doc.service.Service;
+import e.doc.service.ServiceImpl;
 import e.doc.service.exception.ServiceException;
 import e.doc.service.restservice.RestService;
 import e.doc.service.shedule.ServiceSchedule;
@@ -9,14 +11,17 @@ import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class ListenerWeb implements Runnable {
     private static Logger logger = LogManager.getLogger(ListenerWeb.class);
+
+    Service service = new ServiceImpl();
     RestService restService;
     ServiceSchedule serviceSchedule = new ServiceSchedule();
-    Properties properties;
-
+    Properties properties =service.getAppProperty();
+    int timeSleep = Integer.parseInt(properties.getProperty("time.sleep.web"));
     String regexXML;
     String regexZIP;
 
@@ -38,25 +43,24 @@ public class ListenerWeb implements Runnable {
             while (true) {
                 serviceSchedule.checkSchedule();
                 String filePath = "";
-                if (uuid!=null && !uuid.isEmpty()) {
+                if (uuid != null && !uuid.isEmpty()) {
                     JsonBLRWBL[] jsonBlrwbl = restService.getEWayBill();
+                    //logger.debug("jsonBlrwbl.length" + jsonBlrwbl.length);
                     if (jsonBlrwbl.length > 0) {
-                        int[] arrE = restService.getServiceUtils().convertEWayBill(jsonBlrwbl);
+                        int[] arrE = restService.convertEWayBill(jsonBlrwbl);
+                        //logger.debug("Arrays.toString(arrE)" + Arrays.toString(arrE));
                         if (arrE.length > 0) {
                             restService.downloadEWayBill(arrE);
-                            if (serviceSchedule.checkSchedule()) {
-                                listenerInFolder = new ListenerInFolder();
-                            }
                         }
                     }
-                }else {
+                } else {
                     uuid = restService.getConnection();
                     continue;
                 }
-                Thread.sleep(600000);
+                Thread.sleep(timeSleep);
             }
         } catch (ServiceException e) {
-            logger.info(e.toString());
+            logger.info("ERRRRRR ListenerWeb" + e.getMessage());
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

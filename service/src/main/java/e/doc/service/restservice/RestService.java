@@ -16,6 +16,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -28,6 +29,7 @@ public class RestService {
     private static String PROPACCEPTVAL = "*/*";
     private static String CONTENTTYPE = "Content-Type";
     private static String CONTENTTYPEVAL = "application/json";
+    private static String CONTENTTYPEFORMDATA = "multipart/form-data";
     private static String EDOCTYPE = "BLRWBL";
     private static String AUTHNAME = "Authorization";
     private static String CODEFORMAT = "UTF-8";
@@ -71,7 +73,9 @@ public class RestService {
                 logger.error("Connection Error" + responseCode);
                 return "";
             } else {
-                br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                br = new BufferedReader(new InputStreamReader(connection.getInputStream(), CODEFORMAT));
+                //BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream(), "UTF-8"));
+
                 String responseBody = br.lines().collect(Collectors.joining());
                 //logger.debug("responseBody -- " + responseBody);
                 ObjectMapper mapper = new ObjectMapper();
@@ -128,22 +132,21 @@ public class RestService {
             //logger.debug(toCurlRequest(connection, jsonListWayBill.toString().getBytes(CODEFORMAT)));
             OutputStream os = connection.getOutputStream();
             os.write(jsonListWayBill.toString().getBytes(CODEFORMAT));
-
+            os.close();
             int responseCode = connection.getResponseCode();
             BufferedReader br = null;
             logger.debug("getEWayBill responseCode - " + responseCode);
             if (responseCode != HttpURLConnection.HTTP_OK) {
-                br = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-                //logger.error("getEWayBill. Connection Failed. ResponseCode is - " + responseCode);
+                br = new BufferedReader(new InputStreamReader(connection.getErrorStream(), CODEFORMAT));
+                logger.error("getEWayBill. Connection Failed. ResponseCode is - " + responseCode);
                 //logger.error("BufferedReader is - " + br.lines().collect(Collectors.joining()));
             } else {
-                br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                br = new BufferedReader(new InputStreamReader(connection.getInputStream(), CODEFORMAT));
                 String responseBody = br.lines().collect(Collectors.joining());
                 //logger.debug("getEWayBill responseBody - " + responseBody);
                 ObjectMapper mapper = new ObjectMapper();
                 rb = mapper.readValue(responseBody, JsonBLRWBL[].class);
             }
-            os.close();
             br.close();
             connection.disconnect();
             logger.debug("getEWayBill JsonBLRWBL[] rb - " + Arrays.toString(rb));
@@ -157,6 +160,7 @@ public class RestService {
             if (connection != null)
                 connection.disconnect();
         }
+
         return rb;
     }
 
@@ -173,6 +177,7 @@ public class RestService {
             connection.setDoOutput(true);
             connection.setDoInput(true);
             logger.debug(toCurlRequest(connection, ids.toString().getBytes(CODEFORMAT)));
+            logger.debug("Arrays.toString(ids)" + Arrays.toString(ids));
             OutputStream os = connection.getOutputStream();
             os.write(Arrays.toString(ids).getBytes(CODEFORMAT));
             os.close();
@@ -181,6 +186,17 @@ public class RestService {
             logger.debug("downloadEWayBill. response Code - " + responseCode);
             if (responseCode != HttpURLConnection.HTTP_OK) {
                 logger.error("downloadEWayBill. Error responseCode - " + responseCode);
+                InputStream is = connection.getErrorStream();
+
+                StringBuilder textBuilder = new StringBuilder();
+                try (Reader reader = new BufferedReader(new InputStreamReader
+                        (is, StandardCharsets.UTF_8))) {
+                    int c = 0;
+                    while ((c = reader.read()) != -1) {
+                        textBuilder.append((char) c);
+                    }
+                }
+                logger.debug("getErrorStream " + textBuilder.toString());
                 return "";
             } else {
                 String fileName = "";
@@ -217,6 +233,7 @@ public class RestService {
                 outputStream.close();
                 inputStream.close();
                 serviceUtils.updateStartTime(nowTime);
+                startTime = nowTime;
                 return saveFilePath;
             }
         } catch (JsonProcessingException e) {
@@ -228,6 +245,65 @@ public class RestService {
         } finally {
             if (connection != null)
                 connection.disconnect();
+        }
+    }
+
+    public void uploadEDoc(String zipFilePath) {
+        HttpURLConnection connection = null;
+        // OutputStream outputStream = null;
+        JsonResponseUpload jsonResponseUpload;
+        PrintWriter printWriter;
+        File uploadFile = new File(zipFilePath);
+        try {
+
+            URL url = new URL(properties.getProperty("provider.web.base.url") + properties.getProperty("provider.web.edoc.upload.zip"));//?exportFormatType=XML&printEds=false&shortForm=true
+            logger.info("URL - " + properties.getProperty("provider.web.base.url") + properties.getProperty("provider.web.edoc.upload.zip"));
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod(TYPEPOST);
+            connection.setRequestProperty(AUTHNAME, user.getUuid());
+            connection.setRequestProperty(PROPACCEPT, PROPACCEPTVAL);
+            connection.setRequestProperty(CONTENTTYPE, CONTENTTYPEVAL);
+            connection.setDoOutput(true);
+            connection.setDoInput(true);
+            connection.setUseCaches(false);
+
+            OutputStream os = connection.getOutputStream();
+            printWriter = new PrintWriter(new OutputStreamWriter(os, CODEFORMAT), true);
+            printWriter.append("Content-Disposition: form-data; name=\"zipArchive\"; filename=\"" + uploadFile.getName() + "\"");
+            printWriter.append(";");
+            printWriter.append("type=application/zip");
+            printWriter.flush();
+            //logger.debug(toCurlRequest(connection, printWriter.toString().getBytes(CODEFORMAT)));
+
+            FileInputStream inputStream = new FileInputStream(zipFilePath);
+            byte[] buffer = new byte[4096];
+            int bytesRead = -1;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                os.write(buffer, 0, bytesRead);
+            }
+            os.flush();
+            inputStream.close();
+            printWriter.flush();
+            printWriter.close();
+            BufferedReader br = null;
+            int responseCode = connection.getResponseCode();
+
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                br = new BufferedReader(new InputStreamReader(connection.getInputStream(), CODEFORMAT));
+                //BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream(), "UTF-8"));
+
+                String responseBody = br.lines().collect(Collectors.joining());
+                //logger.debug("responseBody -- " + responseBody);
+                ObjectMapper mapper = new ObjectMapper();
+                jsonResponseUpload = mapper.readValue(responseBody, JsonResponseUpload.class);
+                //System.out.println("Connection success. User.toString() -- " + user.toString());
+                br.close();
+                logger.debug("DONE UPLOAD");
+            } else {
+                logger.debug("ERROR UPLOAD");
+            }
+        } catch (IOException e) {
+            logger.debug("UPLOAD - " + e.getMessage());
         }
     }
 
@@ -251,11 +327,15 @@ public class RestService {
 
         // Body
         if (body != null)
-            builder.append("-d '").append(new String(body)).append("' \\\n  ");
+            builder.append("-d '").append(new String(body.toString())).append("' \\\n  ");
 
         // URL
         builder.append("\"").append(connection.getURL()).append("\"");
 
         return builder.toString();
+    }
+
+    public int[] convertEWayBill(JsonBLRWBL[] jsonBLRWBLS) {
+        return serviceUtils.convertEWayBill(jsonBLRWBLS);
     }
 }

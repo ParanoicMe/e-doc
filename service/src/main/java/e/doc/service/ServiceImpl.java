@@ -11,6 +11,7 @@ import e.doc.domain.smoracle.ClientInfo;
 import e.doc.domain.smoracle.hlp.ClientInfoHlp;
 import e.doc.domain.smoracle.hlp.LableWOHlp;
 import e.doc.domain.sqllite.HolderBarcode;
+import e.doc.service.buildersm.BLRWBLParser;
 import e.doc.service.buildersm.SMDocBuilder;
 import e.doc.service.buildectt.CTTDocBuilder;
 import e.doc.service.buildectt.CTTDocBuilderImpl;
@@ -66,8 +67,8 @@ public class ServiceImpl implements Service {
     }
 
     public void convertChain(File f) throws ServiceException {
-
-        BLRWBL blrwbl = getBLRWBLValue(f);
+        BLRWBLParser blrwblParser = new BLRWBLParser();
+        BLRWBL blrwbl = blrwblParser.parseBLRWBL(f); //getBLRWBLValue(f);
         if (serviceUtils.isExist(blrwbl.getDeliveryNote().getDeliveryNoteID())) {
             logger.info("Try to write existed document - " + blrwbl.getDeliveryNote().getDeliveryNoteID());
         } else {
@@ -136,7 +137,7 @@ public class ServiceImpl implements Service {
             } else {
                 logger.info("Missed barcodes for eTTN" + blrwbl.getDeliveryNote().getDeliveryNoteID() + ", " + barcodes.toString());
                 serviceUtils.writeHoldsBarcode(barcodes, packageName + ".xml");
-                serviceUtils.mailbarcode(barcodes, blrwbl.getDeliveryNote().getLineItem());
+                serviceUtils.mailbarcode(barcodes, blrwbl.getDeliveryNote().getLineItem(), properties.getProperty("shop.name"));
                 File smXMLH = new File(pathHolder + packageName + ".xml");
                 xmlMapper.writeValue(smXMLH, pp);
                 backupFile(new File(pathHolder + packageName + ".xml"));

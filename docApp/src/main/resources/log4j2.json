@@ -30,7 +30,7 @@
         ]
       },
       "root": {
-        "level": "debug",
+        "level": "info",
         "appender-ref": {
           "ref": "File-Appender"
         }

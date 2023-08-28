@@ -3,10 +3,12 @@ package e.doc.docApp;
 import e.doc.service.Service;
 import e.doc.service.ServiceImpl;
 import e.doc.service.exception.ServiceException;
+import e.doc.service.shedule.ServiceSchedule;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.SimpleTimeZone;
 import java.util.regex.Pattern;
@@ -19,12 +21,12 @@ public class ListenerInFolder implements Runnable {
     final String TAG = "ListenerInFolder";
     private Thread thread;
     Service service = new ServiceImpl();
+    ServiceSchedule serviceSchedule = new ServiceSchedule();
     Properties properties = service.getAppProperty();
     String pathin = properties.getProperty("path.in");
-    String pathHolder;
     String regexXML = properties.getProperty("xml.regexp.in");
     String regexZIP = properties.getProperty("xml.regexp.in.zip");
-    //int provederId  = Integer.parseInt(properties.getProperty("provider.id"));
+    int timeSleep = Integer.parseInt(properties.getProperty("time.sleep.in"));
 
     public ListenerInFolder() throws ServiceException {
         thread = new Thread(this, "in");
@@ -33,47 +35,49 @@ public class ListenerInFolder implements Runnable {
 
     @Override
     public void run() {
+        boolean sleep = true;
         while (true) {
             try {
+                if (!serviceSchedule.checkSchedule())
+                    Thread.sleep(1800000);
                 File dirin = new File(pathin);
                 String[] files = dirin.list();
-                if (files.length == 0) {
-                    logger.debug("Break listen in folder");
-                    break;
-                }
+                //logger.info("Listener In files - " + Arrays.toString(files));
                 for (String s : files) {
-                    //logger.info("Check file - " + s);
+                    logger.info("Check Listener In file - " + s);
                     File file = new File(pathin + s);
                     if (Pattern.compile(regexXML)
                             .matcher(s)
                             .matches()) {
-                        logger.debug("Start to convert file - " + pathin + s + ".");
-                        try {
-                            service.convertChain(file); //check and convert
-                        } catch (ServiceException e) {
-                            logger.info("ListenerInFolder. Error convert Chain" + pathin + s + ".");
-                        }
+                        logger.debug("Start to convert IN file - " + pathin + s + ".");
+                        service.convertChain(file); //check and convert
+                        //file.delete();
                     } else if (Pattern.compile(regexZIP)
                             .matcher(s)
                             .matches()) {
                         unzip(file);
+                        sleep = false;
                         continue;
                     } else {
-                        logger.debug("file.delete();");
+                        logger.debug(" ListenerIn Delete file - " + file.getName());
                         file.delete();
-                        //break;
+                        continue;
                     }
                     file.delete();
                 }
                 //System.out.println(" While");
-                Thread.sleep(10000);
+                if (sleep)
+                    Thread.sleep(timeSleep);
+                sleep = true;
+            } catch (ServiceException e) {
+                logger.info("ListenerIn . Error convert Chain");
             } catch (InterruptedException e) {
                 logger.error(TAG, "In thread stoped");
+            } catch (IllegalStateException e) {
+                logger.error(TAG, "In IllegalStateException stoped");
             }
         }
     }
-
-
 
     void unzip(File f) {
         try {
@@ -104,13 +108,18 @@ public class ListenerInFolder implements Runnable {
             }
             zis.closeEntry();
             zis.close();
-            //logger.info("Try to delete zip - " + f.getName());
             f.delete();
-            //logger.info("delete zip - " + f.getName());
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void tryToDelete(File file) {
+        while (true)
+            if (file.exists())
+                file.delete();
+
     }
 }

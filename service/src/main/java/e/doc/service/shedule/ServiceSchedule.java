@@ -3,6 +3,8 @@ package e.doc.service.shedule;
 import e.doc.service.Service;
 import e.doc.service.ServiceImpl;
 import e.doc.service.ServiceUtils;
+import e.doc.service.config.PropertiesImpl;
+import e.doc.service.config.PropertyE;
 import e.doc.service.exception.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,8 +15,7 @@ import java.util.Properties;
 
 public class ServiceSchedule {
     private static Logger logger = LogManager.getLogger(ServiceSchedule.class);
-    Service service = new ServiceImpl();
-    Properties properties = service.getAppProperty();
+    Properties properties = getApplicationProperty(PropertyE.APP);
     int startTimeH = Integer.parseInt(properties.getProperty("schedule.start.time.hours"));
     int startTimeM = Integer.parseInt(properties.getProperty("schedule.start.time.minutes"));
     int finishTimeH = Integer.parseInt(properties.getProperty("schedule.finish.time.hours"));
@@ -36,5 +37,8 @@ public class ServiceSchedule {
             return true;
         else
             return false;
+    }
+    Properties getApplicationProperty(PropertyE p) {
+        return new PropertiesImpl().getProperty(p);
     }
 }

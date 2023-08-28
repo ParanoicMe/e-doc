@@ -17,11 +17,20 @@ public class RestServiceUtils {
     ServiceSQLLite serviceSQLLite = new ServiceSQLLite();
 
     public int[] convertEWayBill(JsonBLRWBL[] jsonBLRWBLS) {
+        //logger.debug(" convertEWayBill jsonBLRWBLS.length --- " + jsonBLRWBLS.length);
         int[] ids = new int[jsonBLRWBLS.length];
-        for (int i = 0; i <= jsonBLRWBLS.length - 1; i++) {
+        //logger.debug(" convertEWayBill jsonBLRWBLS.length --- " + jsonBLRWBLS.length + "ids.length ---" + ids.length);
+        //int k = 0;
+        //logger.debug(" i <= jsonBLRWBLS.length --- " + (k <= jsonBLRWBLS.length-1) + "ids.length ---" + ids.length);
+
+        for (int i = 0; i <= jsonBLRWBLS.length-1; i++) {
+            //logger.debug("JsonBLRWBL.toString() --- " + jsonBLRWBLS[i].toString());
+
             JsonBLRWBL blrwbl = jsonBLRWBLS[i];
-            System.out.println("blrwbl.toString()" + blrwbl.toString());
+            //logger.debug("blrwbl.getDocumentType() ---" + blrwbl.getDocumentType());
+            //logger.debug("blrwbl.getDocumentType().equals(\"ТТН\") ---" + blrwbl.getDocumentType().equals("ТТН"));
             if (blrwbl.getDocumentType().equals("ТТН")) {
+                logger.debug("ТТН");
                 ids[i] = blrwbl.getId();
             }
         }
@@ -44,7 +53,7 @@ public class RestServiceUtils {
             int day = calendar.get(Calendar.DATE);
             int hour = calendar.get(Calendar.AM_PM) == 0 ? calendar.get(Calendar.HOUR) : calendar.get(Calendar.HOUR) + 12;
             int minut = calendar.get(Calendar.MINUTE);
-            calendar.set(year, month, day, hour-1, minut-30, 0);
+            calendar.set(year, month, day, hour, minut-5, 0);
             Date date = calendar.getTime();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
             //logger.debug("if start time empty return calendar time " + dateFormat.format(date));

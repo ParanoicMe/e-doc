@@ -40,6 +40,10 @@ public class SMDocBuilderImpl implements SMDocBuilder {
         //this.pd = pd;
     }
 
+    public void parseXML(){
+
+    }
+
     @Override
     public void reset() {
         pp = new PostPackageWI();
@@ -178,7 +182,7 @@ public class SMDocBuilderImpl implements SMDocBuilder {
         swb.setDocType(docType);
         swb.setGoodsOwner(GGODSOWNER);
         swb.setPayCash(PAYCASH);
-        swb.setSupplierDoc(b.getDeliveryNote().getDeliveryNoteID().trim());
+        swb.setSupplierDoc(b.getDeliveryNote().getDeliveryNoteID());
         swb.setSupplierDocCreate(convertDate(b.getDeliveryNote().getCreationDateTime()));
     }
 

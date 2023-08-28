@@ -27,10 +27,10 @@ public class DeliveryNote {
     protected String contractID;
     @JsonProperty("ContractDate")
     protected String contractDate;
-    @JsonProperty("WaybillID")
+    /*@JsonProperty("WaybillID")
     protected String waybillID;
     @JsonProperty("Document")
-    protected Document document;
+    protected Document document;*/
     @JsonProperty("Shipper")
     protected Shipper shipper;
     @JsonProperty("Receiver")
@@ -43,21 +43,22 @@ public class DeliveryNote {
     protected ShipTo shipTo;
     @JsonProperty("Carrier")
     protected Carrier carrier;
-    @JsonProperty("QuantityTrip")
+    /*@JsonProperty("QuantityTrip")
     protected String quantityTrip;
     @JsonProperty("TransportOwnerName")
     protected String transportOwnerName;
+    */
     @JsonProperty("TransportID")
     protected String transportID;
     @JsonProperty("TrailerID")
     protected String trailerID;
-    @JsonProperty("SealID")
-    protected String sealID;
+    /*@JsonProperty("SealID")
+    protected String sealID;*/
     @JsonProperty("OrderID")
     protected String orderID;
     @JsonProperty("Currency")
     protected String currency;
-/*    @JsonProperty("ExtraField")
+    /*@JsonProperty("ExtraField")
     protected List<ExtraField> extraField;*/
     @JsonProperty("ExtraField")
     protected ExtraField extraField;
@@ -67,7 +68,7 @@ public class DeliveryNote {
     @JsonProperty("Total")
     protected Total total;
 
-    /**
+ /**
      * Gets the value of the deliveryNoteType property.
      * 
      * @return
@@ -290,22 +291,22 @@ public class DeliveryNote {
      *     possible object is
      *     {@link String }
      *     
-     */
+     *//*
     public String getWaybillID() {
         return waybillID;
     }
 
-    /**
+    *//**
      * Sets the value of the waybillID property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
-     */
+     *//*
     public void setWaybillID(String value) {
         this.waybillID = value;
-    }
+    }*/
 
     /**
      * Gets the value of the document property.
@@ -328,10 +329,10 @@ public class DeliveryNote {
      * {@link Document }
      * 
      * 
-     */
+     *//*
     public Document getDocument() {
         return this.document;
-    }
+    }*/
 
     /**
      * Грузоотправитель
@@ -484,46 +485,46 @@ public class DeliveryNote {
      *     possible object is
      *     {@link String }
      *     
-     */
+     *//*
     public String getQuantityTrip() {
         return quantityTrip;
     }
 
-    /**
+    *//**
      * Sets the value of the quantityTrip property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
-     */
+     *//*
     public void setQuantityTrip(String value) {
         this.quantityTrip = value;
     }
 
-    /**
+    *//**
      * Gets the value of the transportOwnerName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
-     */
+     *//*
     public String getTransportOwnerName() {
         return transportOwnerName;
     }
 
-    /**
+    *//**
      * Sets the value of the transportOwnerName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
-     */
+     *//*
     public void setTransportOwnerName(String value) {
         this.transportOwnerName = value;
-    }
+    }*/
 
     /**
      * Gets the value of the transportID property.
@@ -580,22 +581,22 @@ public class DeliveryNote {
      *     possible object is
      *     {@link String }
      *     
-     */
+     *//*
     public String getSealID() {
         return sealID;
     }
 
-    /**
+    *//**
      * Sets the value of the sealID property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
-     */
+     *//*
     public void setSealID(String value) {
         this.sealID = value;
-    }
+    }*/
 
     /**
      * Gets the value of the orderID property.
@@ -652,8 +653,8 @@ public class DeliveryNote {
     public void setExtraField(ExtraField extraField) {
         this.extraField = extraField;
     }
-
-    /**
+/*
+    *//**
      * Gets the value of the extraField property.
      * 
      * <p>
@@ -674,11 +675,11 @@ public class DeliveryNote {
      * {@link ExtraField }
      * 
      * 
-     */
-    /*public List<ExtraField> getExtraField() {
-        *//*if (extraField == null) {
+     *//*
+    public List<ExtraField> getExtraField() {
+        if (extraField == null) {
             extraField = new ArrayList<ExtraField>();
-        }*//*
+        }
         return this.extraField;
     }
 
@@ -723,4 +724,5 @@ public class DeliveryNote {
         this.total = value;
     }
 
+    
 }

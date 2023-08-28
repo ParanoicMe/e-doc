@@ -16,7 +16,8 @@ public class EDocs {
             ServiceSQLLite serviceSQLLite = new ServiceSQLLite();
             serviceSQLLite.initDB();
             ListenerWeb listenerWeb = new ListenerWeb();
-            //ListenerOutFolder loutf = new ListenerOutFolder();
+            ListenerOutFolder loutf = new ListenerOutFolder();
+            ListenerInFolder listenerInFolder = new ListenerInFolder();
             ListenerHolderFolder listenerHolderFolder= new ListenerHolderFolder();
         } catch (ServiceException e) {
             logger.error("Application Error - " + e.getMessage());

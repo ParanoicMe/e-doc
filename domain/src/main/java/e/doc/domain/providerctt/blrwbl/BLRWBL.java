@@ -1,50 +1,46 @@
 package e.doc.domain.providerctt.blrwbl;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 @JsonIgnoreProperties(value = { "SpecialPart", "SecurityShipper", "SecurityEnd" })
 public class BLRWBL {
 
     @JsonProperty("MessageHeader")
     protected MessageHeader messageHeader;
-    @JsonProperty("SecurityShipper")
-    protected List<SecurityShipper> securityShipper;
+    //@JsonProperty("SecurityShipper")
+    //protected List<SecurityShipper> securityShipper;
     @JsonProperty("DeliveryNote")
     protected DeliveryNote deliveryNote;
-    @JsonProperty("SecurityEnd")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    protected List<SecurityEnd> securityEnd;
+    //@JsonProperty("SecurityEnd")
+    //@JsonInclude(JsonInclude.Include.NON_NULL)
+    //protected List<SecurityEnd> securityEnd;
     /*@JsonProperty("SpecialPart")
     protected String specialPart;*/
-    @JacksonXmlProperty(isAttribute = true)
-    protected String version;
+    //@JacksonXmlProperty(isAttribute = true)
+    //protected String version;
 
-    /**
+   /* *//**
      * Gets the value of the messageHeader property.
      *
      * @return possible object is
      * {@link MessageHeader }
-     */
+     *//*
     public MessageHeader getMessageHeader() {
         return messageHeader;
     }
 
-    /**
+    *//**
      * Sets the value of the messageHeader property.
      *
      * @param value allowed object is
      *              {@link MessageHeader }
-     */
+     *//*
     public void setMessageHeader(MessageHeader value) {
         this.messageHeader = value;
     }
 
-    /**
+    *//**
      * Gets the value of the securityShipper property.
      *
      * <p>
@@ -63,7 +59,7 @@ public class BLRWBL {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link SecurityShipper }
-     */
+     *//*
     public List<SecurityShipper> getSecurityShipper() {
         if (securityShipper == null) {
             securityShipper = new ArrayList<>();
@@ -71,27 +67,27 @@ public class BLRWBL {
         return this.securityShipper;
     }
 
-    /**
+    *//**
      * Gets the value of the deliveryNote property.
      *
      * @return possible object is
      * {@link DeliveryNote }
-     */
+     *//*
     public DeliveryNote getDeliveryNote() {
         return deliveryNote;
     }
 
-    /**
+    *//**
      * Sets the value of the deliveryNote property.
      *
      * @param value allowed object is
      *              {@link DeliveryNote }
-     */
+     *//*
     public void setDeliveryNote(DeliveryNote value) {
         this.deliveryNote = value;
     }
 
-    /**
+    *//**
      * Gets the value of the securityEnd property.
      *
      * <p>
@@ -110,7 +106,7 @@ public class BLRWBL {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link SecurityEnd }
-     */
+     *//*
     public List<SecurityEnd> getSecurityEnd() {
         if (securityEnd == null) {
             securityEnd = new ArrayList<SecurityEnd>();
@@ -118,12 +114,12 @@ public class BLRWBL {
         return this.securityEnd;
     }
 
-    /**
+    *//**
      * Gets the value of the version property.
      *
      * @return possible object is
      * {@link String }
-     */
+     *//*
     public String getVersion() {
         if (version == null) {
             return "0.1";
@@ -132,12 +128,12 @@ public class BLRWBL {
         }
     }
 
-    /**
+    *//**
      * Sets the value of the version property.
      *
      * @param value allowed object is
      *              {@link String }
-     */
+     *//*
     public void setVersion(String value) {
         this.version = value;
     }
@@ -147,24 +143,40 @@ public class BLRWBL {
         @JsonProperty("SecurityID")
         protected String securityID;
 
-        /**
+        *//**
          * Gets the value of the securityID property.
          *
          * @return possible object is
          * {@link String }
-         */
+         *//*
         public String getSecurityID() {
             return securityID;
         }
 
-        /**
+        *//**
          * Sets the value of the securityID property.
          *
          * @param value allowed object is
          *              {@link String }
-         */
+         *//*
         public void setSecurityID(String value) {
             this.securityID = value;
         }
+    }*/
+
+    public DeliveryNote getDeliveryNote() {
+        return deliveryNote;
+    }
+
+    public void setDeliveryNote(DeliveryNote deliveryNote) {
+        this.deliveryNote = deliveryNote;
+    }
+
+    public MessageHeader getMessageHeader() {
+        return messageHeader;
+    }
+
+    public void setMessageHeader(MessageHeader messageHeader) {
+        this.messageHeader = messageHeader;
     }
 }
